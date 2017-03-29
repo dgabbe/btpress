@@ -1,5 +1,3 @@
-source("tire-pressure.r")
-
 mooney_bike <- bike_tire_pressures(rider_weight_lbs = 165,
                                    bike_weight_lbs = 20,
                                    front_distribution = 0.4,
@@ -57,5 +55,4 @@ light_rider_bike <- bike_tire_pressures(
   rear_tire_size_mm = 28,
   rear_tire_casing_compensation = 1.1)
 
-# Someone like Nairo Quintana
 light_rider_plot <- display_bike_inflation(base_inflation_plot, light_rider_bike)
