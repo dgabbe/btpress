@@ -1,11 +1,11 @@
 Package: btpress
 Title: Bike Tire Pressure Optimizer
-Version: 2016.11.27
+Version: 2017.07.27
 Authors@R: c(person("David", "Gabbé", , "dgabbe@acm.org", role = c("aut", "cre")))
-Description: Calculates front and rear tire pressure based on bicycle, load, and rider weights 
-for various 700c, 650b, and 26 inch tire sizes.  Optimal pressure will provide more comfort and efficiency.
-Depends: R (>= 3.3.2)
+Description: Calculates front and rear tire pressure based on bicycle, load, and rider weights for various 700c, 650b, and 26 inch tire sizes.  Optimal pressure will provide more comfort and efficiency.
+Depends: R (>= 3.3.2), ggplot2 (>= 2.0.2), dgutils, directlabels
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/dgabbe/btpress
+RoxygenNote: 6.0.1

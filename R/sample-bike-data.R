@@ -1,51 +1,54 @@
-mooney_bike <- bike_tire_pressures(rider_weight_lbs = 165,
-                                   bike_weight_lbs = 20,
-                                   front_distribution = 0.4,
-                                   front_tire_size_mm = 26,
-                                   front_tire_casing_compensation = 1.1,
-                                   rear_tire_size_mm = 28,
-                                   rear_tire_casing_compensation = 1.1)
+mooney <- bike_tire_pressures(
+  rider_weight_lbs = 170,
+  bike_weight_lbs = 20,
+  front_distribution = 0.4,
+  front_tire_size_mm = 26,
+  front_tire_casing_compensation = 1.15,
+  rear_tire_size_mm = 28,
+  rear_tire_casing_compensation = 1.15
+  )
 
-mooney_plot <- display_bike_inflation(base_inflation_plot, mooney_bike)
+#' @export
+mooney_plot <- display_bike_inflation(base_pressure_plot, mooney)
 
-norco_shopping_bike <- bike_tire_pressures(rider_weight_lbs = 165,
-                                           bike_weight_lbs = 35,
-                                           load_lbs = 20,
-                                           front_distribution = 0.5,
-                                           front_tire_size_mm = 32,
-                                           front_tire_casing_compensation = 1.1,
-                                           rear_tire_size_mm = 28)
+norco_shopping <- bike_tire_pressures(
+  rider_weight_lbs = 165,
+  bike_weight_lbs = 35,
+  load_lbs = 20,
+  front_distribution = 0.5,
+  front_tire_size_mm = 35,
+  rear_tire_size_mm = 32,
+  rear_tire_casing_compensation = 1.15
+  )
 
-norco_shopping_35_bike <- bike_tire_pressures(rider_weight_lbs = 165,
-                                              bike_weight_lbs = 35,
-                                              load_lbs = 20,
-                                              front_distribution = 0.5,
-                                              front_tire_size_mm = 35,
-                                              front_tire_casing_compensation = 1.1,
-                                              rear_tire_size_mm = 32,
-                                              rear_tire_casing_compensation = 1.1)
+norco_shopping_plot <- display_bike_inflation(base_pressure_plot, norco_shopping)
 
-norco_fun_bike <- bike_tire_pressures(rider_weight_lbs = 165,
-                                      bike_weight_lbs = 35,
-                                      load_lbs = 3,
-                                      front_distribution = 0.45,
-                                      front_tire_size_mm = 32,
-                                      front_tire_casing_compensation = 1.1,
-                                      rear_tire_size_mm = 28)
 
-norco_plot <- display_bike_inflation(base_inflation_plot, norco_shopping_bike)
+norco_fun <- bike_tire_pressures(
+  rider_weight_lbs = 165,
+  bike_weight_lbs = 35,
+  load_lbs = 3,
+  front_distribution = 0.45,
+  front_tire_size_mm = 32,
+  front_tire_casing_compensation = 1.1,
+  rear_tire_size_mm = 28
+)
 
-leslie_trek_lexa_bike <- bike_tire_pressures(rider_weight_lbs = 145,
-                                      bike_weight_lbs = 15,
-                                      load_lbs = 1,
-                                      front_distribution = 0.4,
-                                      front_tire_size_mm = 28,
-                                      rear_tire_size_mm = 26)
+norco_fun_plot <- display_bike_inflation(base_pressure_plot, norco_fun)
 
-leslie_trek_lexa_plot <- display_bike_inflation(base_inflation_plot, leslie_trek_lexa_bike)
+lfr_trek_lexa <- bike_tire_pressures(
+  rider_weight_lbs = 145,
+  bike_weight_lbs = 15,
+  load_lbs = 1,
+  front_distribution = 0.4,
+  front_tire_size_mm = 28,
+  rear_tire_size_mm = 26
+)
 
-# Someone like Nairo Quintana
-light_rider_bike <- bike_tire_pressures(
+lfr_trek_lexa_plot <- display_bike_inflation(base_pressure_plot, lfr_trek_lexa)
+
+# Nairo Quintana
+nairo <- bike_tire_pressures(
   rider_weight_lbs = 125,
   bike_weight_lbs = 15,
   load_lbs = 1,
@@ -53,6 +56,23 @@ light_rider_bike <- bike_tire_pressures(
   front_tire_size_mm = 28,
   front_tire_casing_compensation = 1.1,
   rear_tire_size_mm = 28,
-  rear_tire_casing_compensation = 1.1)
+  rear_tire_casing_compensation = 1.1
+  )
 
-light_rider_plot <- display_bike_inflation(base_inflation_plot, light_rider_bike)
+#' @export
+nairo_plot <- display_bike_inflation(base_pressure_plot, nairo)
+
+# Chris Froome
+froome <- bike_tire_pressures(
+  rider_weight_lbs = 150,
+  bike_weight_lbs = 15,
+  load_lbs = 1,
+  front_distribution = 0.4,
+  front_tire_size_mm = 28,
+  front_tire_casing_compensation = 1.1,
+  rear_tire_size_mm = 28,
+  rear_tire_casing_compensation = 1.1
+)
+
+#' @export
+froome_plot <- display_bike_inflation(base_pressure_plot, froome)
