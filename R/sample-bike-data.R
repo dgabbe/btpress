@@ -1,3 +1,4 @@
+#' @export
 mooney <- bike_tire_pressures(
   rider_weight_lbs = 170,
   bike_weight_lbs = 20,

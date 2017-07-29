@@ -21,7 +21,7 @@ bike_tire_pressures <- function(
   rear_tire_size_mm = 28,
   front_distribution = 0.5
 )
-{
+  {
   total_weight <- rider_weight_lbs + bike_weight_lbs + load_lbs
   front_weight <- total_weight * front_distribution
   rear_weight <- total_weight * (1 - front_distribution)

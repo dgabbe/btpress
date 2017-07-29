@@ -1,3 +1,17 @@
+#' Nominal tire sizes.
+#'
+#' Also happen to be the ones Compass Bicycle sells.
+#'
+#' 14-Jun-2017: Updated to include all sizes.
+#' @export
+tire_sizes_mm <- c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54)
+
+#' X axis values for wheel loads in lbs
+#'
+#' Based on the Bicycle Quarterly chart which is in kilograms
+#' @export
+wheel_loads_lbs <- c(66, 77, 88, 100, 110, 121, 132, 143, 154)
+
 #' Compute the 15\% droop tire pressure based on wheel load and tire size
 #'
 #' The emperical, imperial centric formula is from the
@@ -16,13 +30,14 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
 }
 
 
-#' Generate a data set point.  Used to build data to display inflation curves on
-#' base inflation plot.
+#' Generate a data set point.
+#'
+#' Used to build data to display inflation curves on base inflation plot.
 #'
 #' @param wheel_load_lbs Self-explanatory
 #' @param tire_size_mm Self-explanatory
 #'
-#' @return Vector of wheel load, tire size, and droop pressure
+#' @return c(wheel load, tire size, and droop pressure)
 #' @export
 inflation_datum <- function(wheel_load_lbs, tire_size_mm) {
   return(

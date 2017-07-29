@@ -66,31 +66,44 @@ dual_pressure_point <- function(position = c("Front", "Rear"), psi) {
 base_pressure_plot <-
   ggplot(
     inflation_data,
-    aes(x=wheel_load_lbs, y=tire_pressure_psi,
-        group=tire_size_mm, color=tire_size_mm
+    aes(
+      x = wheel_load_lbs,
+      y = tire_pressure_psi,
+      group = tire_size_mm,
+      color = tire_size_mm
     )
   ) +
   theme_dg +
-  labs(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
-       x = "Wheel Load", y = "Tire Pressure") +
-#                    theme(legend.position = c(0.08, 0.735), legend.justification = c(0, 1)) +
+  theme_update(plot.title = element_text(hjust = 0.5)) +
+  ggtitle("Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes") +
   theme(aspect.ratio = 0.66) +
   scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
   scale_x_continuous(
+    name = "Wheel Load",
     breaks = seq(floor(min(inflation_data$wheel_load_lbs) / 10) * 10,
     ceiling(max(inflation_data$wheel_load_lbs) / 10) * 10, 10),
-    label = dual_weight) +
-  scale_y_continuous(breaks=seq(20, 160, 10), label = dual_pressure) +
+    label = dual_weight
+    ) +
+  scale_y_continuous(
+    name = "Tire Pressure",
+    breaks = seq(20, 160, 10),
+    label = dual_pressure
+    ) +
   coord_cartesian(ylim = c(20, 150)) +
   annotate("rect", xmin = 66, xmax= 160, ymin = 20, ymax = 105, alpha = 0.1,
            fill = safe_pressure_color) +
-  annotate("text",
-           label = paste0("Better safety and comfort with pressure below 105psi"),
-           x = 67, y = 99, hjust = 0, vjust = -0.9, color = safe_pressure_color) +
+  annotate(
+    "text",
+    label = paste0("Better safety and comfort with pressure below 105psi"),
+    x = 67, y = 99, hjust = 0, vjust = -0.9, color = safe_pressure_color
+  ) +
   geom_line(size = 0.75, show.legend = FALSE) +
   expand_limits(x = 158) +
-  geom_dl(aes(label = label), method = list("last.qp", cex = 1, hjust = -0.05),
-          color = "Black", show.legend = FALSE)
+  geom_dl(
+    aes(label = label),
+    method = list("last.points", cex = 1, hjust = -0.05),
+    color = "Black"
+  )
 
 #' Plot and label front and rear wheel inflation data for a bike.
 #'
