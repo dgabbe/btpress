@@ -2,7 +2,10 @@
 % Please edit documentation in R/plot-pressure.R
 \name{psi_to_bar}
 \alias{psi_to_bar}
-\title{Convert PSI to Bar}
+\title{#' Better safety and comfort color
+#' @keywords internal
+recommended_pressure_color <- "#33cc33" # lime green
+Convert PSI to Bar}
 \usage{
 psi_to_bar(psi)
 }

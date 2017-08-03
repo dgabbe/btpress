@@ -65,6 +65,8 @@ NULL
 
 # generate messages for increasing tire size and check max pressure labels
 
+# Change subtitle theme(plot.subtitle=element_text(size=18, hjust=0.5, face="italic", color="black"))
+
 # Change "Weight" to "Wheel_load" to be more accurate
 
 # Create a bike object so summary info about weight & weight distribution can be displayed on graph

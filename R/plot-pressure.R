@@ -1,6 +1,6 @@
-#' Better safety and comfort color
-#' @keywords internal
-recommended_pressure_color <- "#33cc33" # lime green
+#' #' Better safety and comfort color
+#' #' @keywords internal
+#' recommended_pressure_color <- "#33cc33" # lime green
 
 #' Convert PSI to Bar
 #'
@@ -62,6 +62,28 @@ dual_pressure_point <- function(
   return(sprintf('%dmm %s\n%d psi | %.1f bar', tire_size, position, psi, psi_to_bar(psi)))
 }
 
+#' Display a generic title or bike summary info.
+#'
+#' @param title Fill in...
+#' @param subtitle Fill in...
+#' @param summary Fill in...
+#'
+#' @return figure out
+#' @importFrom ggplot2 ggtitle
+#' @export
+#'
+#' @examples think about this one
+plot_title <- function(
+  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
+  subtitle = "For road & gravel riding",
+  summary = NULL
+  ) {
+  ggtitle(
+    title,
+    subtitle = paste(subtitle, summary, sep = if (is.null(summary))  {""} else {"\n"})
+  )
+}
+
 #' @importFrom dgutils theme_dg
 #' @importFrom directlabels geom_dl
 #' @import ggplot2
@@ -78,10 +100,7 @@ generate_base_pressure_plot <- function(data = inflation_data)
     )
   ) +
     #  theme_dg +
-    ggtitle(
-      "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
-      subtitle = "For road & gravel riding"
-    ) +
+    plot_title() +
     theme(aspect.ratio = 0.66) +
     theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
     scale_x_continuous(
@@ -139,28 +158,6 @@ display_bike_inflation <- function (
         y = bike$Pressure,
         vjust = -0.4
       )
-    # annotate(
-    #     "text",
-    #     label = dual_pressure_point(
-    #       bike[1, "Tire_size"][[1]],
-    #       bike[1, "position"][[1]],
-    #       bike[1,"Pressure"][[1]]
-    #     ),
-    #     x = bike[1, "Weight"][[1]],
-    #     y = bike[1,"Pressure"][[1]],
-    #     vjust = -0.4
-      # )
-      # annotate(
-      #   "text",
-      #   label = dual_pressure_point(
-      #     bike[2, "Tire_size"][[1]],
-      #     bike[2, "position"][[1]],
-      #     bike[2, "Pressure"][[1]]
-      #   ),
-      #   x = bike[2, "Weight"][[1]],
-      #   y = bike[2, "Pressure"][[1]],
-      #   vjust = -0.4
-      # )
   )
 }
 
