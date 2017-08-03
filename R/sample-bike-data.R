@@ -48,6 +48,20 @@ lfr_trek_lexa <- bike_tire_pressures(
 
 lfr_trek_lexa_plot <- display_bike_inflation(base_pressure_plot, lfr_trek_lexa)
 
+#' @export
+all_roads <- bike_tire_pressures(
+  rider_weight_lbs = 170,
+  bike_weight_lbs = 20,
+  front_distribution = 0.4,
+  front_tire_size_mm = 54,
+  front_tire_casing_compensation = 1.15,
+  rear_tire_size_mm = 54,
+  rear_tire_casing_compensation = 1.15
+)
+
+all_roads_plot <- display_bike_inflation(base_pressure_plot, all_roads)
+
+
 # Nairo Quintana
 nairo <- bike_tire_pressures(
   rider_weight_lbs = 125,

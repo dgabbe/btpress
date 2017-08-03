@@ -4,19 +4,20 @@
 \alias{dual_pressure_point}
 \title{Data point formatting function.}
 \usage{
-dual_pressure_point(position = c("Front", "Rear"), psi)
+dual_pressure_point(tire_size, position = c("Front", "Rear"), psi)
 }
 \arguments{
+\item{tire_size}{String in the form "<integer>mm".}
+
 \item{position}{Indicates which wheel. Value should be "Front" or "Rear".}
 
 \item{psi}{Inflation pressure for the wheel.}
 }
 \value{
 string similar to
-\code{
-Front
-80 psi
-5.5 bar
+\preformatted{
+    28mm Front
+ 80 psi | 5.5 bar
 }
 }
 \description{

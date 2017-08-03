@@ -46,7 +46,7 @@
 #' Biking riding is an inheritly risky activity. Remember the bike racer's motto: Falling is a matter of
 #' 'when', not 'if'. You are solely responsible for not extending any load limits including, but not
 #' exclusive of maximum tire inflation pressure, rim inflation pressure, mininum tire clearance, and
-#' compatibility tubeless tire and rim combinations.
+#' compatibility of tubeless tire and rim combinations.
 #' Use of this app is at your risk and you assume all liabilities.
 #'
 #' @section Improvements:
@@ -60,7 +60,19 @@
 #'
 #' @docType package
 #' @name btpress
-#' @import ggplot2
-#' @importFrom directlabels geom_dl
-#' @importFrom dgutils theme_dg
 NULL
+# To-do List:
+
+# generate messages for increasing tire size and check max pressure labels
+
+# Change "Weight" to "Wheel_load" to be more accurate
+
+# Create a bike object so summary info about weight & weight distribution can be displayed on graph
+
+# Review @return tags - needed or not for simple functions?
+
+# rebuild dgutils to pick up scaling fix in ggplot2 2.0.0
+
+# Find out why I need a AES group for display_bike_pressure!!!!!
+
+# Iteratring over a dataframe: https://stackoverflow.com/questions/1699046/for-each-row-in-an-r-dataframe

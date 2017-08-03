@@ -1,5 +1,6 @@
 #' Better safety and comfort color
-safe_pressure_color <- "#33cc33" # lime green
+#' @keywords internal
+recommended_pressure_color <- "#33cc33" # lime green
 
 #' Convert PSI to Bar
 #'
@@ -9,7 +10,6 @@ safe_pressure_color <- "#33cc33" # lime green
 #'
 #' @return bars
 #' @export
-#'
 psi_to_bar <- function(psi) { return(psi * 0.068947) }
 
 
@@ -21,7 +21,6 @@ psi_to_bar <- function(psi) { return(psi * 0.068947) }
 #'
 #' @return kilograms
 #' @export
-#'
 lb_to_kg <- function(lb) { return(lb *  0.45359) }
 
 
@@ -31,7 +30,6 @@ lb_to_kg <- function(lb) { return(lb *  0.45359) }
 #'
 #' @return Formatted string with pounds and kilograms.
 #' @export
-#'
 dual_weight <- function(lbs) { return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs))) }
 
 #' Y axis label formatting function.
@@ -42,28 +40,34 @@ dual_weight <- function(lbs) { return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg
 #'
 #' @return Formatted string with psi and bars.
 #' @export
-#'
 dual_pressure <- function(psi) { return(sprintf('%d psi\n%.1f bar', psi, psi_to_bar(psi))) }
 
 #' Data point formatting function.
 #'
+#' @param tire_size String in the form "<integer>mm".
 #' @param position Indicates which wheel. Value should be "Front" or "Rear".
 #' @param psi Inflation pressure for the wheel.
 #'
 #' @return string similar to
-#' \code{
-#' Front
-#' 80 psi
-#' 5.5 bar
+#' \preformatted{
+#'     28mm Front
+#'  80 psi | 5.5 bar
 #' }
 #' @export
-#'
-dual_pressure_point <- function(position = c("Front", "Rear"), psi) {
-  return(sprintf('%s\n%d psi\n%.1f bar', position, psi, psi_to_bar(psi)))
+dual_pressure_point <- function(
+  tire_size,
+  position = c("Front", "Rear"),
+  psi
+  ) {
+  return(sprintf('%dmm %s\n%d psi | %.1f bar', tire_size, position, psi, psi_to_bar(psi)))
 }
 
-
-base_pressure_plot <-
+#' @importFrom dgutils theme_dg
+#' @importFrom directlabels geom_dl
+#' @import ggplot2
+#' @export
+generate_base_pressure_plot <- function(data = inflation_data)
+{
   ggplot(
     inflation_data,
     aes(
@@ -73,56 +77,90 @@ base_pressure_plot <-
       color = tire_size_mm
     )
   ) +
-  theme_dg +
-  theme_update(plot.title = element_text(hjust = 0.5)) +
-  ggtitle("Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes") +
-  theme(aspect.ratio = 0.66) +
-  scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
-  scale_x_continuous(
-    name = "Wheel Load",
-    breaks = seq(floor(min(inflation_data$wheel_load_lbs) / 10) * 10,
-    ceiling(max(inflation_data$wheel_load_lbs) / 10) * 10, 10),
-    label = dual_weight
+    #  theme_dg +
+    ggtitle(
+      "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
+      subtitle = "For road & gravel riding"
     ) +
-  scale_y_continuous(
-    name = "Tire Pressure",
-    breaks = seq(20, 160, 10),
-    label = dual_pressure
+    theme(aspect.ratio = 0.66) +
+    theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
+    scale_x_continuous(
+      name = "Wheel Load",
+      breaks = seq(
+        floor(min(inflation_data$wheel_load_lbs) / 10) * 10,
+        ceiling(max(inflation_data$wheel_load_lbs) / 10) * 10, 10
+      ),
+      label = dual_weight
     ) +
-  coord_cartesian(ylim = c(20, 150)) +
-  annotate("rect", xmin = 66, xmax= 160, ymin = 20, ymax = 105, alpha = 0.1,
-           fill = safe_pressure_color) +
-  annotate(
-    "text",
-    label = paste0("Better safety and comfort with pressure below 105psi"),
-    x = 67, y = 99, hjust = 0, vjust = -0.9, color = safe_pressure_color
-  ) +
-  geom_line(size = 0.75, show.legend = FALSE) +
-  expand_limits(x = 158) +
-  geom_dl(
-    aes(label = label),
-    method = list("last.points", cex = 1, hjust = -0.05),
-    color = "Black"
-  )
+    scale_y_continuous(
+      name = "Tire Pressure",
+      breaks = seq(20, 160, 10),
+      label = dual_pressure
+    ) +
+    #  scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
+    coord_cartesian(ylim = c(20, 150)) +
+    geom_line(size = 0.40, alpha = 0.4) +
+    expand_limits(x = 158) +
+    geom_dl(
+      aes(label = tire_size_text),
+      method = list("last.points", cex = 0.75, hjust = -0.05),
+      color = "Black"
+    )
+}
+
+#' @export
+base_pressure_plot <- generate_base_pressure_plot()
 
 #' Plot and label front and rear wheel inflation data for a bike.
 #'
 #' @param base_plot ggplot object of base tire pressure curves.
-#' @param bike data.frame to display for specific bike and rider.
+#' @param bike tibble to display for specific bike and rider.
+#' @param show.summary Fill in....
 #'
 #' @return A complete plot for display
 #' @export
-#'
-display_bike_inflation <- function (base_plot = base_pressure_plot, bike) {
+display_bike_inflation <- function (
+  base_plot = base_pressure_plot,
+  bike,
+  show.summary = FALSE
+  ) {
   return(
     base_plot +
-    geom_point(data=bike, aes(x=Weight, y = Pressure), color = "Black", show.legend = FALSE) +
-    annotate("text", label = dual_pressure_point("Front", bike["Front","Pressure"]),
-               x = bike["Front", "Weight"], y = bike["Front","Pressure"],
-               vjust = -0.4) +
-    annotate("text", label = dual_pressure_point("Rear", bike["Rear", "Pressure"]),
-               x = bike["Rear", "Weight"], y = bike["Rear", "Pressure"],
-               vjust = -0.4)
+      geom_point(
+        data=bike,
+        aes(x = Weight, y = Pressure, group = Tire_size),
+        shape = 8,
+        color = "Black"
+      )  +
+      annotate(
+        "text",
+        label = bike$annotation,
+        x = bike$Weight,
+        y = bike$Pressure,
+        vjust = -0.4
+      )
+    # annotate(
+    #     "text",
+    #     label = dual_pressure_point(
+    #       bike[1, "Tire_size"][[1]],
+    #       bike[1, "position"][[1]],
+    #       bike[1,"Pressure"][[1]]
+    #     ),
+    #     x = bike[1, "Weight"][[1]],
+    #     y = bike[1,"Pressure"][[1]],
+    #     vjust = -0.4
+      # )
+      # annotate(
+      #   "text",
+      #   label = dual_pressure_point(
+      #     bike[2, "Tire_size"][[1]],
+      #     bike[2, "position"][[1]],
+      #     bike[2, "Pressure"][[1]]
+      #   ),
+      #   x = bike[2, "Weight"][[1]],
+      #   y = bike[2, "Pressure"][[1]],
+      #   vjust = -0.4
+      # )
   )
 }
 

@@ -4,7 +4,7 @@
 #'
 #' 14-Jun-2017: Updated to include all sizes.
 #' @export
-tire_sizes_mm <- c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54)
+tire_sizes_mm <- as.integer(c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
 
 #' X axis values for wheel loads in lbs
 #'
@@ -29,42 +29,27 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
   return(153.6 * weight_lbs / tire_size_mm**1.5785 - 7.1685)
 }
 
-
-#' Generate a data set point.
-#'
-#' Used to build data to display inflation curves on base inflation plot.
-#'
-#' @param wheel_load_lbs Self-explanatory
-#' @param tire_size_mm Self-explanatory
-#'
-#' @return c(wheel load, tire size, and droop pressure)
+#' @importFrom tibble add_row
+#' @importFrom tibble tribble
 #' @export
-inflation_datum <- function(wheel_load_lbs, tire_size_mm) {
-  return(
-    c(
-      wheel_load_lbs,
-      tire_size_mm,
-      droop_pressure_psi(wheel_load_lbs, tire_size_mm)
-      )
-    )
-}
-
-inflation_data <- matrix(
-  ncol = 3,
-  byrow = TRUE,
-  dimnames=list(c(), c("wheel_load_lbs", "tire_size_mm", "tire_pressure_psi"))
-)
-
-# Figure out double nested apply semantics!
-# Even worse - first row is NAs because of inflation_data has no info in it for
-# first rbind call.
+inflation_data <- tibble::tribble(~wheel_load_lbs, ~tire_size_mm, ~tire_pressure_psi, ~tire_size_text)
 for(wl in wheel_loads_lbs){
   for(ts in tire_sizes_mm){
-    inflation_data <- rbind(inflation_data, inflation_datum(wl, ts))
+    inflation_data <- tibble::add_row(
+      inflation_data,
+      wheel_load_lbs = wl,
+      tire_size_mm = as.integer(ts),
+      tire_pressure_psi = droop_pressure_psi(wl, ts),
+      tire_size_text = paste(ts, "mm", sep = "")
+    )
   }
 }
 
-inflation_data <- as.data.frame(inflation_data)
-inflation_data <- inflation_data[-c(1), ] # hack alert!
-inflation_data$tire_size_mm <- as.factor(inflation_data$tire_size_mm)
-inflation_data$label  <- paste(inflation_data$tire_size_mm, "mm", sep = "")
+#' @export
+max_psi <- 120
+
+#' @export
+min_psi <- 15
+
+#' @importFrom dplyr filter
+inflation_data <- dplyr::filter(inflation_data, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)

@@ -4,12 +4,15 @@
 \alias{display_bike_inflation}
 \title{Plot and label front and rear wheel inflation data for a bike.}
 \usage{
-display_bike_inflation(base_plot = base_pressure_plot, bike)
+display_bike_inflation(base_plot = base_pressure_plot, bike,
+  show.summary = FALSE)
 }
 \arguments{
 \item{base_plot}{ggplot object of base tire pressure curves.}
 
-\item{bike}{data.frame to display for specific bike and rider.}
+\item{bike}{tibble to display for specific bike and rider.}
+
+\item{show.summary}{Fill in....}
 }
 \value{
 A complete plot for display
