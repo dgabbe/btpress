@@ -57,9 +57,12 @@ bike_tire_pressures <- function(
       "black"
   )
   pressures$annotation <- dual_pressure_point(pressures$Tire_size, pressures$position, pressures$Pressure)
-  for (i in 1:nrow(pressures)) {
-    # add messages/warnings here
-  }
+  increase_size_min <- 105
+  increase_size_max <- 120
+  pressures$message <-
+    if (pressures$Pressure >= increase_size_min & pressures$Pressure <= increase_size_max) {
+      paste("Recommendation: Increase", pressures$position, "tire to larger size.", sep = " ")
+    }
 
   w <- tibble::tribble(
     ~Source, ~Weight,

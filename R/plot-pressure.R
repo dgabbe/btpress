@@ -138,29 +138,42 @@ base_pressure_plot <- generate_base_pressure_plot()
 #'
 #' @return A complete plot for display
 #' @export
-display_bike_inflation <- function (
+plot_bike_inflation <- function (
   base_plot = base_pressure_plot,
   bike,
   show.summary = FALSE
   ) {
+  summary <- if (show.summary == TRUE) {
+    paste(
+      paste(bike$weights$Source, collapse = " + "),
+      " = ",
+      sum(bike$weights$Weight),
+      "lbs  F/R %: ",
+      paste(bike$wheels$distribution, collapse = "/"),
+      sep = ""
+    )
+  } else {
+    NULL
+  }
   b <- bike$wheels
-  return(
-    base_plot +
-      geom_point(
-        data=b,
-        aes(x = Load, y = Pressure, group = Tire_size),
-        shape = 8,
-        color = b$ggplot_color
-      )  +
-      annotate(
-        "text",
-        label = b$annotation,
-        size = 3.5,
-        color = b$ggplot_color,
-        x = b$Load,
-        y = b$Pressure,
-        vjust = -0.4
-      )
-  )
+  p <- base_plot +
+    plot_title(summary = summary) +
+    geom_point(
+      data=b,
+      aes(x = Load, y = Pressure, group = Tire_size),
+      shape = 8,
+      color = b$ggplot_color
+    )  +
+    annotate(
+      "text",
+      label = b$annotation,
+      size = 3.5,
+      color = b$ggplot_color,
+      x = b$Load,
+      y = b$Pressure,
+      vjust = -0.4
+    )
+
+  return(p)
 }
 

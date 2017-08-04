@@ -1,5 +1,5 @@
 #' @export
-mooney <- bike_tire_pressures(
+steel_sport <- bike_tire_pressures(
   rider_weight_lbs = 170,
   bike_weight_lbs = 20,
   front_distribution = 0.4,
@@ -10,9 +10,10 @@ mooney <- bike_tire_pressures(
   )
 
 #' @export
-mooney_plot <- display_bike_inflation(bike = mooney)
+steel_sport_plot <- plot_bike_inflation(bike = steel_sport)
 
-norco_shopping <- bike_tire_pressures(
+#' @export
+internal_hub_shopping <- bike_tire_pressures(
   rider_weight_lbs = 165,
   bike_weight_lbs = 35,
   load_lbs = 20,
@@ -22,10 +23,11 @@ norco_shopping <- bike_tire_pressures(
   rear_tire_casing_compensation = 1.15
   )
 
-norco_shopping_plot <- display_bike_inflation(base_pressure_plot, norco_shopping)
+#' @export
+internal_hub_shopping_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_shopping)
 
-
-norco_fun <- bike_tire_pressures(
+#' @export
+internal_hub_fun <- bike_tire_pressures(
   rider_weight_lbs = 165,
   bike_weight_lbs = 35,
   load_lbs = 3,
@@ -35,9 +37,11 @@ norco_fun <- bike_tire_pressures(
   rear_tire_size_mm = 28
 )
 
-norco_fun_plot <- display_bike_inflation(base_pressure_plot, norco_fun)
+#' @export
+internal_hub_fun_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_fun)
 
-lfr_trek_lexa <- bike_tire_pressures(
+#' @export
+trek_lexa <- bike_tire_pressures(
   rider_weight_lbs = 145,
   bike_weight_lbs = 15,
   load_lbs = 1,
@@ -46,7 +50,8 @@ lfr_trek_lexa <- bike_tire_pressures(
   rear_tire_size_mm = 26
 )
 
-lfr_trek_lexa_plot <- display_bike_inflation(base_pressure_plot, lfr_trek_lexa)
+#' @export
+trek_lexa_plot <- plot_bike_inflation(base_pressure_plot, trek_lexa)
 
 #' @export
 all_roads <- bike_tire_pressures(
@@ -59,10 +64,12 @@ all_roads <- bike_tire_pressures(
   rear_tire_casing_compensation = 1.15
 )
 
-all_roads_plot <- display_bike_inflation(base_pressure_plot, all_roads)
+#' @export
+all_roads_plot <- plot_bike_inflation(base_pressure_plot, all_roads)
 
 
 # Nairo Quintana
+#' @export
 nairo <- bike_tire_pressures(
   rider_weight_lbs = 125,
   bike_weight_lbs = 15,
@@ -75,9 +82,10 @@ nairo <- bike_tire_pressures(
   )
 
 #' @export
-nairo_plot <- display_bike_inflation(base_pressure_plot, nairo)
+nairo_plot <- plot_bike_inflation(base_pressure_plot, nairo)
 
 # Chris Froome
+#' @export
 froome <- bike_tire_pressures(
   rider_weight_lbs = 150,
   bike_weight_lbs = 15,
@@ -90,4 +98,4 @@ froome <- bike_tire_pressures(
 )
 
 #' @export
-froome_plot <- display_bike_inflation(base_pressure_plot, froome)
+froome_plot <- plot_bike_inflation(base_pressure_plot, froome)
