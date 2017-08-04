@@ -143,19 +143,22 @@ display_bike_inflation <- function (
   bike,
   show.summary = FALSE
   ) {
+  b <- bike$wheels
   return(
     base_plot +
       geom_point(
-        data=bike,
-        aes(x = Weight, y = Pressure, group = Tire_size),
+        data=b,
+        aes(x = Load, y = Pressure, group = Tire_size),
         shape = 8,
-        color = "Black"
+        color = b$ggplot_color
       )  +
       annotate(
         "text",
-        label = bike$annotation,
-        x = bike$Weight,
-        y = bike$Pressure,
+        label = b$annotation,
+        size = 3.5,
+        color = b$ggplot_color,
+        x = b$Load,
+        y = b$Pressure,
         vjust = -0.4
       )
   )

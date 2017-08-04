@@ -34,30 +34,39 @@ bike_tire_pressures <- function(
   front_weight <- total_weight * front_distribution
   rear_weight <- total_weight * (1 - front_distribution)
   pressures <- tibble::tribble(
-    ~position, ~Weight, ~Tire_size, ~Pressure, ~annotation, ~message,
-    #--------/--------/-----------/----------/------------,---------
+    ~position, ~position_short, ~Load, ~Tire_size, ~Pressure, ~distribution, ~annotation, ~message, ~ggplot_color,
+    #--------/----------------/--------/-----------/----------/--------------/------------/-------/
     "Front",
+      "F",
       round(front_weight),
       as.integer(front_tire_size_mm),
       round(droop_pressure_psi(front_weight, front_tire_size_mm) * front_tire_casing_compensation),
+      as.integer(front_distribution * 100),
       "",
       "",
+      "darkblue",
 
     "Rear",
+      "R",
       round(rear_weight),
       as.integer(rear_tire_size_mm),
       round(droop_pressure_psi(rear_weight, rear_tire_size_mm) * rear_tire_casing_compensation),
+      as.integer(((1 - front_distribution) * 100)),
       "",
-      ""
+      "",
+      "black"
   )
+  pressures$annotation <- dual_pressure_point(pressures$Tire_size, pressures$position, pressures$Pressure)
   for (i in 1:nrow(pressures)) {
-    pressures[[i, "annotation"]] <- dual_pressure_point(
-      pressures[[i, "Tire_size"]],
-      pressures[[i, "position"]],
-      pressures[[i, "Pressure"]]
-    )
     # add messages/warnings here
   }
 
-  return(pressures)
+  w <- tibble::tribble(
+    ~Source, ~Weight,
+    "Rider", rider_weight_lbs,
+    "Bike", bike_weight_lbs,
+    "Load", load_lbs
+  )
+
+  return(list(weights = w, wheels = pressures))
 }

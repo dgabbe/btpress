@@ -10,7 +10,7 @@ mooney <- bike_tire_pressures(
   )
 
 #' @export
-mooney_plot <- display_bike_inflation(base_pressure_plot, mooney)
+mooney_plot <- display_bike_inflation(bike = mooney)
 
 norco_shopping <- bike_tire_pressures(
   rider_weight_lbs = 165,
@@ -30,8 +30,8 @@ norco_fun <- bike_tire_pressures(
   bike_weight_lbs = 35,
   load_lbs = 3,
   front_distribution = 0.45,
-  front_tire_size_mm = 32,
-  front_tire_casing_compensation = 1.1,
+  front_tire_size_mm = 35,
+  front_tire_casing_compensation = 1.0,
   rear_tire_size_mm = 28
 )
 
