@@ -100,6 +100,8 @@ generate_base_pressure_plot <- function(data = inflation_data)
     )
   ) +
     #  theme_dg +
+    theme_bw() + # temp until theme_dg fixed!
+    theme(plot.subtitle=element_text(size = 12)) +
     plot_title() +
     theme(aspect.ratio = 0.66) +
     theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
@@ -116,7 +118,8 @@ generate_base_pressure_plot <- function(data = inflation_data)
       breaks = seq(20, 160, 10),
       label = dual_pressure
     ) +
-    #  scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
+    # Error: Continuous value supplied to discrete scale
+#    scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
     coord_cartesian(ylim = c(20, 150)) +
     geom_line(size = 0.40, alpha = 0.4) +
     expand_limits(x = 158) +

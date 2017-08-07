@@ -44,6 +44,18 @@ bike_tire_pressures <- function(
   front_distribution = 0.4
 )
   {
+  # Param validation
+  if (
+    min(front_tire_casing_compensation, rear_tire_casing_compensation) < 1 |
+    max(front_tire_casing_compensation, rear_tire_casing_compensation) > 1.25 |
+    min(front_tire_size_mm, rear_tire_size_mm) < 19 |
+    max(front_tire_size_mm, rear_tire_size_mm) >60 |
+    rider_weight_lbs > 250 |
+    rider_weight_lbs < 80
+  ) {
+    stop("Unhelpful msg - one or more parameters are out of range")
+  }
+
   total_weight <- rider_weight_lbs + bike_weight_lbs + load_lbs
   front_weight <- total_weight * front_distribution
   rear_weight <- total_weight * (1 - front_distribution)

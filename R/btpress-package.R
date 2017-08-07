@@ -63,13 +63,8 @@
 NULL
 # To-do List:
 
-# generate messages for increasing tire size and check max pressure labels
-
-# Change subtitle theme(plot.subtitle=element_text(size=18, hjust=0.5, face="italic", color="black"))
 
 # Change "Weight" to "Wheel_load" to be more accurate
-
-# Create a bike object so summary info about weight & weight distribution can be displayed on graph
 
 # Review @return tags - needed or not for simple functions?
 
@@ -77,4 +72,4 @@ NULL
 
 # Find out why I need a AES group for display_bike_pressure!!!!!
 
-# Iteratring over a dataframe: https://stackoverflow.com/questions/1699046/for-each-row-in-an-r-dataframe
+# Write test cases for error checking in bike_tire_pressures
