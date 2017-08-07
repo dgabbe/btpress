@@ -1,3 +1,17 @@
+increase_size_min <- 105
+increase_size_max <- 120
+check_pressure <- function(position, pressure) {
+  if (pressure >= increase_size_min && pressure <= increase_size_max) {
+    paste("Recommendation: Increase", position, "tire to larger size.", sep = " ")
+  } else if (pressure > increase_size_max) {
+    paste(
+      "Warning: Please check", position,
+      "tire pressure does not exceed max tire or rim pressures!",
+      sep = " "
+    )
+  } else {paste("")}
+}
+
 #' Compute front and rear tire pressures based on data for bike and rider.
 #'
 #' The label for each point is generated and stored in the `annotation` column.
@@ -57,12 +71,8 @@ bike_tire_pressures <- function(
       "black"
   )
   pressures$annotation <- dual_pressure_point(pressures$Tire_size, pressures$position, pressures$Pressure)
-  increase_size_min <- 105
-  increase_size_max <- 120
-  pressures$message <-
-    if (pressures$Pressure >= increase_size_min & pressures$Pressure <= increase_size_max) {
-      paste("Recommendation: Increase", pressures$position, "tire to larger size.", sep = " ")
-    }
+
+  pressures$message <- mapply(check_pressure, pressures$position, pressures$Pressure)
 
   w <- tibble::tribble(
     ~Source, ~Weight,
