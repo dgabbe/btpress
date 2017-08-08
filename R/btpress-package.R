@@ -63,13 +63,8 @@
 NULL
 # To-do List:
 
-
-# Change "Weight" to "Wheel_load" to be more accurate
-
 # Review @return tags - needed or not for simple functions?
 
 # rebuild dgutils to pick up scaling fix in ggplot2 2.0.0
-
-# Find out why I need a AES group for display_bike_pressure!!!!!
 
 # Write test cases for error checking in bike_tire_pressures

@@ -62,6 +62,13 @@ dual_pressure_point <- function(
   return(sprintf('%dmm %s\n%d psi | %.1f bar', tire_size, position, psi, psi_to_bar(psi)))
 }
 
+#' @importFrom wesanderson wes_palette
+tire_palette <- wesanderson::wes_palette(
+  n = length(tire_sizes_mm),
+  name = "GrandBudapest2",
+  type = "continuous"
+  )
+
 #' Display a generic title or bike summary info.
 #'
 #' @param title Fill in...
@@ -96,12 +103,12 @@ generate_base_pressure_plot <- function(data = inflation_data)
       x = wheel_load_lbs,
       y = tire_pressure_psi,
       group = tire_size_mm,
-      color = tire_size_mm
+      color = tire_size_text
     )
   ) +
     #  theme_dg +
     theme_bw() + # temp until theme_dg fixed!
-    theme(plot.subtitle=element_text(size = 12)) +
+    theme(plot.subtitle=element_text(size = rel(1.1))) +
     plot_title() +
     theme(aspect.ratio = 0.66) +
     theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
@@ -118,10 +125,9 @@ generate_base_pressure_plot <- function(data = inflation_data)
       breaks = seq(20, 160, 10),
       label = dual_pressure
     ) +
-    # Error: Continuous value supplied to discrete scale
-#    scale_color_brewer(name = "Tire Size (mm)", type="seq", palette = "Set3") +
+    scale_color_manual(values = tire_palette) +
     coord_cartesian(ylim = c(20, 150)) +
-    geom_line(size = 0.40, alpha = 0.4) +
+    geom_line(size = 0.5, alpha = 0.95) +
     expand_limits(x = 158) +
     geom_dl(
       aes(label = tire_size_text),
