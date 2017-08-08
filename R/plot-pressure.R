@@ -108,7 +108,10 @@ generate_base_pressure_plot <- function(data = inflation_data)
   ) +
     #  theme_dg +
     theme_bw() + # temp until theme_dg fixed!
-    theme(plot.subtitle=element_text(size = rel(1.1))) +
+    theme(
+      plot.subtitle = element_text(size = rel(1.1)),
+      plot.caption = element_text(color = "#cccccc")
+      ) +
     plot_title() +
     theme(aspect.ratio = 0.66) +
     theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
@@ -132,12 +135,14 @@ generate_base_pressure_plot <- function(data = inflation_data)
     geom_dl(
       aes(label = tire_size_text),
       method = list("last.points", cex = 0.75, hjust = -0.05),
-      color = "Black"
+      color = "#333333"
     )
 }
 
 #' @export
 base_pressure_plot <- generate_base_pressure_plot()
+
+base_pressure_plot <- base_pressure_plot + labs(caption = "Credit to Jan Heine & Frank Berto for original work...")
 
 #' Plot and label front and rear wheel inflation data for a bike.
 #'
@@ -177,6 +182,7 @@ plot_bike_inflation <- function (
       "text",
       label = b$annotation,
       size = 3.5,
+      fontface = "bold",
       color = b$ggplot_color,
       x = b$Load,
       y = b$Pressure,
