@@ -5,15 +5,15 @@
 \title{Display a generic title or bike summary info.}
 \usage{
 
-  plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
-  subtitle = "For road & gravel riding", summary = NULL)
+  plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
+  summary = NULL)
 }
 \arguments{
 \item{title}{Fill in...}
 
-\item{subtitle}{Fill in...}
-
 \item{summary}{Fill in...}
+
+\item{subtitle}{Fill in...}
 }
 \value{
 figure out

@@ -5,14 +5,14 @@
 \title{Plot and label front and rear wheel inflation data for a bike.}
 \usage{
 plot_bike_inflation(base_plot = base_pressure_plot, bike,
-  show.summary = FALSE)
+  show_summary = FALSE)
 }
 \arguments{
 \item{base_plot}{ggplot object of base tire pressure curves.}
 
 \item{bike}{tibble to display for specific bike and rider.}
 
-\item{show.summary}{Fill in....}
+\item{show_summary}{Fill in....}
 }
 \value{
 A complete plot for display
