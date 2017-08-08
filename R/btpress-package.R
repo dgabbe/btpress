@@ -51,10 +51,6 @@
 #'
 #' @section Improvements:
 #' \itemize{
-#'   \item RColorBrewer has limititations on the number of colors for the different palette settings.
-#'  Figure out how to test for that to prevent run-time error or different way of computing the color
-#'  palette.
-#'
 #'  \item Figure out better sample/example.  May be graph tire pressure & bike data in 2 columns.
 #' }
 #'

@@ -10,7 +10,7 @@ steel_sport <- bike_tire_pressures(
   )
 
 #' @export
-steel_sport_plot <- plot_bike_inflation(bike = steel_sport)
+steel_sport_plot <- plot_bike_inflation(bike = steel_sport, show_summary = TRUE)
 
 #' @export
 internal_hub_shopping <- bike_tire_pressures(
@@ -24,7 +24,7 @@ internal_hub_shopping <- bike_tire_pressures(
   )
 
 #' @export
-internal_hub_shopping_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_shopping)
+internal_hub_shopping_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_shopping, show_summary = TRUE)
 
 #' @export
 internal_hub_fun <- bike_tire_pressures(
@@ -33,12 +33,12 @@ internal_hub_fun <- bike_tire_pressures(
   load_lbs = 3,
   front_distribution = 0.45,
   front_tire_size_mm = 35,
-  front_tire_casing_compensation = 1.0,
-  rear_tire_size_mm = 28
+  rear_tire_size_mm = 32,
+  rear_tire_casing_compensation = 1.15
 )
 
 #' @export
-internal_hub_fun_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_fun)
+internal_hub_fun_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_fun, show_summary = TRUE)
 
 #' @export
 trek_lexa <- bike_tire_pressures(
@@ -65,7 +65,7 @@ all_roads <- bike_tire_pressures(
 )
 
 #' @export
-all_roads_plot <- plot_bike_inflation(base_pressure_plot, all_roads)
+all_roads_plot <- plot_bike_inflation(base_pressure_plot, all_roads, show_summary = TRUE)
 
 
 # Nairo Quintana

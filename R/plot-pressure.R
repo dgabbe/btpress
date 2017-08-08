@@ -81,13 +81,12 @@ tire_palette <- wesanderson::wes_palette(
 #'
 #' @examples think about this one
 plot_title <- function(
-  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes",
-  subtitle = "For road & gravel riding",
+  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
   summary = NULL
   ) {
   ggtitle(
     title,
-    subtitle = paste(subtitle, summary, sep = if (is.null(summary))  {""} else {"\n"})
+    subtitle = summary #, sep = if (is.null(summary))  {""} else {"\n"})
   )
 }
 
@@ -110,11 +109,13 @@ generate_base_pressure_plot <- function(data = inflation_data)
     theme_bw() + # temp until theme_dg fixed!
     theme(
       plot.subtitle = element_text(size = rel(1.1)),
-      plot.caption = element_text(color = "#cccccc")
-      ) +
+      plot.caption = element_text(color = "#cccccc"),
+      axis.title = element_text(face = "bold"),
+      axis.text = element_text(size = rel(0.95)),
+      aspect.ratio = 0.66,
+      legend.position = "none" # Avoid show.legend = "FALSE" args
+    ) +
     plot_title() +
-    theme(aspect.ratio = 0.66) +
-    theme(legend.position = "none") + # Avoid show.legend = "FALSE" args
     scale_x_continuous(
       name = "Wheel Load",
       breaks = seq(
@@ -148,16 +149,16 @@ base_pressure_plot <- base_pressure_plot + labs(caption = "Credit to Jan Heine &
 #'
 #' @param base_plot ggplot object of base tire pressure curves.
 #' @param bike tibble to display for specific bike and rider.
-#' @param show.summary Fill in....
+#' @param show_summary Fill in....
 #'
 #' @return A complete plot for display
 #' @export
 plot_bike_inflation <- function (
   base_plot = base_pressure_plot,
   bike,
-  show.summary = FALSE
+  show_summary = FALSE
   ) {
-  summary <- if (show.summary == TRUE) {
+  summary <- if (show_summary == TRUE) {
     paste(
       paste(bike$weights$Source, collapse = " + "),
       " = ",
