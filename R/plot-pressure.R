@@ -158,7 +158,7 @@ plot_bike_inflation <- function (
   bike,
   show_summary = FALSE
   ) {
-  summary <- if (show_summary == TRUE) {
+  summary <- if (isTRUE(show_summary)) {
     paste(
       paste(bike$weights$Source, collapse = " + "),
       " = ",

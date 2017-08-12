@@ -59,6 +59,8 @@
 NULL
 # To-do List:
 
+# Create new theme for Shiny apps & pass in as a parameter to generate-base-plot()!
+
 # Review @return tags - needed or not for simple functions?
 
 # rebuild dgutils to pick up scaling fix in ggplot2 2.0.0

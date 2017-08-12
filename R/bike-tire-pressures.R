@@ -49,7 +49,7 @@ bike_tire_pressures <- function(
     min(front_tire_casing_compensation, rear_tire_casing_compensation) < 1 |
     max(front_tire_casing_compensation, rear_tire_casing_compensation) > 1.25 |
     min(front_tire_size_mm, rear_tire_size_mm) < 19 |
-    max(front_tire_size_mm, rear_tire_size_mm) >60 |
+    max(front_tire_size_mm, rear_tire_size_mm) > 60 |
     rider_weight_lbs > 250 |
     rider_weight_lbs < 80
   ) {
