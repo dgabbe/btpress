@@ -7,11 +7,11 @@
 lb_to_kg(lb)
 }
 \arguments{
-\item{lb}{}
+\item{lb}{Weight in pounds.}
 }
 \value{
 kilograms
 }
 \description{
-1 pound = 0.45359 kilogram
+1 pound = 0.45359 kilogram.
 }

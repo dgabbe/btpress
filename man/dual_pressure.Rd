@@ -7,7 +7,7 @@
 dual_pressure(psi)
 }
 \arguments{
-\item{psi}{}
+\item{psi}{Tire pressure.}
 }
 \value{
 Formatted string with psi and bars.
