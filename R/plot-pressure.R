@@ -1,12 +1,8 @@
-#' #' Better safety and comfort color
-#' #' @keywords internal
-#' recommended_pressure_color <- "#33cc33" # lime green
-
 #' Convert PSI to Bar
 #'
 #'1 Psi = 0.0689475729 Bar
 #'
-#' @param psi
+#' @param psi Pressure in pounds per square inch.
 #'
 #' @return bars
 #' @export
@@ -15,9 +11,9 @@ psi_to_bar <- function(psi) { return(psi * 0.068947) }
 
 #' Convert pounds to kilograms
 #'
-#' 1 pound = 0.45359 kilogram
+#' 1 pound = 0.45359 kilogram.
 #'
-#' @param lb
+#' @param lb Weight in pounds.
 #'
 #' @return kilograms
 #' @export
@@ -30,13 +26,13 @@ lb_to_kg <- function(lb) { return(lb *  0.45359) }
 #'
 #' @return Formatted string with pounds and kilograms.
 #' @export
-dual_weight <- function(lbs) { return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs))) }
+dual_weight <- function(lbs) {return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs)))}
 
 #' Y axis label formatting function.
 #'
 #' Used for labeling plot axis
 #'
-#' @param psi
+#' @param psi Tire pressure.
 #'
 #' @return Formatted string with psi and bars.
 #' @export
@@ -90,11 +86,33 @@ plot_title <- function(
   )
 }
 
+#' #' ggplot theme tweaks to improve aesthics in a Shiny app.
+#' #'
+#' #' Starts with dgutils::theme_dg if found; othewise theme_bw.
+#' #'
+#' #' @param base_theme Theme to use instead of theme_dg or theme_bw.
+#' #'
+#' #' @return Theme object.
+#' #' @export
+#' theme_dg_shiny <- function(base_theme) {
+#'   if (is.null(base_theme) | is.na(base_theme)) {
+#'     if (exists("theme_dg",  where = "package:dgutils")) { theme_dg } else { theme_bw() }
+#'   } else { base_theme } +
+#'     theme_update(
+#'       plot.subtitle = element_text(size = rel(1.1)),
+#'       plot.caption = element_text(color = "#cccccc"),
+#'       axis.title = element_text(face = "bold"),
+#'       axis.text = element_text(size = rel(1.05)),
+#'       aspect.ratio = 0.66,
+#'       legend.position = "none" # Avoid show.legend = "FALSE" args
+#'     )
+#' }
+
 #' @importFrom dgutils theme_dg
 #' @importFrom directlabels geom_dl
 #' @import ggplot2
 #' @export
-generate_base_pressure_plot <- function(data = inflation_data)
+generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
 {
   ggplot(
     inflation_data,
@@ -105,13 +123,12 @@ generate_base_pressure_plot <- function(data = inflation_data)
       color = tire_size_text
     )
   ) +
-    #  theme_dg +
-    theme_bw() + # temp until theme_dg fixed!
+    theme_dg +
     theme(
       plot.subtitle = element_text(size = rel(1.1)),
       plot.caption = element_text(color = "#cccccc"),
       axis.title = element_text(face = "bold"),
-      axis.text = element_text(size = rel(0.95)),
+      axis.text = element_text(size = rel(.95)),
       aspect.ratio = 0.66,
       legend.position = "none" # Avoid show.legend = "FALSE" args
     ) +
@@ -131,11 +148,11 @@ generate_base_pressure_plot <- function(data = inflation_data)
     ) +
     scale_color_manual(values = tire_palette) +
     coord_cartesian(ylim = c(20, 150)) +
-    geom_line(size = 0.5, alpha = 0.95) +
+    geom_line(size = 0.75, alpha = 0.95) +
     expand_limits(x = 158) +
     geom_dl(
       aes(label = tire_size_text),
-      method = list("last.points", cex = 0.75, hjust = -0.05),
+      method = list("last.points", cex = 0.85, hjust = -0.05),
       color = "#333333"
     )
 }
