@@ -1,8 +1,7 @@
 #' Nominal tire sizes.
 #'
-#' Also happen to be the ones Compass Bicycle sells.
+#' Widths from Compass Bicycle catalog.
 #'
-#' 14-Jun-2017: Updated to include all sizes.
 #' @export
 tire_sizes_mm <- as.integer(c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
 
@@ -29,27 +28,56 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
   return(153.6 * weight_lbs / tire_size_mm**1.5785 - 7.1685)
 }
 
-#' @importFrom tibble add_row
-#' @importFrom tibble tribble
+##' @importFrom tibble add_row
+##' @importFrom tibble tribble
+##' @export
+# inflation_data <- tibble::tribble(~wheel_load_lbs, ~tire_size_mm, ~tire_pressure_psi, ~tire_size_text)
+# for(wl in wheel_loads_lbs){
+#   for(ts in tire_sizes_mm){
+#     inflation_data <- tibble::add_row(
+#       inflation_data,
+#       wheel_load_lbs = wl,
+#       tire_size_mm = as.integer(ts),
+#       tire_pressure_psi = droop_pressure_psi(wl, ts),
+#       tire_size_text = paste(ts, "mm", sep = "")
+#     )
+#   }
+# }
+
+
+
+#' Generate the dataset for drawing the inflation curves.
+#'
+#' @param wheel_loads Vector containing the major X axis loads.
+#' @param tire_sizes Vector containing the different tire widths.
+#' @param min_psi Lowest pressure to plot.
+#' @param max_psi Highest pressure to plot.
+#'
+#' @return tibble
 #' @export
-inflation_data <- tibble::tribble(~wheel_load_lbs, ~tire_size_mm, ~tire_pressure_psi, ~tire_size_text)
-for(wl in wheel_loads_lbs){
-  for(ts in tire_sizes_mm){
-    inflation_data <- tibble::add_row(
-      inflation_data,
-      wheel_load_lbs = wl,
-      tire_size_mm = as.integer(ts),
-      tire_pressure_psi = droop_pressure_psi(wl, ts),
-      tire_size_text = paste(ts, "mm", sep = "")
-    )
+#' @importFrom dplyr filter
+#' @importFrom tibble tribble
+generate_inflation_data <- function(
+  wheel_loads = wheel_loads_lbs,
+  tire_sizes = tire_sizes_mm,
+  min_psi = 15,
+  max_psi = 120
+) {
+  d <- tibble::tribble(~wheel_load_lbs, ~tire_size_mm, ~tire_pressure_psi, ~tire_size_text)
+  for(wl in wheel_loads){
+    for(ts in tire_sizes){
+      d <- tibble::add_row(
+        d,
+        wheel_load_lbs = wl,
+        tire_size_mm = as.integer(ts),
+        tire_pressure_psi = droop_pressure_psi(wl, ts),
+        tire_size_text = paste(ts, "mm", sep = "")
+      )
+    }
   }
+  d <- dplyr::filter(d, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)
+  return(d)
 }
 
-#' @export
-max_psi <- 120
+inflation_data <- generate_inflation_data()
 
-#' @export
-min_psi <- 15
-
-#' @importFrom dplyr filter
-inflation_data <- dplyr::filter(inflation_data, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)

@@ -78,35 +78,13 @@ tire_palette <- wesanderson::wes_palette(
 #' @examples think about this one
 plot_title <- function(
   title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
-  summary = NULL
+  summary = NA
   ) {
   ggtitle(
     title,
-    subtitle = summary #, sep = if (is.null(summary))  {""} else {"\n"})
+    subtitle = summary #, sep = if (is.na(summary))  {""} else {"\n"})
   )
 }
-
-#' #' ggplot theme tweaks to improve aesthics in a Shiny app.
-#' #'
-#' #' Starts with dgutils::theme_dg if found; othewise theme_bw.
-#' #'
-#' #' @param base_theme Theme to use instead of theme_dg or theme_bw.
-#' #'
-#' #' @return Theme object.
-#' #' @export
-#' theme_dg_shiny <- function(base_theme) {
-#'   if (is.null(base_theme) | is.na(base_theme)) {
-#'     if (exists("theme_dg",  where = "package:dgutils")) { theme_dg } else { theme_bw() }
-#'   } else { base_theme } +
-#'     theme_update(
-#'       plot.subtitle = element_text(size = rel(1.1)),
-#'       plot.caption = element_text(color = "#cccccc"),
-#'       axis.title = element_text(face = "bold"),
-#'       axis.text = element_text(size = rel(1.05)),
-#'       aspect.ratio = 0.66,
-#'       legend.position = "none" # Avoid show.legend = "FALSE" args
-#'     )
-#' }
 
 #' @importFrom dgutils theme_dg
 #' @importFrom directlabels geom_dl
@@ -128,7 +106,7 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
       plot.subtitle = element_text(size = rel(1.1)),
       plot.caption = element_text(color = "#cccccc"),
       axis.title = element_text(face = "bold"),
-      axis.text = element_text(size = rel(.95)),
+      axis.text = element_text(size = rel(1.1)),
       aspect.ratio = 0.66,
       legend.position = "none" # Avoid show.legend = "FALSE" args
     ) +
@@ -152,7 +130,7 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
     expand_limits(x = 158) +
     geom_dl(
       aes(label = tire_size_text),
-      method = list("last.points", cex = 0.85, hjust = -0.05),
+      method = list("last.points", cex = 1.0, hjust = -0.05),
       color = "#333333"
     )
 }
@@ -199,7 +177,7 @@ plot_bike_inflation <- function (
     annotate(
       "text",
       label = b$annotation,
-      size = 3.5,
+      size = 4.5,
       fontface = "bold",
       color = b$ggplot_color,
       x = b$Load,
