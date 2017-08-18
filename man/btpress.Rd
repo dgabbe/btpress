@@ -12,16 +12,18 @@ independent studies that support lower pressures are significantly better
 than pumping up your tires until they are rock hard.  See the References
 section for links.
 }
+\section{Pump Inccuracies}{
+
+}
+
+\section{Weight vs. Load}{
+
+}
+
 \section{Directions for Use}{
 
 
 Extra light casings need an extra 10-15\% pressure to prevent the casing threads from breaking.
-}
-
-\section{How to Update Tire Sizes}{
-
-
-Update \code{generate_inflation_curve_data.R} for new tire sizes and wheel loads and rebuild package.
 }
 
 \section{References}{
@@ -65,12 +67,5 @@ Biking riding is an inheritly risky activity. Remember the bike racer's motto: F
 exclusive of maximum tire inflation pressure, rim inflation pressure, mininum tire clearance, and
 compatibility of tubeless tire and rim combinations.
 Use of this app is at your risk and you assume all liabilities.
-}
-
-\section{Improvements}{
-
-\itemize{
- \item Figure out better sample/example.  May be graph tire pressure & bike data in 2 columns.
-}
 }
 

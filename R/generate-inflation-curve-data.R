@@ -28,24 +28,6 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
   return(153.6 * weight_lbs / tire_size_mm**1.5785 - 7.1685)
 }
 
-##' @importFrom tibble add_row
-##' @importFrom tibble tribble
-##' @export
-# inflation_data <- tibble::tribble(~wheel_load_lbs, ~tire_size_mm, ~tire_pressure_psi, ~tire_size_text)
-# for(wl in wheel_loads_lbs){
-#   for(ts in tire_sizes_mm){
-#     inflation_data <- tibble::add_row(
-#       inflation_data,
-#       wheel_load_lbs = wl,
-#       tire_size_mm = as.integer(ts),
-#       tire_pressure_psi = droop_pressure_psi(wl, ts),
-#       tire_size_text = paste(ts, "mm", sep = "")
-#     )
-#   }
-# }
-
-
-
 #' Generate the dataset for drawing the inflation curves.
 #'
 #' @param wheel_loads Vector containing the major X axis loads.

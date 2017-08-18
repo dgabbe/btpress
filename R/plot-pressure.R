@@ -103,7 +103,8 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
   ) +
     theme_dg +
     theme(
-      plot.subtitle = element_text(size = rel(1.1)),
+      plot.title = element_text(size = rel(1.6)),
+      plot.subtitle = element_text(size = rel(1.3)),
       plot.caption = element_text(color = "#cccccc"),
       axis.title = element_text(face = "bold"),
       axis.text = element_text(size = rel(1.1)),
@@ -158,7 +159,7 @@ plot_bike_inflation <- function (
       paste(bike$weights$Source, collapse = " + "),
       " = ",
       sum(bike$weights$Weight),
-      "lbs  F/R %: ",
+      "lbs | F/R %: ",
       paste(bike$wheels$distribution, collapse = "/"),
       sep = ""
     )
@@ -170,9 +171,11 @@ plot_bike_inflation <- function (
     plot_title(summary = summary) +
     geom_point(
       data=b,
-      aes(x = Load, y = Pressure, group = Tire_size),
+      aes(x = Load, y = Pressure),
       shape = 8,
-      color = b$ggplot_color
+      size = 4,
+      color = b$ggplot_color,
+      inherit.aes = FALSE
     )  +
     annotate(
       "text",
