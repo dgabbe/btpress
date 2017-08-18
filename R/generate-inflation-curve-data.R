@@ -57,7 +57,7 @@ generate_inflation_data <- function(
       )
     }
   }
-  d <- dplyr::filter(d, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)
+  d <- filter(d, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)
   return(d)
 }
 
