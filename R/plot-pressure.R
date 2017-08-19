@@ -184,7 +184,6 @@ plot_bike_inflation <- function (
       y = b$Pressure,
       vjust = -0.4
     )
-
   return(p)
 }
 

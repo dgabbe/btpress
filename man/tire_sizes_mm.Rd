@@ -9,9 +9,6 @@
 tire_sizes_mm
 }
 \description{
-Also happen to be the ones Compass Bicycle sells.
-}
-\details{
-14-Jun-2017: Updated to include all sizes.
+Widths from Compass Bicycle catalog.
 }
 \keyword{datasets}

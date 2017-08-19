@@ -6,7 +6,7 @@
 \usage{
 
   plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
-  summary = NULL)
+  summary = NA)
 }
 \arguments{
 \item{title}{Fill in...}

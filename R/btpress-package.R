@@ -3,8 +3,7 @@
 #' If you were told that you could bicycle faster and more comfortablely simply
 #' by changing your bike tire pressure, would you try it? There are now 2
 #' independent studies that support lower pressures are significantly better
-#' than pumping up your tires until they are rock hard.  See the References
-#' section for links.
+#' than pumping up your tires until they are rock hard.  See the \link{#References} for links.
 #'
 #' @section Directions for Use:
 #'
@@ -21,12 +20,13 @@
 #'   \item fill in
 #'   \item fill in
 #'   \item fill in
-#'   \item fill in
+#'   \item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
 #' }
 #' Bicycle Quarterly blogs
 #' Silca.cc - Josh's articles
 #'
 #' @section Acknowledgements:
+#'
 #' Source for data and pratical application to Jan Heine and Frank Berto
 #' published in \href{http://www.bikequarterly.com/images/BQTireDrop.pdf}{Bike
 #' Quarterly}.
@@ -43,6 +43,7 @@
 #' write it by anyone.
 #'
 #' @section Disclaimer:
+#'
 #' Biking riding is an inheritly risky activity. Remember the bike racer's motto: Falling is a matter of
 #' 'when', not 'if'. You are solely responsible for not extending any load limits including, but not
 #' exclusive of maximum tire inflation pressure, rim inflation pressure, mininum tire clearance, and
@@ -50,6 +51,7 @@
 #' Use of this app is at your risk and you assume all liabilities.
 #'
 #' @section Improvements:
+#'
 #' \itemize{
 #'  \item Figure out better sample/example.  May be graph tire pressure & bike data in 2 columns.
 #' }
