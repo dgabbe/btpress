@@ -11,16 +11,18 @@ by changing your bike tire pressure, would you try it? There are now 2
 independent studies that support lower pressures are significantly better
 than pumping up your tires until they are rock hard.  See the \link{#References} for links.
 }
+\section{Pump Inccuracies}{
+
+}
+
+\section{Weight vs. Load}{
+
+}
+
 \section{Directions for Use}{
 
 
 Extra light casings need an extra 10-15\% pressure to prevent the casing threads from breaking.
-}
-
-\section{How to Update Tire Sizes}{
-
-
-Update \code{generate_inflation_curve_data.R} for new tire sizes and wheel loads and rebuild package.
 }
 
 \section{References}{
@@ -68,6 +70,7 @@ compatibility of tubeless tire and rim combinations.
 Use of this app is at your risk and you assume all liabilities.
 }
 
+<<<<<<< HEAD
 \section{Improvements}{
 
 
@@ -76,3 +79,13 @@ Use of this app is at your risk and you assume all liabilities.
 }
 }
 
+||||||| merged common ancestors
+\section{Improvements}{
+
+\itemize{
+ \item Figure out better sample/example.  May be graph tire pressure & bike data in 2 columns.
+}
+}
+
+=======
+>>>>>>> b781f8e9df80e4a34d655d9986656067101ffeed

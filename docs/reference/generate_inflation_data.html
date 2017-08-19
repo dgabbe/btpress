@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert pounds to kilograms — lb_to_kg • btpress</title>
+<title>Generate the dataset for drawing the inflation curves. — generate_inflation_data • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -80,27 +80,40 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert pounds to kilograms</h1>
+    <h1>Generate the dataset for drawing the inflation curves.</h1>
     </div>
 
     
-    <p>1 pound = 0.45359 kilogram.</p>
+    <p>Generate the dataset for drawing the inflation curves.</p>
     
 
-    <pre class="usage"><span class='fu'>lb_to_kg</span>(<span class='no'>lb</span>)</pre>
+    <pre class="usage"><span class='fu'>generate_inflation_data</span>(<span class='kw'>wheel_loads</span> <span class='kw'>=</span> <span class='no'>wheel_loads_lbs</span>,
+  <span class='kw'>tire_sizes</span> <span class='kw'>=</span> <span class='no'>tire_sizes_mm</span>, <span class='kw'>min_psi</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='fl'>120</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lb</th>
-      <td><p>Weight in pounds.</p></td>
+      <th>wheel_loads</th>
+      <td><p>Vector containing the major X axis loads.</p></td>
+    </tr>
+    <tr>
+      <th>tire_sizes</th>
+      <td><p>Vector containing the different tire widths.</p></td>
+    </tr>
+    <tr>
+      <th>min_psi</th>
+      <td><p>Lowest pressure to plot.</p></td>
+    </tr>
+    <tr>
+      <th>max_psi</th>
+      <td><p>Highest pressure to plot.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>kilograms</p>
+    <p>tibble</p>
     
 
   </div>
