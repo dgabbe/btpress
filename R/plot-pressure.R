@@ -186,7 +186,14 @@ plot_bike_inflation <- function (
       x = b$Load,
       y = b$Pressure,
       vjust = -0.4
-    )
+    ) +
+  geom_label(
+    data = bike$messages,
+    aes(label = Msg, x = x, y = y, fill = color),
+    hjust = "left",
+    na.rm = TRUE,
+    inherit.aes = FALSE
+  )
   return(p)
 }
 

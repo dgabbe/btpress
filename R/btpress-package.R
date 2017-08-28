@@ -19,7 +19,7 @@
 #' \itemize{
 #'   \item fill in
 #'   \item fill in
-#'   \item fill in
+#'   \item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
 #'   \item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
 #' }
 #' Bicycle Quarterly blogs
@@ -28,8 +28,7 @@
 #' @section Acknowledgements:
 #'
 #' Source for data and pratical application to Jan Heine and Frank Berto
-#' published in \href{http://www.bikequarterly.com/images/BQTireDrop.pdf}{Bike
-#' Quarterly}.
+#' published in \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly}.
 #'
 #' The emperical curve fitting formula from the
 #' \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}.

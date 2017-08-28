@@ -38,7 +38,9 @@ internal_hub_fun <- bike_tire_pressures(
 )
 
 #' @export
-internal_hub_fun_plot <- plot_bike_inflation(base_pressure_plot, internal_hub_fun, show_summary = TRUE)
+internal_hub_fun_plot <- plot_bike_inflation(
+  base_pressure_plot, internal_hub_fun, show_summary = TRUE
+  )
 
 #' @export
 trek_lexa <- bike_tire_pressures(
@@ -99,3 +101,13 @@ froome <- bike_tire_pressures(
 
 #' @export
 froome_plot <- plot_bike_inflation(base_pressure_plot, froome)
+
+#' @export
+too_heavy <- bike_tire_pressures(
+  rider_weight_lbs = 250,
+  bike_weight_lbs = 25,
+  load_lbs = 5,
+  front_distribution = 0.4,
+  front_tire_size_mm = 19,
+  rear_tire_size_mm = 25
+)

@@ -1,22 +1,39 @@
-increase_size_min <- 105
-increase_size_max <- 120
-check_pressure <- function(position, pressure) {
-  if (pressure >= increase_size_min && pressure <= increase_size_max) {
-    list(
-      paste("Recommendation: Increase ", position, " tire to larger size.", sep = ""),
-      "yellow"
+#' Check if pressure exceeds certain levels
+#'
+#' More details here...
+#'
+#' @param p Desired tire inflation pressure
+#' @param warn_psi Pressure exceeds to suggest increasing tire size
+#' @param max_psi Pressure exceeds warn to check max pressure ratings of tire & rim
+#'
+#' @return a list or NA
+#' @export
+#'
+#' @examples Fill in later....
+check_pressure <- function(
+  p,
+  warn_psi = 105,
+  max_psi = 120
+) {
+  if (p > max_psi) {
+    return(
+      list(
+        "msg" = paste("Warning: Check maximum tire and rim PSI ratings are not exceeded!"),
+        "color" = "red"
+      )
     )
-  } else if (pressure > increase_size_max) {
-    list(
-      paste(
-        "Warning: Please check ", position,
-        " tire pressure does not exceed max tire or rim pressures!",
-        sep = ""
-      ),
-      "red"
+  } else if (p > warn_psi) {
+    return(
+      list(
+        "msg" = paste("Recommendation: Increase tire size."),
+        "color" = "yellow"
+      )
     )
-  } else {list("", "")}
+  } else {
+    return(list())
+  }
 }
+
 
 #' Compute front and rear tire pressures based on data for bike and rider.
 #'
@@ -37,6 +54,7 @@ check_pressure <- function(position, pressure) {
 #' corresponding to 40/60 front/rear weight distribution.
 #'
 #' @return tibble used by ggplot to display tire pressures
+#' @importFrom tibble tibble
 #' @importFrom tibble tribble
 #' @importFrom tidyr separate
 #' @export
@@ -58,14 +76,25 @@ bike_tire_pressures <- function(
     min(front_tire_size_mm, rear_tire_size_mm) < 19 |
     max(front_tire_size_mm, rear_tire_size_mm) > 60 |
     rider_weight_lbs > 250 |
-    rider_weight_lbs < 80
+    rider_weight_lbs < 80 |
+    front_distribution < 0.25 |
+    front_distribution > 0.80
   ) {
     stop("Unhelpful msg - one or more parameters are out of range")
   }
 
+  # Calculations
   total_weight <- rider_weight_lbs + bike_weight_lbs + load_lbs
   front_weight <- total_weight * front_distribution
   rear_weight <- total_weight * (1 - front_distribution)
+  front_pressure <- round(
+    droop_pressure_psi(front_weight, front_tire_size_mm) * front_tire_casing_compensation
+    )
+  rear_pressure <- round(
+    droop_pressure_psi(rear_weight, rear_tire_size_mm) * rear_tire_casing_compensation
+    )
+
+  # Store results
   pressures <- tibble::tribble(
     ~position, ~position_short, ~Load, ~Tire_size, ~Pressure, ~distribution, ~annotation, ~ggplot_color,
     #--------/----------------/--------/-----------/----------/--------------/------------/-------/
@@ -73,7 +102,7 @@ bike_tire_pressures <- function(
       "F",
       round(front_weight),
       as.integer(front_tire_size_mm),
-      round(droop_pressure_psi(front_weight, front_tire_size_mm) * front_tire_casing_compensation),
+      front_pressure,
       as.integer(front_distribution * 100),
       "",
       "darkblue",
@@ -82,19 +111,50 @@ bike_tire_pressures <- function(
       "R",
       round(rear_weight),
       as.integer(rear_tire_size_mm),
-      round(droop_pressure_psi(rear_weight, rear_tire_size_mm) * rear_tire_casing_compensation),
+      rear_pressure,
       as.integer(((1 - front_distribution) * 100)),
       "",
-    "black"
+      "black"
   )
-  pressures$annotation <- dual_pressure_point(pressures$Tire_size, pressures$position, pressures$Pressure)
+
+  pressures$annotation <- dual_pressure_point(
+    pressures$Tire_size, pressures$position, pressures$Pressure
+    )
 
   m <- tibble::tribble(
-    ~Position, ~Message, ~color, ~x, ~y,
-    "", "", "", 70, 148,
-    "", "", "", 70, 140
+    ~Position,
+    ~Msg,
+    ~color,
+    ~x,
+    ~y
   )
-#  msgs <- check_pressure(pressures$)
+
+p <- check_pressure(front_pressure)
+  if (length(p) > 0) {
+    m <- tibble::add_row(
+      m,
+      Position = "Front",
+      Msg = paste("Front", p$msg),
+      color = p$color,
+      x = 70,
+      y = 148
+    )
+  }
+
+p <- check_pressure(rear_pressure)
+if (length(p) > 0) {
+  m <- tibble::add_row(
+    m,
+    Position = "Rear",
+    Msg = paste("Rear", p$msg),
+    color = p$color,
+    x = 70,
+    y = 140
+  )
+}
+
+
+
 #  pressures$message <- mapply(check_pressure, pressures$position, pressures$Pressure)
 
   w <- tibble::tribble(

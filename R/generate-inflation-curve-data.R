@@ -3,7 +3,7 @@
 #' Widths from Compass Bicycle catalog.
 #'
 #' @export
-tire_sizes_mm <- as.integer(c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
+tire_sizes_mm <- as.integer(c(20, 23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
 
 #' X axis values for wheel loads in lbs
 #'
@@ -11,7 +11,10 @@ tire_sizes_mm <- as.integer(c(23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
 #' @export
 wheel_loads_lbs <- c(66, 77, 88, 100, 110, 121, 132, 143, 154)
 
-#' Compute the 15\% droop tire pressure based on wheel load and tire size
+#' Compute the 15\% droop tire pressure based on wheel load and tire size.
+#'
+#' Original research used rims with internal widths of \~19mm. Today's
+#' wider rims can add increase the volume of a tire by 33\%.
 #'
 #' The emperical, imperial centric formula is from the
 #' \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}
