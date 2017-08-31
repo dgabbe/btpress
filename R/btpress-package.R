@@ -6,7 +6,7 @@
 #' than pumping up your tires until they are rock hard.  See the References
 #' section for links.
 #'
-#' @section Pump Inccuracies:
+#' @section Pump Inaccuracies:
 #'
 #' @section Weight vs. Load:
 #'
@@ -20,11 +20,10 @@
 #' \itemize{
 #'   \item fill in
 #'   \item fill in
-#'   \item fill in
+#'   \item Silca has a few articles on tire width and pressure, here's \html{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{one} to start with.
 #'   \item fill in
 #' }
 #' Bicycle Quarterly blogs
-#' Silca.cc - Josh's articles
 #'
 #' @section Acknowledgements:
 #' Source for data and pratical application to Jan Heine and Frank Berto
@@ -55,8 +54,6 @@ NULL
 # To-do List:
 
 # Create new theme for Shiny apps & pass in as a parameter to generate-base-plot()!
-
-# Create link to References section
 
 # Review @return tags - needed or not for simple functions?
 
