@@ -189,7 +189,8 @@ plot_bike_inflation <- function (
     ) +
   geom_label(
     data = bike$messages,
-    aes(label = Msg, x = x, y = y, fill = color),
+    aes(label = Msg, x = x, y = y),
+    fill = bike$messages$color,
     hjust = "left",
     na.rm = TRUE,
     inherit.aes = FALSE
