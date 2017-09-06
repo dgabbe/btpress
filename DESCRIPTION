@@ -3,7 +3,7 @@ Title: Bike Tire Pressure Optimizer
 Version: 2017.08.11
 Authors@R: c(person("David", "Gabbé", , "dgabbe@acm.org", role = c("aut", "cre")))
 Description: Calculates front and rear tire pressure based on bicycle, load, and rider weights for various 700c, 650b, and 26 inch tire sizes.  Optimal pressure will provide more comfort and efficiency.
-Depends: R (>= 3.3.2), ggplot2 (>= 2.2.0), dgutils, directlabels, dplyr (>=0.7.2)
+Depends: R (>= 3.3.2), ggplot2 (>= 2.2.0), dgutils, directlabels, dplyr (>= 0.7.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
