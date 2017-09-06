@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate-inflation-curve-data.R
 \name{droop_pressure_psi}
 \alias{droop_pressure_psi}
-\title{Compute the 15\% droop tire pressure based on wheel load and tire size}
+\title{Compute the 15\% droop tire pressure based on wheel load and tire size.}
 \usage{
 droop_pressure_psi(weight_lbs, tire_size_mm)
 }
@@ -17,6 +17,10 @@ measured diameter.}
 pressure, psi
 }
 \description{
+Original research used rims with internal widths of \~19mm. Today's
+wider rims can add increase the volume of a tire by 33\%.
+}
+\details{
 The emperical, imperial centric formula is from the
 \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}
 }

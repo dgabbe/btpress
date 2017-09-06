@@ -4,7 +4,7 @@
 \name{tire_sizes_mm}
 \alias{tire_sizes_mm}
 \title{Nominal tire sizes.}
-\format{An object of class \code{integer} of length 10.}
+\format{An object of class \code{integer} of length 11.}
 \usage{
 tire_sizes_mm
 }
