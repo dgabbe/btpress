@@ -7,7 +7,15 @@
 #'
 #' @section Pump Inccuracies:
 #'
+#' Pump gauges considerably inaccurate. Parallex viewing makes precise reading
+#' of needle impossible.
+#'
 #' @section Weight vs. Load:
+#'
+#' At the end of the day, these two are effectively the same.  That said,
+#' \emph{Weight} is used for the individual components that go into the calculations.
+#' \emph{Load} is used
+#' to describe the forces the tires are subject to.
 #'
 #' @section Directions for Use:
 #'
@@ -43,9 +51,11 @@
 #'
 #' @section Disclaimer:
 #'
-#' Biking riding is an inheritly risky activity. Remember the bike racer's motto: Falling is a matter of
-#' 'when', not 'if'. You are solely responsible for not extending any load limits including, but not
-#' exclusive of maximum tire inflation pressure, rim inflation pressure, mininum tire clearance, and
+#' Biking riding is an inheritly risky activity. Remember the bike racer's motto: \emph{Falling is a matter of
+#' 'when', not 'if'.} You are solely responsible for not extending any load limits
+#' including, but not
+#' exclusive of maximum tire inflation pressure, rim inflation pressure,
+#' mininum tire clearance, and
 #' compatibility of tubeless tire and rim combinations.
 #' Use of this app is at your risk and you assume all liabilities.
 #'
