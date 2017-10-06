@@ -3,7 +3,7 @@
 #' If you were told that you could bicycle faster and more comfortablely simply
 #' by changing your bike tire pressure, would you try it? There are now 2
 #' independent studies that support lower pressures are significantly better
-#' than pumping up your tires until they are rock hard.  See the \link{#References} for links.
+#' than pumping up your tires until they are rock hard.  See the \link{References} for links.
 #'
 #' @section Pump Inccuracies:
 #'
