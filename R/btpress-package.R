@@ -3,12 +3,19 @@
 #' If you were told that you could bicycle faster and more comfortablely simply
 #' by changing your bike tire pressure, would you try it? There are now 2
 #' independent studies that support lower pressures are significantly better
-#' than pumping up your tires until they are rock hard.  See the \link{References} for links.
+#' than pumping up your tires until they are rock hard.
+#' See the [References](#References) for links.
 #'
-#' @section Pump Inccuracies:
+#' @section Pump Inaccuracies:
 #'
 #' Pump gauges considerably inaccurate. Parallex viewing makes precise reading
-#' of needle impossible.
+#' of needle impossible. Never mind the pressure sensing mechanism has a wide tolerance.
+#'
+#' @section Rim Widths:
+#'
+#' The original research was conducted when internal widths for road rims were around 19mm.
+#' Today's rims are available in wider sizes, 23 - 25mm, increasing the volume up to 33\%.
+#' This program does not use internal rim width in its calculations.
 #'
 #' @section Weight vs. Load:
 #'
@@ -19,9 +26,11 @@
 #'
 #' @section Directions for Use:
 #'
-#' Extra light casings need an extra 10-15\% pressure to prevent the casing threads from breaking.
+#' Extra light casings need an extra 10-15\% pressure to prevent the casing threads
+#' from breaking.
 #'
 #' @section References:
+#' id: References
 #' Links to articles:
 #'
 #' \itemize{
@@ -43,8 +52,8 @@
 #'
 #' @section Full Disclosure:
 #'
-#' I ride and recommend Compass Bicycle
-#' \href{https://www.compasscycle.com/product-category/components/tires/}{tires}
+#' I ride and recommend
+#' \href{https://www.compasscycle.com/product-category/components/tires/}{Compass Bicycle tires}
 #' and subscribe to \href{https://www.bikequarterly.com/}{\emph{Bicycle
 #' Quarterly}}. I received no compensation for this program nor was I asked to
 #' write it by anyone.
@@ -52,7 +61,7 @@
 #' @section Disclaimer:
 #'
 #' Biking riding is an inheritly risky activity. Remember the bike racer's motto: \emph{Falling is a matter of
-#' 'when', not 'if'.} You are solely responsible for not extending any load limits
+#' 'when', not 'if'.} You are solely responsible for not exceeding any load limits
 #' including, but not
 #' exclusive of maximum tire inflation pressure, rim inflation pressure,
 #' mininum tire clearance, and

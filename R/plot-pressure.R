@@ -26,7 +26,9 @@ lb_to_kg <- function(lb) { return(lb *  0.45359) }
 #'
 #' @return Formatted string with pounds and kilograms.
 #' @export
-dual_weight <- function(lbs) {return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs)))}
+dual_weight <- function(lbs) {
+  return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs)))
+}
 
 #' Y axis label formatting function.
 #'
@@ -36,7 +38,9 @@ dual_weight <- function(lbs) {return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(
 #'
 #' @return Formatted string with psi and bars.
 #' @export
-dual_pressure <- function(psi) { return(sprintf('%d psi\n%.1f bar', psi, psi_to_bar(psi))) }
+dual_pressure <- function(psi) {
+  return(sprintf('%d psi\n%.1f bar', psi, psi_to_bar(psi)))
+}
 
 #' Data point formatting function.
 #'
@@ -55,7 +59,10 @@ dual_pressure_point <- function(
   position = c("Front", "Rear"),
   psi
   ) {
-  return(sprintf('%dmm %s\n%d psi | %.1f bar', tire_size, position, psi, psi_to_bar(psi)))
+  return(
+    sprintf(
+      '%dmm %s\n%d psi | %.1f bar', tire_size, position, psi, psi_to_bar(psi))
+  )
 }
 
 #' @importFrom wesanderson wes_palette

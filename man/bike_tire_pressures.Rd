@@ -32,9 +32,9 @@ corresponding to 40/60 front/rear weight distribution.}
 tibble used by ggplot to display tire pressures
 }
 \description{
-The label for each point is generated and stored in the `annotation` column.
+The label for each point is generated and stored in the \code{annotation} column.
 }
 \details{
-For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the `message`
+For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the \code{message}
 column. For pressures over 120psi, a suggestion to check max tire and rim pressures is stored.
 }

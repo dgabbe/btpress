@@ -17,7 +17,7 @@ measured diameter.}
 pressure, psi
 }
 \description{
-Original research used rims with internal widths of \~19mm. Today's
+Original research used rims with internal widths of ~19mm. Today's
 wider rims can add increase the volume of a tire by 33\%.
 }
 \details{
