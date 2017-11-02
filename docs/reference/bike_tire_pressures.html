@@ -23,17 +23,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
 <!-- mathjax -->
-<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
   </head>
 
   <body>
@@ -52,12 +49,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -84,52 +75,35 @@
     </div>
 
     
-    <p>The label for each point is generated and stored in the `annotation` column.</p>
+    <p>The label for each point is generated and stored in the <code>annotation</code> column.</p>
     
 
-    <pre class="usage"><span class='fu'>bike_tire_pressures</span>(<span class='kw'>rider_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>bike_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>15</span>,
+    <pre><span class='fu'>bike_tire_pressures</span>(<span class='kw'>rider_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>bike_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>15</span>,
   <span class='kw'>load_lbs</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>front_tire_casing_compensation</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>front_tire_size_mm</span> <span class='kw'>=</span> <span class='fl'>28</span>, <span class='kw'>rear_tire_casing_compensation</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>rear_tire_size_mm</span> <span class='kw'>=</span> <span class='fl'>28</span>, <span class='kw'>front_distribution</span> <span class='kw'>=</span> <span class='fl'>0.4</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>rider_weight_lbs</th>
-      <td><p>Weight of rider dressed with biking shoes and helmet.</p></td>
-    </tr>
-    <tr>
-      <th>bike_weight_lbs</th>
-      <td><p>Weight of bike</p></td>
-    </tr>
-    <tr>
-      <th>load_lbs</th>
-      <td><p>Weight of accessories carried on the bike such as water bottles, repair kit, pump, etc.</p></td>
-    </tr>
-    <tr>
-      <th>front_tire_casing_compensation</th>
-      <td><p>Supple casings require about 15% more pressure to maintain shape.</p></td>
-    </tr>
-    <tr>
-      <th>front_tire_size_mm</th>
-      <td><p>Measured or side wall marking.</p></td>
-    </tr>
-    <tr>
-      <th>rear_tire_casing_compensation</th>
-      <td><p>Supple casings require about 15% more pressure to maintain shape.</p></td>
-    </tr>
-    <tr>
-      <th>rear_tire_size_mm</th>
-      <td><p>Measured or side wall marking.</p></td>
-    </tr>
-    <tr>
-      <th>front_distribution</th>
-      <td><p>Decimal representation of percentage of bike plus rider weight
+    <dl class="dl-horizontal">
+      <dt>rider_weight_lbs</dt>
+      <dd>Weight of rider dressed with biking shoes and helmet.</dd>
+      <dt>bike_weight_lbs</dt>
+      <dd>Weight of bike</dd>
+      <dt>load_lbs</dt>
+      <dd>Weight of accessories carried on the bike such as water bottles, repair kit, pump, etc.</dd>
+      <dt>front_tire_casing_compensation</dt>
+      <dd>Supple casings require about 15% more pressure to maintain shape.</dd>
+      <dt>front_tire_size_mm</dt>
+      <dd>Measured or side wall marking.</dd>
+      <dt>rear_tire_casing_compensation</dt>
+      <dd>Supple casings require about 15% more pressure to maintain shape.</dd>
+      <dt>rear_tire_size_mm</dt>
+      <dd>Measured or side wall marking.</dd>
+      <dt>front_distribution</dt>
+      <dd>Decimal representation of percentage of bike plus rider weight
 on the front wheel. Defaults to 0.4 for dropped handlebar road bike
-corresponding to 40/60 front/rear weight distribution.</p></td>
-    </tr>
-    </table>
+corresponding to 40/60 front/rear weight distribution.</dd>
+    </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -137,7 +111,7 @@ corresponding to 40/60 front/rear weight distribution.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the `message`
+    <p>For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the <code>message</code>
 column. For pressures over 120psi, a suggestion to check max tire and rim pressures is stored.</p>
     
 

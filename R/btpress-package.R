@@ -29,18 +29,25 @@
 #' Extra light casings need an extra 10-15\% pressure to prevent the casing threads
 #' from breaking.
 #'
+#' There are other subtlies which are not explicitly taken into account. The
+#' biggest one is weight carried on the rider. For example, if your bike lock is
+#' carried on you, it should be added to the rider weight, not the load field.
+#' Same for a backpack.  Carrying weight on front and rear racks is not
+#' considered by the program.
+#'
+#' Snow tires and thick sidewalled tires are supported by their sidewalls and do
+#' not respond to pressure changes the way performace tires do.
+#'
 #' @section References:
 #' id: References
 #' Links to articles:
 #'
 #' \itemize{
-#'   \item fill in
-#'   \item fill in
+#'   \item fill in Bicycle Quarterly blogs
+#'   \item fill in Silca.cc - Josh's articles
 #'   \item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
 #'   \item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
 #' }
-#' Bicycle Quarterly blogs
-#' Silca.cc - Josh's articles
 #'
 #' @section Acknowledgements:
 #'
@@ -60,13 +67,12 @@
 #'
 #' @section Disclaimer:
 #'
-#' Biking riding is an inheritly risky activity. Remember the bike racer's motto: \emph{Falling is a matter of
-#' 'when', not 'if'.} You are solely responsible for not exceeding any load limits
-#' including, but not
-#' exclusive of maximum tire inflation pressure, rim inflation pressure,
-#' mininum tire clearance, and
-#' compatibility of tubeless tire and rim combinations.
-#' Use of this app is at your risk and you assume all liabilities.
+#' Biking riding is an inheritly risky activity. Remember the bike racer's
+#' motto: \emph{Falling is a matter of 'when', not 'if'.} You are solely
+#' responsible for not exceeding any limits including, but not exclusive of
+#' maximum tire inflation pressure, rim inflation pressure, mininum tire
+#' clearance, and compatibility of tubeless tire and rim combinations. Use of
+#' this app is at your risk and you assume all liabilities.
 #'
 #' @docType package
 #' @name btpress
@@ -80,3 +86,5 @@ NULL
 # Review @return tags - needed or not for simple functions?
 
 # Write test cases for error checking in bike_tire_pressures
+
+# tire pressures great than 150psi are not displayed on the chart - try expand_limit.

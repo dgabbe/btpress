@@ -135,7 +135,7 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
     scale_color_manual(values = tire_palette) +
     coord_cartesian(ylim = c(20, 150)) +
     geom_line(size = 0.75, alpha = 0.95) +
-    expand_limits(x = 158) +
+    expand_limits(x = 158, y = 190) +
     geom_dl(
       aes(label = tire_size_text),
       method = list("last.points", cex = 1.0, hjust = -0.05),
