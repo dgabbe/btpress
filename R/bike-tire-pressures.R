@@ -1,6 +1,8 @@
-#' Check if pressure exceeds certain levels
+#' Check if pressure exceeds certain levels.
 #'
-#' More details here...
+#' Display a message if the tire pressure might be getting into the range
+#' where a tire or rim could be overinflated. New wider rims and tires
+#' have lower pressures than the defaults.
 #'
 #' @param p Desired tire inflation pressure
 #' @param warn_psi Pressure exceeds to suggest increasing tire size
@@ -9,7 +11,6 @@
 #' @return a list or NA
 #' @export
 #'
-#' @examples Fill in later....
 check_pressure <- function(
   p,
   warn_psi = 105,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/bike-tire-pressures.R
 \name{check_pressure}
 \alias{check_pressure}
-\title{Check if pressure exceeds certain levels}
+\title{Check if pressure exceeds certain levels.}
 \usage{
 check_pressure(p, warn_psi = 105, max_psi = 120)
 }
@@ -17,8 +17,7 @@ check_pressure(p, warn_psi = 105, max_psi = 120)
 a list or NA
 }
 \description{
-More details here...
-}
-\examples{
-Fill in later....
+Display a message if the tire pressure might be getting into the range
+where a tire or rim could be overinflated. New wider rims and tires
+have lower pressures than the defaults.
 }

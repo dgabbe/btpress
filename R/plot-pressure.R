@@ -72,24 +72,23 @@ tire_palette <- wesanderson::wes_palette(
   type = "continuous"
   )
 
-#' Display a generic title or bike summary info.
+#' Display a generic title and optionally add bike summary info.  Wrapper for
+#' \code{\link[ggplot2]{ggtitle}}
 #'
-#' @param title Fill in...
-#' @param subtitle Fill in...
-#' @param summary Fill in...
+#' @param title for the plot.
+#' @param summary If provided, is used for the subtitle.
 #'
-#' @return figure out
+#' @return labels
 #' @importFrom ggplot2 ggtitle
 #' @export
 #'
-#' @examples think about this one
 plot_title <- function(
   title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
   summary = NA
   ) {
   ggtitle(
     title,
-    subtitle = summary #, sep = if (is.na(summary))  {""} else {"\n"})
+    subtitle = summary
   )
 }
 

@@ -2,25 +2,22 @@
 % Please edit documentation in R/plot-pressure.R
 \name{plot_title}
 \alias{plot_title}
-\title{Display a generic title or bike summary info.}
+\title{Display a generic title and optionally add bike summary info.  Wrapper for
+\code{\link[ggplot2]{ggtitle}}}
 \usage{
 
   plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
   summary = NA)
 }
 \arguments{
-\item{title}{Fill in...}
+\item{title}{for the plot.}
 
-\item{summary}{Fill in...}
-
-\item{subtitle}{Fill in...}
+\item{summary}{If provided, is used for the subtitle.}
 }
 \value{
-figure out
+labels
 }
 \description{
-Display a generic title or bike summary info.
-}
-\examples{
-think about this one
+Display a generic title and optionally add bike summary info.  Wrapper for
+\code{\link[ggplot2]{ggtitle}}
 }

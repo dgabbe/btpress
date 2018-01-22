@@ -10,7 +10,7 @@ If you were told that you could bicycle faster and more comfortablely simply
 by changing your bike tire pressure, would you try it? There are now 2
 independent studies that support lower pressures are significantly better
 than pumping up your tires until they are rock hard.
-See the \href{#References}{References} for links.
+See the References section for articles.
 }
 \section{Pump Inaccuracies}{
 
@@ -41,21 +41,31 @@ to describe the forces the tires are subject to.
 
 Extra light casings need an extra 10-15\% pressure to prevent the casing threads
 from breaking.
+
+There are other subtlies which are not explicitly taken into account. The
+biggest one is weight carried on the rider. For example, if your bike lock is
+carried on you, it should be added to the rider weight, not the load field.
+Same for a backpack.  Carrying weight on front and rear racks is not
+considered by the program.
+
+Snow tires and thick sidewalled tires are supported by their sidewalls and do
+not respond to pressure changes the way performace tires do.
 }
 
 \section{References}{
 
-id: References
 Links to articles:
 
 \itemize{
-\item fill in
-\item fill in
+\item \href{https://janheine.wordpress.com/2010/10/18/science-and-bicycles-1-tires-and-pressure/}{Science and Bicycles 1: Tires and Pressure}
+\item \href{https://janheine.wordpress.com/2015/01/26/the-tire-pressure-revolution/}{The Tire Pressure Revolution}
+\item \href{https://janheine.wordpress.com/2015/02/17/tire-pressure-data-and-details/}{Tire Pressure: Data and Details}
+\item \href{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{Silca - Road to Roubaix - The Complete Story}
+\item \href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How we Got to Now}. There five parts in this series.
 \item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
 \item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
+\item \href{http://trstriathlon.com/talking-tires-with-joshua-poertner/}{Tire Pressure – Stop Guessing And Read The Science}
 }
-Bicycle Quarterly blogs
-Silca.cc - Josh's articles
 }
 
 \section{Acknowledgements}{
@@ -81,12 +91,11 @@ write it by anyone.
 \section{Disclaimer}{
 
 
-Biking riding is an inheritly risky activity. Remember the bike racer's motto: \emph{Falling is a matter of
-'when', not 'if'.} You are solely responsible for not exceeding any load limits
-including, but not
-exclusive of maximum tire inflation pressure, rim inflation pressure,
-mininum tire clearance, and
-compatibility of tubeless tire and rim combinations.
-Use of this app is at your risk and you assume all liabilities.
+Biking riding is an inheritly risky activity. Remember the bike racer's
+motto: \emph{Falling is a matter of 'when', not 'if'.} You are solely
+responsible for not exceeding any limits including, but not exclusive of
+maximum tire inflation pressure, rim inflation pressure, mininum tire
+clearance, and compatibility of tubeless tire and rim combinations. Use of
+this app is at your risk and you assume all liabilities.
 }
 

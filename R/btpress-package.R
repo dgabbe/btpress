@@ -4,7 +4,7 @@
 #' by changing your bike tire pressure, would you try it? There are now 2
 #' independent studies that support lower pressures are significantly better
 #' than pumping up your tires until they are rock hard.
-#' See the [References](#References) for links.
+#' See the References section for articles.
 #'
 #' @section Pump Inaccuracies:
 #'
@@ -39,14 +39,17 @@
 #' not respond to pressure changes the way performace tires do.
 #'
 #' @section References:
-#' id: References
 #' Links to articles:
 #'
 #' \itemize{
-#'   \item fill in Bicycle Quarterly blogs
-#'   \item fill in Silca.cc - Josh's articles
+#'   \item \href{https://janheine.wordpress.com/2010/10/18/science-and-bicycles-1-tires-and-pressure/}{Science and Bicycles 1: Tires and Pressure}
+#'   \item \href{https://janheine.wordpress.com/2015/01/26/the-tire-pressure-revolution/}{The Tire Pressure Revolution}
+#'   \item \href{https://janheine.wordpress.com/2015/02/17/tire-pressure-data-and-details/}{Tire Pressure: Data and Details}
+#'   \item \href{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{Silca - Road to Roubaix - The Complete Story}
+#'   \item \href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How we Got to Now}. There five parts in this series.
 #'   \item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
 #'   \item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
+#'   \item \href{http://trstriathlon.com/talking-tires-with-joshua-poertner/}{Tire Pressure – Stop Guessing And Read The Science}
 #' }
 #'
 #' @section Acknowledgements:
