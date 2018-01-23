@@ -39,9 +39,9 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
 #' @param max_psi Highest pressure to plot.
 #'
 #' @return tibble
-#' @export
 #' @importFrom dplyr filter
 #' @importFrom tibble tribble
+#' @export
 generate_inflation_data <- function(
   wheel_loads = wheel_loads_lbs,
   tire_sizes = tire_sizes_mm,
@@ -60,7 +60,7 @@ generate_inflation_data <- function(
       )
     }
   }
-  d <- filter(d, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)
+  d <- dplyr::filter(d, tire_pressure_psi <= max_psi, tire_pressure_psi >= min_psi)
   return(d)
 }
 
