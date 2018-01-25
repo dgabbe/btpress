@@ -81,9 +81,8 @@ tire_palette <- wesanderson::wes_palette(
 #' @return labels
 #' @importFrom ggplot2 ggtitle
 #' @export
-#'
 plot_title <- function(
-  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
+  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes for Road & Gravel Riding",
   summary = NA
   ) {
   ggtitle(
@@ -92,6 +91,13 @@ plot_title <- function(
   )
 }
 
+#' Generate the base plot of inflation curves for all tire sizes.
+#'
+#' @param data the inflation data to use
+#' @param plot_theme the ggplot theme to use for the plot.  Currently
+#' not implemented.
+#'
+#' @return ggplot object
 #' @importFrom dgutils theme_dg
 #' @importFrom directlabels geom_dl
 #' @import ggplot2
@@ -111,7 +117,7 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
     theme(
       plot.title = element_text(size = rel(1.6)),
       plot.subtitle = element_text(size = rel(1.3)),
-      plot.caption = element_text(color = "#cccccc"),
+      plot.caption = element_text(color = "#bbbbbb"),
       axis.title = element_text(face = "bold"),
       axis.text = element_text(size = rel(1.1)),
       aspect.ratio = 0.66,
@@ -145,15 +151,16 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
 #' @export
 base_pressure_plot <- generate_base_pressure_plot()
 
-base_pressure_plot <- base_pressure_plot + labs(caption = "Credit to Jan Heine & Frank Berto for original work...")
+base_pressure_plot <- base_pressure_plot +
+  labs(caption = "Credit to Jan Heine & Frank Berto for original work.")
 
 #' Plot and label front and rear wheel inflation data for a bike.
 #'
 #' @param base_plot ggplot object of base tire pressure curves.
 #' @param bike tibble to display for specific bike and rider.
-#' @param show_summary Fill in....
+#' @param show_summary boolean to show the summary info under the title.
 #'
-#' @return A complete plot for display
+#' @return ggplot object with the bike superimposed over the base inflation plot.
 #' @export
 plot_bike_inflation <- function (
   base_plot = base_pressure_plot,

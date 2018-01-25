@@ -6,7 +6,7 @@
 \code{\link[ggplot2]{ggtitle}}}
 \usage{
 
-  plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road & Gravel Riding",
+  plot_title(title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes for Road & Gravel Riding",
   summary = NA)
 }
 \arguments{

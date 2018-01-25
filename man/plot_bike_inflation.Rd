@@ -12,10 +12,10 @@ plot_bike_inflation(base_plot = base_pressure_plot, bike,
 
 \item{bike}{tibble to display for specific bike and rider.}
 
-\item{show_summary}{Fill in....}
+\item{show_summary}{boolean to show the summary info under the title.}
 }
 \value{
-A complete plot for display
+ggplot object with the bike superimposed over the base inflation plot.
 }
 \description{
 Plot and label front and rear wheel inflation data for a bike.
