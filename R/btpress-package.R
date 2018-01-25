@@ -84,10 +84,6 @@ NULL
 
 # Create new theme for Shiny apps & pass in as a parameter to generate-base-plot()!
 
-# Create link to References section
-
-# Review @return tags - needed or not for simple functions?
-
 # Write test cases for error checking in bike_tire_pressures
 
 # tire pressures great than 150psi are not displayed on the chart - try expand_limit.
