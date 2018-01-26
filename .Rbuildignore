@@ -1,4 +1,5 @@
-^.*\.Rproj$
+^_untracked$
 ^\.Rproj\.user$
-^docs$
 ^\testing.R
+^docs$
+^README\.Rmd$

@@ -13,7 +13,7 @@ psi_to_bar <- function(psi) { return(psi * 0.068947) }
 #'
 #' 1 pound = 0.45359 kilogram.
 #'
-#' @param lb Weight in pounds.
+#' @param lb weight in pounds.
 #'
 #' @return kilograms
 #' @export
@@ -22,7 +22,7 @@ lb_to_kg <- function(lb) { return(lb *  0.45359) }
 
 #' X axis label formatting function
 #'
-#' @param lbs
+#' @param lbs weight in pounds.
 #'
 #' @return Formatted string with pounds and kilograms.
 #' @export
@@ -82,7 +82,8 @@ tire_palette <- wesanderson::wes_palette(
 #' @importFrom ggplot2 ggtitle
 #' @export
 plot_title <- function(
-  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes for Road & Gravel Riding",
+  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes
+  for Road & Gravel Riding",
   summary = NA
   ) {
   ggtitle(
@@ -130,12 +131,12 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
         floor(min(inflation_data$wheel_load_lbs) / 10) * 10,
         ceiling(max(inflation_data$wheel_load_lbs) / 10) * 10, 10
       ),
-      label = dual_weight
+      labels = dual_weight
     ) +
     scale_y_continuous(
       name = "Tire Pressure",
       breaks = seq(20, 160, 10),
-      label = dual_pressure
+      labels = dual_pressure
     ) +
     scale_color_manual(values = tire_palette) +
     coord_cartesian(ylim = c(20, 150)) +
