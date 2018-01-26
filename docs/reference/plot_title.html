@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Display a generic title and optionally add bike summary info.  Wrapper for
- — plot_title • btpress</title>
+<code><a href='http://www.rdocumentation.org/packages/ggplot2/topics/labs'>ggtitle</a></code> — plot_title • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -24,14 +24,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -50,6 +53,12 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -73,7 +82,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Display a generic title and optionally add bike summary info.  Wrapper for
-</h1>
+<code><a href='http://www.rdocumentation.org/packages/ggplot2/topics/labs'>ggtitle</a></code></h1>
     </div>
 
     
@@ -81,16 +90,21 @@
 <code><a href='http://www.rdocumentation.org/packages/ggplot2/topics/labs'>ggtitle</a></code></p>
     
 
-    <pre><span class='fu'>plot_title</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes For Road &amp; Gravel Riding"</span>,
+    <pre class="usage"><span class='fu'>plot_title</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes for Road &amp; Gravel Riding"</span>,
   <span class='kw'>summary</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>title</dt>
-      <dd>for the plot.</dd>
-      <dt>summary</dt>
-      <dd>If provided, is used for the subtitle.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>title</th>
+      <td><p>for the plot.</p></td>
+    </tr>
+    <tr>
+      <th>summary</th>
+      <td><p>If provided, is used for the subtitle.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
