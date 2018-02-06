@@ -1,34 +1,29 @@
 #' Check if pressure exceeds certain levels.
 #'
-#' Display a message if the tire pressure might be getting into the range
-#' where a tire or rim could be overinflated. New wider rims and tires
-#' have lower pressures than the defaults.
+#' Display a message if the tire pressure might be getting into the range where
+#' a tire or rim could be overinflated. New wider rims and tires have lower
+#' pressures than the defaults.
 #'
 #' @param p Desired tire inflation pressure
 #' @param warn_psi Pressure exceeds to suggest increasing tire size
-#' @param max_psi Pressure exceeds warn to check max pressure ratings of tire & rim
+#' @param max_psi Pressure exceeds warn to check max pressure ratings of tire &
+#'   rim
 #'
 #' @return a list or NA
 #' @export
-#'
-check_pressure <- function(
-  p,
-  warn_psi = 105,
-  max_psi = 120
-) {
+check_pressure <- function(p, warn_psi = 105, max_psi = 120) {
   if (p > max_psi) {
     return(
       list(
-        "msg" = paste("Warning: Check maximum tire and rim PSI ratings are not exceeded!"),
+        "msg" = paste(
+          "Warning: Check maximum tire and rim PSI ratings are not exceeded!"
+        ),
         "color" = "red"
       )
     )
   } else if (p > warn_psi) {
     return(
-      list(
-        "msg" = paste("Recommendation: Increase tire size."),
-        "color" = "yellow"
-      )
+      list("msg" = paste("Recommendation: Increase tire size."), "color" = "yellow")
     )
   } else {
     return(list())
@@ -40,24 +35,25 @@ check_pressure <- function(
 #'
 #' The label for each point is generated and stored in the `annotation` column.
 #'
-#' For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the `message`
-#' column. For pressures over 120psi, a suggestion to check max tire and rim pressures is stored.
+#' For pressures between 105 and 120psi, a suggestion to increase tire width is
+#' stored in the `message` column. For pressures over 120psi, a suggestion to
+#' check max tire and rim pressures is stored.
 #'
 #' @param rider_weight_lbs Weight of rider dressed with biking shoes and helmet.
 #' @param bike_weight_lbs Weight of bike
-#' @param load_lbs Weight of accessories carried on the bike such as water bottles, repair kit, pump, etc.
-#' @param front_tire_casing_compensation Supple casings require about 15\% more pressure to maintain shape.
+#' @param load_lbs Weight of accessories carried on the bike such as water
+#'   bottles, repair kit, pump, etc.
+#' @param front_tire_casing_compensation Supple casings require about 15\% more
+#'   pressure to maintain shape.
 #' @param front_tire_size_mm Measured or side wall marking.
-#' @param rear_tire_casing_compensation Supple casings require about 15\% more pressure to maintain shape.
+#' @param rear_tire_casing_compensation Supple casings require about 15\% more
+#'   pressure to maintain shape.
 #' @param rear_tire_size_mm Measured or side wall marking.
-#' @param front_distribution Decimal representation of percentage of bike plus rider weight
-#' on the front wheel. Defaults to 0.4 for dropped handlebar road bike
-#' corresponding to 40/60 front/rear weight distribution.
+#' @param front_distribution Decimal representation of percentage of bike plus
+#'   rider weight on the front wheel. Defaults to 0.4 for dropped handlebar road
+#'   bike corresponding to 40/60 front/rear weight distribution.
 #'
 #' @return tibble used by ggplot to display tire pressures
-#' @importFrom tibble tibble
-#' @importFrom tibble tribble
-#' @importFrom tidyr separate
 #' @export
 bike_tire_pressures <- function(
   rider_weight_lbs = 100,
@@ -130,7 +126,7 @@ bike_tire_pressures <- function(
     ~y
   )
 
-p <- check_pressure(front_pressure)
+  p <- check_pressure(front_pressure)
   if (length(p) > 0) {
     m <- tibble::add_row(
       m,
@@ -142,21 +138,17 @@ p <- check_pressure(front_pressure)
     )
   }
 
-p <- check_pressure(rear_pressure)
-if (length(p) > 0) {
-  m <- tibble::add_row(
-    m,
-    Position = "Rear",
-    Msg = paste("Rear", p$msg),
-    color = p$color,
-    x = 70,
-    y = 140
-  )
-}
-
-
-
-#  pressures$message <- mapply(check_pressure, pressures$position, pressures$Pressure)
+  p <- check_pressure(rear_pressure)
+  if (length(p) > 0) {
+    m <- tibble::add_row(
+      m,
+      Position = "Rear",
+      Msg = paste("Rear", p$msg),
+      color = p$color,
+      x = 70,
+      y = 140
+    )
+  }
 
   w <- tibble::tribble(
     ~Source, ~Weight,

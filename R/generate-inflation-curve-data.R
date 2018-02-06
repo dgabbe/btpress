@@ -3,27 +3,29 @@
 #' Widths from Compass Bicycle catalog.
 #'
 #' @export
-tire_sizes_mm <- as.integer(c(20, 23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
+tire_sizes_mm <- function() {
+  as.integer(c(20, 23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
+}
 
 #' X axis values for wheel loads in lbs
 #'
 #' Based on the Bicycle Quarterly chart which is in kilograms
 #' @export
-wheel_loads_lbs <- c(66, 77, 88, 100, 110, 121, 132, 143, 154)
+wheel_loads_lbs <- function() { c(66, 77, 88, 100, 110, 121, 132, 143, 154) }
 
 #' Compute the 15\% droop tire pressure based on wheel load and tire size.
 #'
-#' Original research used rims with internal widths of \~19mm. Today's
-#' wider rims can add increase the volume of a tire by 33\%.
+#' Original research used rims with internal widths of \~19mm. Today's wider
+#' rims can add increase the volume of a tire by 33\%.
 #'
 #' The emperical, imperial centric formula is from the
 #' \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}
 #'
-#' @param weight_lbs is the load on the bicycle wheel and typically 40 - 60 percent
-#' of the total weight of the rider, bike and carried items.
+#' @param weight_lbs is the load on the bicycle wheel and typically 40 - 60
+#'   percent of the total weight of the rider, bike and carried items.
 #'
-#' @param tire_size_mm is the nominal size of the tire from the casing label or directly
-#'  measured diameter.
+#' @param tire_size_mm is the nominal size of the tire from the casing label or
+#'   directly measured diameter.
 #'
 #' @return pressure, psi
 #' @export
@@ -31,7 +33,9 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
   return(153.6 * weight_lbs / tire_size_mm**1.5785 - 7.1685)
 }
 
-#' Generate the dataset for drawing the inflation curves.
+#' Generate the dataset for drawing the inflation curves
+#'
+#' Assign it to a variable if you want to explore it.
 #'
 #' @param wheel_loads Vector containing the major X axis loads.
 #' @param tire_sizes Vector containing the different tire widths.
@@ -39,12 +43,10 @@ droop_pressure_psi <- function(weight_lbs, tire_size_mm) {
 #' @param max_psi Highest pressure to plot.
 #'
 #' @return tibble
-#' @importFrom dplyr filter
-#' @importFrom tibble tribble
 #' @export
 generate_inflation_data <- function(
-  wheel_loads = wheel_loads_lbs,
-  tire_sizes = tire_sizes_mm,
+  wheel_loads = wheel_loads_lbs(),
+  tire_sizes = tire_sizes_mm(),
   min_psi = 15,
   max_psi = 120
 ) {
@@ -64,5 +66,7 @@ generate_inflation_data <- function(
   return(d)
 }
 
-inflation_data <- generate_inflation_data()
-
+#' #' Table of all base plot calculated pressures
+#' #'
+#' #' @export
+#' inflation_data <- generate_inflation_data()

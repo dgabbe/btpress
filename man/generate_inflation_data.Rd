@@ -2,10 +2,10 @@
 % Please edit documentation in R/generate-inflation-curve-data.R
 \name{generate_inflation_data}
 \alias{generate_inflation_data}
-\title{Generate the dataset for drawing the inflation curves.}
+\title{Generate the dataset for drawing the inflation curves}
 \usage{
-generate_inflation_data(wheel_loads = wheel_loads_lbs,
-  tire_sizes = tire_sizes_mm, min_psi = 15, max_psi = 120)
+generate_inflation_data(wheel_loads = wheel_loads_lbs(),
+  tire_sizes = tire_sizes_mm(), min_psi = 15, max_psi = 120)
 }
 \arguments{
 \item{wheel_loads}{Vector containing the major X axis loads.}
@@ -20,5 +20,5 @@ generate_inflation_data(wheel_loads = wheel_loads_lbs,
 tibble
 }
 \description{
-Generate the dataset for drawing the inflation curves.
+Assign it to a variable if you want to explore it.
 }

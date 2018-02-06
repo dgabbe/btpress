@@ -7,18 +7,18 @@
 droop_pressure_psi(weight_lbs, tire_size_mm)
 }
 \arguments{
-\item{weight_lbs}{is the load on the bicycle wheel and typically 40 - 60 percent
-of the total weight of the rider, bike and carried items.}
+\item{weight_lbs}{is the load on the bicycle wheel and typically 40 - 60
+percent of the total weight of the rider, bike and carried items.}
 
-\item{tire_size_mm}{is the nominal size of the tire from the casing label or directly
-measured diameter.}
+\item{tire_size_mm}{is the nominal size of the tire from the casing label or
+directly measured diameter.}
 }
 \value{
 pressure, psi
 }
 \description{
-Original research used rims with internal widths of ~19mm. Today's
-wider rims can add increase the volume of a tire by 33\%.
+Original research used rims with internal widths of ~19mm. Today's wider
+rims can add increase the volume of a tire by 33\%.
 }
 \details{
 The emperical, imperial centric formula is from the

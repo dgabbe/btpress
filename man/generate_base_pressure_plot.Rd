@@ -4,13 +4,13 @@
 \alias{generate_base_pressure_plot}
 \title{Generate the base plot of inflation curves for all tire sizes.}
 \usage{
-generate_base_pressure_plot(data = inflation_data, plot_theme = NA)
+generate_base_pressure_plot(data = generate_inflation_data(),
+  plot_theme = theme_dg_pale())
 }
 \arguments{
 \item{data}{the inflation data to use}
 
-\item{plot_theme}{the ggplot theme to use for the plot.  Currently
-not implemented.}
+\item{plot_theme}{the ggplot theme to use.}
 }
 \value{
 ggplot object

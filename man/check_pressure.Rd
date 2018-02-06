@@ -11,13 +11,14 @@ check_pressure(p, warn_psi = 105, max_psi = 120)
 
 \item{warn_psi}{Pressure exceeds to suggest increasing tire size}
 
-\item{max_psi}{Pressure exceeds warn to check max pressure ratings of tire & rim}
+\item{max_psi}{Pressure exceeds warn to check max pressure ratings of tire &
+rim}
 }
 \value{
 a list or NA
 }
 \description{
-Display a message if the tire pressure might be getting into the range
-where a tire or rim could be overinflated. New wider rims and tires
-have lower pressures than the defaults.
+Display a message if the tire pressure might be getting into the range where
+a tire or rim could be overinflated. New wider rims and tires have lower
+pressures than the defaults.
 }

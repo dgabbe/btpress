@@ -3,3 +3,6 @@
 ^\testing.R
 ^docs$
 ^README\.Rmd$
+^.*\.Rproj$
+^_pkgdown\.yml$
+^\.nojekyll$

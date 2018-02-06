@@ -7,7 +7,7 @@
 lb_to_kg(lb)
 }
 \arguments{
-\item{lb}{Weight in pounds.}
+\item{lb}{weight in pounds.}
 }
 \value{
 kilograms

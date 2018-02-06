@@ -60,6 +60,7 @@ Links to articles:
 \item \href{https://janheine.wordpress.com/2010/10/18/science-and-bicycles-1-tires-and-pressure/}{Science and Bicycles 1: Tires and Pressure}
 \item \href{https://janheine.wordpress.com/2015/01/26/the-tire-pressure-revolution/}{The Tire Pressure Revolution}
 \item \href{https://janheine.wordpress.com/2015/02/17/tire-pressure-data-and-details/}{Tire Pressure: Data and Details}
+\item \href{https://janheine.wordpress.com/2018/01/31/one-of-the-5-fastest-tire-in-the-world/}{Compass Bon Jon Pass 700C x 35 in Top 5 Fastest Tires in the World}
 \item \href{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{Silca - Road to Roubaix - The Complete Story}
 \item \href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How we Got to Now}. There five parts in this series.
 \item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}

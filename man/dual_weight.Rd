@@ -7,7 +7,7 @@
 dual_weight(lbs)
 }
 \arguments{
-\item{lbs}{}
+\item{lbs}{weight in pounds.}
 }
 \value{
 Formatted string with pounds and kilograms.

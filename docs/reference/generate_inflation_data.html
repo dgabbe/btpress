@@ -23,17 +23,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
 <!-- mathjax -->
-<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
   </head>
 
   <body>
@@ -52,10 +49,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-  </a>
+  <a href="../reference/btpress-package.html">Intro</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -87,29 +81,20 @@
     <p>Generate the dataset for drawing the inflation curves.</p>
     
 
-    <pre class="usage"><span class='fu'>generate_inflation_data</span>(<span class='kw'>wheel_loads</span> <span class='kw'>=</span> <span class='no'>wheel_loads_lbs</span>,
+    <pre><span class='fu'>generate_inflation_data</span>(<span class='kw'>wheel_loads</span> <span class='kw'>=</span> <span class='no'>wheel_loads_lbs</span>,
   <span class='kw'>tire_sizes</span> <span class='kw'>=</span> <span class='no'>tire_sizes_mm</span>, <span class='kw'>min_psi</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='fl'>120</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>wheel_loads</th>
-      <td><p>Vector containing the major X axis loads.</p></td>
-    </tr>
-    <tr>
-      <th>tire_sizes</th>
-      <td><p>Vector containing the different tire widths.</p></td>
-    </tr>
-    <tr>
-      <th>min_psi</th>
-      <td><p>Lowest pressure to plot.</p></td>
-    </tr>
-    <tr>
-      <th>max_psi</th>
-      <td><p>Highest pressure to plot.</p></td>
-    </tr>
-    </table>
+    <dl class="dl-horizontal">
+      <dt>wheel_loads</dt>
+      <dd>Vector containing the major X axis loads.</dd>
+      <dt>tire_sizes</dt>
+      <dd>Vector containing the different tire widths.</dd>
+      <dt>min_psi</dt>
+      <dd>Lowest pressure to plot.</dd>
+      <dt>max_psi</dt>
+      <dd>Highest pressure to plot.</dd>
+    </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 

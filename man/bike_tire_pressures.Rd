@@ -14,19 +14,22 @@ bike_tire_pressures(rider_weight_lbs = 100, bike_weight_lbs = 15,
 
 \item{bike_weight_lbs}{Weight of bike}
 
-\item{load_lbs}{Weight of accessories carried on the bike such as water bottles, repair kit, pump, etc.}
+\item{load_lbs}{Weight of accessories carried on the bike such as water
+bottles, repair kit, pump, etc.}
 
-\item{front_tire_casing_compensation}{Supple casings require about 15\% more pressure to maintain shape.}
+\item{front_tire_casing_compensation}{Supple casings require about 15\% more
+pressure to maintain shape.}
 
 \item{front_tire_size_mm}{Measured or side wall marking.}
 
-\item{rear_tire_casing_compensation}{Supple casings require about 15\% more pressure to maintain shape.}
+\item{rear_tire_casing_compensation}{Supple casings require about 15\% more
+pressure to maintain shape.}
 
 \item{rear_tire_size_mm}{Measured or side wall marking.}
 
-\item{front_distribution}{Decimal representation of percentage of bike plus rider weight
-on the front wheel. Defaults to 0.4 for dropped handlebar road bike
-corresponding to 40/60 front/rear weight distribution.}
+\item{front_distribution}{Decimal representation of percentage of bike plus
+rider weight on the front wheel. Defaults to 0.4 for dropped handlebar road
+bike corresponding to 40/60 front/rear weight distribution.}
 }
 \value{
 tibble used by ggplot to display tire pressures
@@ -35,6 +38,7 @@ tibble used by ggplot to display tire pressures
 The label for each point is generated and stored in the \code{annotation} column.
 }
 \details{
-For pressures between 105 and 120psi, a suggestion to increase tire width is stored in the \code{message}
-column. For pressures over 120psi, a suggestion to check max tire and rim pressures is stored.
+For pressures between 105 and 120psi, a suggestion to increase tire width is
+stored in the \code{message} column. For pressures over 120psi, a suggestion to
+check max tire and rim pressures is stored.
 }

@@ -30,9 +30,8 @@ dual_weight <- function(lbs) {
   return(sprintf('%.0f lbs\n%.0f kg', lbs, lb_to_kg(lbs)))
 }
 
-#' Y axis label formatting function.
-#'
-#' Used for labeling plot axis
+
+#' Y axis label formatting function
 #'
 #' @param psi Tire pressure.
 #'
@@ -42,7 +41,8 @@ dual_pressure <- function(psi) {
   return(sprintf('%d psi\n%.1f bar', psi, psi_to_bar(psi)))
 }
 
-#' Data point formatting function.
+
+#' Data point formatting function
 #'
 #' @param tire_size String in the form "<integer>mm".
 #' @param position Indicates which wheel. Value should be "Front" or "Rear".
@@ -65,26 +65,21 @@ dual_pressure_point <- function(
   )
 }
 
-#' @importFrom wesanderson wes_palette
-tire_palette <- wesanderson::wes_palette(
-  n = length(tire_sizes_mm),
-  name = "GrandBudapest2",
-  type = "continuous"
-  )
 
-#' Display a generic title and optionally add bike summary info.  Wrapper for
-#' \code{\link[ggplot2]{ggtitle}}
+#' Display a generic title and optionally add bike summary info
+#'
+#' Wrapper for \code{\link[ggplot2]{ggtitle}} so you can change the
+#' the title and subtitle for your application.
 #'
 #' @param title for the plot.
 #' @param summary If provided, is used for the subtitle.
 #'
 #' @return labels
-#' @importFrom ggplot2 ggtitle
+#' @import ggplot2
 #' @export
 plot_title <- function(
-  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes
-  for Road & Gravel Riding",
-  summary = NA
+  title = "Optimized Bicycle Tire Pressure for 26, 650B, and 700C Sizes for Road & Gravel Riding",
+  summary = ""
   ) {
   ggtitle(
     title,
@@ -92,44 +87,68 @@ plot_title <- function(
   )
 }
 
-#' Generate the base plot of inflation curves for all tire sizes.
+
+#' Modifications to \code{theme_bw} to add a bit of color
 #'
-#' @param data the inflation data to use
-#' @param plot_theme the ggplot theme to use for the plot.  Currently
-#' not implemented.
+#' @param ... passed to theme_bw
 #'
-#' @return ggplot object
-#' @importFrom dgutils theme_dg
-#' @importFrom directlabels geom_dl
+#' @return ggplot theme
+#' @seealso \code{\link[ggplot2]{ggtheme}}
 #' @import ggplot2
 #' @export
-generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
-{
-  ggplot(
-    inflation_data,
-    aes(
-      x = wheel_load_lbs,
-      y = tire_pressure_psi,
-      group = tire_size_mm,
-      color = tire_size_text
-    )
-  ) +
-    theme_dg +
+theme_dg_pale <- function(...) {
+  theme_bw(...) +
     theme(
       plot.title = element_text(size = rel(1.6)),
       plot.subtitle = element_text(size = rel(1.3)),
-      plot.caption = element_text(color = "#bbbbbb"),
       axis.title = element_text(face = "bold"),
       axis.text = element_text(size = rel(1.1)),
-      aspect.ratio = 0.66,
       legend.position = "none" # Avoid show.legend = "FALSE" args
+    )
+}
+
+
+#' Generate the base plot of inflation curves for all tire sizes
+#'
+#' @param data the inflation data to use.
+#'
+#' @param plot_theme the ggplot theme to use.
+#'
+#' @return ggplot object
+#' @include generate-inflation-curve-data.R
+#' @import ggplot2
+#' @importFrom directlabels geom_dl
+#' @export
+generate_base_pressure_plot <- function(
+  data = generate_inflation_data(),
+  plot_theme = theme_dg_pale()
+) {
+  tire_palette <- wesanderson::wes_palette(
+    n = length(tire_sizes_mm()),
+    name = "GrandBudapest2",
+    type = "continuous"
+  )
+  ggplot(
+    data = data,
+    aes(
+      x = data$wheel_load_lbs,
+      y = data$tire_pressure_psi,
+      group = data$tire_size_mm,
+      color = data$tire_size_text
+    )
+  ) +
+    plot_theme +
+    theme(
+      plot.caption = element_text(color = "#bbbbbb"),
+      aspect.ratio = 0.66
     ) +
     plot_title() +
+    labs(caption = "Original data from Bicycle Quarterly/Frank Berto and Jan Heine") +
     scale_x_continuous(
       name = "Wheel Load",
       breaks = seq(
-        floor(min(inflation_data$wheel_load_lbs) / 10) * 10,
-        ceiling(max(inflation_data$wheel_load_lbs) / 10) * 10, 10
+        floor(min(data$wheel_load_lbs) / 10) * 10,
+        ceiling(max(data$wheel_load_lbs) / 10) * 10, 10
       ),
       labels = dual_weight
     ) +
@@ -140,7 +159,8 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
     ) +
     scale_color_manual(values = tire_palette) +
     coord_cartesian(ylim = c(20, 150)) +
-    geom_line(size = 0.75, alpha = 0.95) +
+    # geom_line(size = 0.75, alpha = 0.95) +
+    geom_line(size = 0.85, alpha = 0.95) +
     expand_limits(x = 158, y = 190) +
     geom_dl(
       aes(label = tire_size_text),
@@ -149,66 +169,89 @@ generate_base_pressure_plot <- function(data = inflation_data, plot_theme = NA)
     )
 }
 
+
+#' Base pressure chart
+#'
+#' This chart corresponds to the printed chart, updated for
+#' current tire sizes. Front and rear calculated pressures
+#' are superimposed over the chart.
+#'
 #' @export
 base_pressure_plot <- generate_base_pressure_plot()
 
-base_pressure_plot <- base_pressure_plot +
-  labs(caption = "Credit to Jan Heine & Frank Berto for original work.")
 
-#' Plot and label front and rear wheel inflation data for a bike.
+#' Plot and label front and rear wheel inflation data for a bike
 #'
 #' @param base_plot ggplot object of base tire pressure curves.
-#' @param bike tibble to display for specific bike and rider.
+#' @param bike1 tibble to display for specific bike and rider.
+#' @param bike2 tibble to display for specific bike and rider.
 #' @param show_summary boolean to show the summary info under the title.
 #'
 #' @return ggplot object with the bike superimposed over the base inflation plot.
 #' @export
 plot_bike_inflation <- function (
   base_plot = base_pressure_plot,
-  bike,
+  bike1,
+  bike2 = NULL,
   show_summary = FALSE
   ) {
-  summary <- if (isTRUE(show_summary)) {
+  summary <- if (isTRUE(show_summary) && is.null(bike2)) {
     paste(
-      paste(bike$weights$Source, collapse = " + "),
-      " = ",
-      sum(bike$weights$Weight),
-      "lbs | F/R %: ",
-      paste(bike$wheels$distribution, collapse = "/"),
+      paste(bike1$weights$Source, collapse = " + "), " = ",
+      sum(bike1$weights$Weight), "lbs | F/R %: ",
+      paste(bike1$wheels$distribution, collapse = "/"),
       sep = ""
     )
-  } else {
-    NULL
-  }
-  b <- bike$wheels
+  } else if (! is.null(bike2)) { paste("Comparison of 2 Different Configurations") }
+  else { NULL }
+  wheels1 <- bike1$wheels
+  wheels2 <- bike2$wheels
   p <- base_plot +
     plot_title(summary = summary) +
     geom_point(
-      data=b,
+      data = wheels1,
       aes(x = Load, y = Pressure),
       shape = 8,
       size = 4,
-      color = b$ggplot_color,
+      color = wheels1$ggplot_color,
+      inherit.aes = FALSE
+    )  +
+    geom_point(
+      data = wheels2,
+      aes(x = Load, y = Pressure),
+      shape = 13,
+      size = 4,
+      color = wheels2$ggplot_color,
       inherit.aes = FALSE
     )  +
     annotate(
       "text",
-      label = b$annotation,
+      label = wheels1$annotation,
       size = 4.5,
       fontface = "bold",
-      color = b$ggplot_color,
-      x = b$Load,
-      y = b$Pressure,
+      color = wheels1$ggplot_color,
+      x = wheels1$Load,
+      y = wheels1$Pressure,
       vjust = -0.4
     ) +
-  geom_label(
-    data = bike$messages,
+    annotate(
+      "text",
+      label = wheels2$annotation,
+      size = 4.5,
+      fontface = "bold.italic",
+      color = wheels2$ggplot_color,
+      x = wheels2$Load,
+      y = wheels2$Pressure,
+      vjust = -0.4
+    ) +
+    geom_label(
+    data = bike1$messages,
     aes(label = Msg, x = x, y = y),
-    fill = bike$messages$color,
+    fill = bike1$messages$color,
     hjust = "left",
     na.rm = TRUE,
     inherit.aes = FALSE
   )
-  return(p)
+  # return(p)
 }
 
