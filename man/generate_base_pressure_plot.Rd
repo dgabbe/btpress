@@ -2,13 +2,13 @@
 % Please edit documentation in R/plot-pressure.R
 \name{generate_base_pressure_plot}
 \alias{generate_base_pressure_plot}
-\title{Generate the base plot of inflation curves for all tire sizes.}
+\title{Generate the base plot of inflation curves for all tire sizes}
 \usage{
-generate_base_pressure_plot(data = generate_inflation_data(),
+generate_base_pressure_plot(base_inflation = generate_inflation_data(),
   plot_theme = theme_dg_pale())
 }
 \arguments{
-\item{data}{the inflation data to use}
+\item{base_inflation}{the inflation data to use.}
 
 \item{plot_theme}{the ggplot theme to use.}
 }
@@ -16,5 +16,5 @@ generate_base_pressure_plot(data = generate_inflation_data(),
 ggplot object
 }
 \description{
-Generate the base plot of inflation curves for all tire sizes.
+Generate the base plot of inflation curves for all tire sizes
 }

@@ -120,7 +120,7 @@ create_example_bikes <- function() {
       assign(as.character(l[1]), l[2], envir = .GlobalEnv)
       assign(
         paste(l[1], "_plot", sep = ""),
-        plot_bike_inflation(base_pressure_plot, l[2], show_summary = TRUE),
+        plot_bike_inflation(base_pressure_plot, l[2], show_note = TRUE),
         envir = .GlobalEnv)
     }
   )

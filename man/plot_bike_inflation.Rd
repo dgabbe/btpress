@@ -2,21 +2,25 @@
 % Please edit documentation in R/plot-pressure.R
 \name{plot_bike_inflation}
 \alias{plot_bike_inflation}
-\title{Plot and label front and rear wheel inflation data for a bike.}
+\title{Plot and label front and rear wheel inflation data for a bike setup}
 \usage{
-plot_bike_inflation(base_plot = base_pressure_plot, bike,
-  show_summary = FALSE)
+plot_bike_inflation(base_plot = base_pressure_plot, bike, bike2 = NULL,
+  show_note = FALSE, note = NULL)
 }
 \arguments{
 \item{base_plot}{ggplot object of base tire pressure curves.}
 
 \item{bike}{tibble to display for specific bike and rider.}
 
-\item{show_summary}{boolean to show the summary info under the title.}
+\item{bike2}{tibble to display for specific bike and rider.}
+
+\item{show_note}{boolean to show the note under the title.}
+
+\item{note}{string to print under title}
 }
 \value{
 ggplot object with the bike superimposed over the base inflation plot.
 }
 \description{
-Plot and label front and rear wheel inflation data for a bike.
+Plot and label front and rear wheel inflation data for a bike setup
 }

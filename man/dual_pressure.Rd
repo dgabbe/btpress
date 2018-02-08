@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot-pressure.R
 \name{dual_pressure}
 \alias{dual_pressure}
-\title{Y axis label formatting function.}
+\title{Y axis label formatting function}
 \usage{
 dual_pressure(psi)
 }
@@ -13,5 +13,5 @@ dual_pressure(psi)
 Formatted string with psi and bars.
 }
 \description{
-Used for labeling plot axis
+Y axis label formatting function
 }

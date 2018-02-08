@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot-pressure.R
 \name{dual_pressure_point}
 \alias{dual_pressure_point}
-\title{Data point formatting function.}
+\title{Data point formatting function}
 \usage{
 dual_pressure_point(tire_size, position = c("Front", "Rear"), psi)
 }
@@ -21,5 +21,5 @@ string similar to
 }
 }
 \description{
-Data point formatting function.
+Data point formatting function
 }
