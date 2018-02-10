@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate-inflation-curve-data.R
 \name{tire_sizes_mm}
 \alias{tire_sizes_mm}
-\title{Nominal tire sizes.}
+\title{Nominal tire sizes}
 \usage{
 tire_sizes_mm()
 }

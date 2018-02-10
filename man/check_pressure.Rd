@@ -2,7 +2,7 @@
 % Please edit documentation in R/bike-tire-pressures.R
 \name{check_pressure}
 \alias{check_pressure}
-\title{Check if pressure exceeds certain levels.}
+\title{Check if pressure exceeds certain levels}
 \usage{
 check_pressure(p, warn_psi = 105, max_psi = 120)
 }

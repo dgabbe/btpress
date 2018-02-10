@@ -6,87 +6,141 @@
 \alias{btpress-package}
 \title{btpress}
 \description{
-If you were told that you could bicycle faster and more comfortablely simply
-by changing your bike tire pressure, would you try it? There are now 2
-independent studies that support lower pressures are significantly better
-than pumping up your tires until they are rock hard.
-See the References section for articles.
+A program to calculate optimized bicycle tire pressure based on research that
+found a small sag or droop in the profile of the tire lead to better
+performance and comfort.
 }
+\details{
+Image that you could ride one gear faster or feel less fatigued at the end of
+your ride and it cost you nothing. Tuning your bike tire pressue to you, your
+bike, and your load may do just that. It all depends on wider bike tires with
+flexible sidewalls.
+
+Riding one gear higher, depending on your gearing, is a 5 - 8\% increase.
+There are now 2 independent studies that support lower pressures are
+significantly better than pumping up your tires until they are rock hard. See
+the References section for articles.
+}
+\section{Directions for Use}{
+
+
+The first step is evaluating whether your tires have flexible sidewalls
+which will respond readily to tire pressure changes. Tires marketed as
+racing tires, marketed as having a casing from a tubular tire, used by
+professional racers, or are a folding tire are good candidates. On the
+other hand, puncture resistant tires, \href{https://edsasslercoaching.com/product-reviews/nokian-a10-studded-winter-tires/}{snowtires},
+and thick sidewalled tires are supported by their sidewalls and do not
+respond to pressure changes very well.
+
+The simplest way to calculate your tire pressure is to use the web app
+\url{http://btp.frame38.com}, which uses this package.
+
+To calculate your tire pressures execute this code sequence:\preformatted{my_bike <- bike_tire_pressures() # Supply your values for the parameters
+plot_bike_inflation(bike = my_bike)
+}
+
+If a test ride indicates that the tire pressure is really too low, it's
+likely your pressure gauge is reading too high. Try increasing your
+pressure by 10psi.  Remember this is not an exact science nor setting so
+some experimentation may be needed.
+
+Extra light casings need an extra 10-15\% pressure to prevent the casing
+threads from breaking.
+
+Let's say your trials indicate a performance improvement and you'd like to
+\href{https://janheine.wordpress.com/2017/06/21/choosing-your-tires/}{explore
+other tire options}, or it's simply time for new tires. A wider tire is a
+great option to
+\href{https://janheine.wordpress.com/2013/03/12/how-wide-a-tire-can-i-run/}{consider}.
+The following code compares 2 setups and builds upon the first example.\preformatted{new_tires <- bike_tire_pressures() # Supply new tires for the parameters
+plot_2_bike_inflation(bike_a = my_bike, bike_b = new_tires)
+}
+
+There are 2 cases for the load which need to be handled manually. The first
+is weight carried on the rider. For example, if your bike lock is carried
+on you, it should be added to the rider weight parameter, not the load
+parameter. Same for a backpack.
+
+The second is a load on both the front and rear racks. It's unwise to
+assume a front/rear weight distribution. My recommendation is to measure
+the distribution on a level surface.  A bathroom scale place under one
+wheel and a spacer block the same height as the scale placed under the
+other wheel.  Load up the bike, hop on, and have a helper steady you and
+read the numbers. Flip the bike around and meaure the other wheel.  Divide
+the front weight by the rear weight and use that for the
+\code{front_distribution} parameter.
+}
+
 \section{Pump Inaccuracies}{
 
 
 Pump gauges considerably inaccurate. Parallex viewing makes precise reading
-of needle impossible. Never mind the pressure sensing mechanism has a wide tolerance.
+of needle impossible. Never mind the pressure sensing mechanism has a wide
+tolerance.
 }
 
 \section{Rim Widths}{
 
 
-The original research was conducted when internal widths for road rims were around 19mm.
-Today's rims are available in wider sizes, 23 - 25mm, increasing the volume up to 33\%.
-This program does not use internal rim width in its calculations.
+The original research was conducted when internal widths for road rims were
+around 19mm. Today's rims are available in wider sizes, 23 - 25mm,
+increasing the volume up to 33\%. This program does not use internal rim
+width in its calculations.
 }
 
 \section{Weight vs. Load}{
 
 
 At the end of the day, these two are effectively the same.  That said,
-\emph{Weight} is used for the individual components that go into the calculations.
-\emph{Load} is used
-to describe the forces the tires are subject to.
-}
-
-\section{Directions for Use}{
-
-
-Extra light casings need an extra 10-15\% pressure to prevent the casing threads
-from breaking.
-
-There are other subtlies which are not explicitly taken into account. The
-biggest one is weight carried on the rider. For example, if your bike lock is
-carried on you, it should be added to the rider weight, not the load field.
-Same for a backpack.  Carrying weight on front and rear racks is not
-considered by the program.
-
-Snow tires and thick sidewalled tires are supported by their sidewalls and do
-not respond to pressure changes the way performace tires do.
+\emph{Weight} is used for the individual components that go into the
+calculations. \emph{Load} is used to describe the forces the tires are
+subject to.
 }
 
 \section{References}{
 
-Links to articles:
 
 \itemize{
-\item \href{https://janheine.wordpress.com/2010/10/18/science-and-bicycles-1-tires-and-pressure/}{Science and Bicycles 1: Tires and Pressure}
-\item \href{https://janheine.wordpress.com/2015/01/26/the-tire-pressure-revolution/}{The Tire Pressure Revolution}
-\item \href{https://janheine.wordpress.com/2015/02/17/tire-pressure-data-and-details/}{Tire Pressure: Data and Details}
-\item \href{https://janheine.wordpress.com/2018/01/31/one-of-the-5-fastest-tire-in-the-world/}{Compass Bon Jon Pass 700C x 35 in Top 5 Fastest Tires in the World}
-\item \href{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{Silca - Road to Roubaix - The Complete Story}
-\item \href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How we Got to Now}. There five parts in this series.
-\item \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
-\item \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
-\item \href{http://trstriathlon.com/talking-tires-with-joshua-poertner/}{Tire Pressure – Stop Guessing And Read The Science}
-}
+\item
+\href{https://janheine.wordpress.com/2010/10/18/science-and-bicycles-1-tires-and-pressure/}{Science
+and Bicycles 1: Tires and Pressure}
+\item
+\href{https://janheine.wordpress.com/2015/01/26/the-tire-pressure-revolution/}{The
+Tire Pressure Revolution}
+\item
+\href{https://janheine.wordpress.com/2015/02/17/tire-pressure-data-and-details/}{Tire
+Pressure: Data and Details}
+\item \href{https://janheine.wordpress.com/2015/11/19/why-wider-tires-corner-better/}{Why Wider Tires Corner Better}
+\item
+\href{https://janheine.wordpress.com/2018/01/31/one-of-the-5-fastest-tire-in-the-world/}{Compass
+Bon Jon Pass 700C x 35 in Top 5 Fastest Tires in the World}
+\item
+\href{https://silca.cc/blogs/journal/115178628-road-to-roubaix-the-complete-story}{Silca - Road to Roubaix - The Complete Story}
+\item
+\href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire
+Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How we
+Got to Now}. There five parts in this series.
+\item Original
+\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle
+Quarterly article}
+\item
+\href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road
+Tire Pressure For Plus And BLACK Wheels}
+\item
+\href{http://trstriathlon.com/talking-tires-with-joshua-poertner/}{Tire
+Pressure – Stop Guessing And Read The Science} }
 }
 
 \section{Acknowledgements}{
 
 
 Source for data and pratical application to Jan Heine and Frank Berto
-published in \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly}.
+published in
+\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle
+Quarterly}.
 
 The emperical curve fitting formula from the
 \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}.
-}
-
-\section{Full Disclosure}{
-
-
-I ride and recommend
-\href{https://www.compasscycle.com/product-category/components/tires/}{Compass Bicycle tires}
-and subscribe to \href{https://www.bikequarterly.com/}{\emph{Bicycle
-Quarterly}}. I received no compensation for this program nor was I asked to
-write it by anyone.
 }
 
 \section{Disclaimer}{
@@ -95,8 +149,19 @@ write it by anyone.
 Biking riding is an inheritly risky activity. Remember the bike racer's
 motto: \emph{Falling is a matter of 'when', not 'if'.} You are solely
 responsible for not exceeding any limits including, but not exclusive of
-maximum tire inflation pressure, rim inflation pressure, mininum tire
-clearance, and compatibility of tubeless tire and rim combinations. Use of
-this app is at your risk and you assume all liabilities.
+your abilities, maximum tire inflation pressure, rim inflation pressure,
+mininum tire clearance, and compatibility of tubeless tire and rim
+combinations. Use of this app is at your risk and you assume all
+liabilities.
+}
+
+\section{Full Disclosure}{
+
+
+I ride and recommend
+\href{https://www.compasscycle.com/product-category/components/tires/}{Compass
+Bicycle tires} and subscribe to
+\href{https://www.bikequarterly.com/}{\emph{Bicycle Quarterly}}. I received
+no compensation for this program.
 }
 

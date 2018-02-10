@@ -1,4 +1,4 @@
-#' Check if pressure exceeds certain levels.
+#' Check if pressure exceeds certain levels
 #'
 #' Display a message if the tire pressure might be getting into the range where
 #' a tire or rim could be overinflated. New wider rims and tires have lower

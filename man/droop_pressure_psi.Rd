@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate-inflation-curve-data.R
 \name{droop_pressure_psi}
 \alias{droop_pressure_psi}
-\title{Compute the 15\% droop tire pressure based on wheel load and tire size.}
+\title{Compute the 15\% droop tire pressure based on wheel load and tire size}
 \usage{
 droop_pressure_psi(weight_lbs, tire_size_mm)
 }

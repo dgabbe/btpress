@@ -115,12 +115,12 @@ create_example_bikes <- function() {
   message("environment. Append '_plot' for plot object.")
   lapply(
     bikes,
-    function(l){
-      message("  ", l[1])
-      assign(as.character(l[1]), l[2], envir = .GlobalEnv)
+    function(lst){
+      message("  ", lst[1])
+      assign(as.character(lst[1]), lst[2], envir = .GlobalEnv)
       assign(
-        paste(l[1], "_plot", sep = ""),
-        plot_bike_inflation(base_pressure_plot, l[2], show_note = TRUE),
+        paste(lst[1], "_plot", sep = ""),
+        plot_bike_inflation(base_pressure_plot, lst[2], show_note = TRUE),
         envir = .GlobalEnv)
     }
   )

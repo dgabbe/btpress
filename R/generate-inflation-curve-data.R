@@ -1,4 +1,4 @@
-#' Nominal tire sizes.
+#' Nominal tire sizes
 #'
 #' Widths from Compass Bicycle catalog.
 #'
@@ -13,7 +13,7 @@ tire_sizes_mm <- function() {
 #' @export
 wheel_loads_lbs <- function() { c(66, 77, 88, 100, 110, 121, 132, 143, 154) }
 
-#' Compute the 15\% droop tire pressure based on wheel load and tire size.
+#' Compute the 15\% droop tire pressure based on wheel load and tire size
 #'
 #' Original research used rims with internal widths of \~19mm. Today's wider
 #' rims can add increase the volume of a tire by 33\%.
@@ -66,7 +66,7 @@ generate_inflation_data <- function(
   return(d)
 }
 
-#' #' Table of all base plot calculated pressures
-#' #'
-#' #' @export
+#' Table of all base plot calculated pressures
+#'
+#' @export
 #' inflation_data <- generate_inflation_data()
