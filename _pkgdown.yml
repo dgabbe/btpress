@@ -4,17 +4,17 @@ navbar:
     href: reference/btpress-package.html
   - text: Reference
     href: reference/index.html
-reference:
-  - title: "title"
-    desc: "description here"
-    contents:
-      - func1
-      - func2
-      - func3
-  - title: "title here"
-    desc: "description here."
-    contents:
-      - func1
-      - func2
-      - func2
+#reference:
+#  - title: "title"
+#    desc: "description here"
+#    contents:
+#      - func1
+#      - func2
+#      - func3
+#  - title: "title here"
+#    desc: "description here."
+#    contents:
+#      - func1
+#      - func2
+#      - func2
 

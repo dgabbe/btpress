@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Modifications to  — theme_dg_pale • btpress</title>
+<title>Plot and label front and rear wheel inflation data for comparing
+ — plot_2_bike_inflation • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -74,28 +75,34 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Modifications to </h1>
+    <h1>Plot and label front and rear wheel inflation data for comparing
+</h1>
     </div>
 
     
-    <p>Modifications to <code>theme_bw</code> to add a bit of color</p>
+    <p>Plot and label front and rear wheel inflation data for comparing
+2 bike setups.</p>
     
 
-    <pre><span class='fu'>theme_dg_pale</span>(<span class='no'>...</span>)</pre>
+    <pre><span class='fu'>plot_2_bike_inflation</span>(<span class='kw'>base_plot</span> <span class='kw'>=</span> <span class='no'>base_pressure_plot</span>, <span class='no'>bike_a</span>, <span class='no'>bike_b</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>...</dt>
-      <dd>passed to theme_bw</dd>
+      <dt>base_plot</dt>
+      <dd>ggplot object of base tire pressure curves.</dd>
+      <dt>bike_a</dt>
+      <dd>tibble to display for specific bike and rider.</dd>
+      <dt>bike_b</dt>
+      <dd>tibble to display for specific bike and rider.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>ggplot theme</p>
+    <p>ggplot object with the bikes superimposed over the base inflation plot.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code>ggtheme</code></p>
+    <p>plot_bike_inflation</p>
     
 
   </div>

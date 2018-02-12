@@ -14,8 +14,10 @@ Create a few example bikes and inflation plots
 }
 \examples{
 \donttest{
+\dontrun{
 create_example_bikes()
 steel_sport
 steel_sport_plot
+}
 }
 }

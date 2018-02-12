@@ -5,9 +5,11 @@
 #'
 #' @examples
 #' \donttest{
+#' \dontrun{
 #' create_example_bikes()
 #' steel_sport
 #' steel_sport_plot
+#' }
 #' }
 create_example_bikes <- function() {
   bikes <- list(

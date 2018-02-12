@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot and label front and rear wheel inflation data for a bike. — plot_bike_inflation • btpress</title>
+<title>Plot and label front and rear wheel inflation data for a bike setup — plot_bike_inflation • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -74,15 +74,15 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot and label front and rear wheel inflation data for a bike.</h1>
+    <h1>Plot and label front and rear wheel inflation data for a bike setup</h1>
     </div>
 
     
-    <p>Plot and label front and rear wheel inflation data for a bike.</p>
+    <p>Plot and label front and rear wheel inflation data for a bike setup</p>
     
 
-    <pre><span class='fu'>plot_bike_inflation</span>(<span class='kw'>base_plot</span> <span class='kw'>=</span> <span class='no'>base_pressure_plot</span>, <span class='no'>bike</span>,
-  <span class='kw'>show_summary</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre><span class='fu'>plot_bike_inflation</span>(<span class='kw'>base_plot</span> <span class='kw'>=</span> <span class='no'>base_pressure_plot</span>, <span class='no'>bike</span>, <span class='kw'>show_note</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>note</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -90,8 +90,10 @@
       <dd>ggplot object of base tire pressure curves.</dd>
       <dt>bike</dt>
       <dd>tibble to display for specific bike and rider.</dd>
-      <dt>show_summary</dt>
-      <dd>boolean to show the summary info under the title.</dd>
+      <dt>show_note</dt>
+      <dd>boolean to show the note under the title.</dd>
+      <dt>note</dt>
+      <dd>string to print under title</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
