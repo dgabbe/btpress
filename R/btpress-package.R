@@ -22,7 +22,7 @@
 #'   professional racers, or are a folding tire are good candidates. On the
 #'   other hand, puncture resistant tires,
 #'   \href{snow tires}{https://edsasslercoaching.com/product-reviews/nokian-a10-studded-winter-tires/},
-#'   and thick sidewalled tires are supported by their sidewalls and do not
+#'   and thick touring tires are supported by their sidewalls and do not
 #'   respond to pressure changes very well.
 #'
 #'   The simplest way to calculate your tire pressure is to use the
@@ -57,7 +57,7 @@
 #'
 #'   The second is a load on both the front and rear racks. It's unwise to
 #'   assume a front/rear weight distribution. My recommendation is to measure
-#'   the distribution on a level surface.  A bathroom scale place under one
+#'   the distribution on a level surface.  A bathroom scale placed under one
 #'   wheel and a spacer block the same height as the scale placed under the
 #'   other wheel.  Load up the bike, hop on, and have a helper steady you and
 #'   read the numbers. Flip the bike around and meaure the other wheel.  Divide
@@ -66,9 +66,16 @@
 #'
 #' @section Pump Inaccuracies:
 #'
-#'   Pump gauges considerably inaccurate. Parallex viewing makes precise reading
-#'   of needle impossible. Never mind the pressure sensing mechanism has a wide
-#'   tolerance.
+#'   Built-in pump gauges are inaccurate. Between a wide tolerance range of the pressure
+#'   sensing mechanism and imprecise reading of the gauge needle due to parallex,
+#'   the indicated pressure should be considered an approximation.
+#'
+#'   A simple experiment can help determine how your pump is reading.  Inflate your
+#'   tires to the calculated pressure plus another 15psi.  If a test ride seems harsher
+#'   or your bike bounces around more, the pressure is too high.  Repeat, but this time
+#'   inflate to 15psi less than the calculated pressure.  If your wheels bottom out or the
+#'   handling is squishly, the pressure is too low.  Adjust in increments of 5psi and repeat
+#'   until satisfied.
 #'
 #' @section Rim Widths:
 #'
