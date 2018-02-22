@@ -11,7 +11,7 @@
 #'
 #' @return a list or NA
 #' @export
-check_pressure <- function(p, warn_psi = 105, max_psi = 120) {
+check_pressure <- function(p, warn_psi = warn_tire_psi, max_psi = max_tire_psi) {
   if (p > max_psi) {
     return(
       list(
@@ -69,11 +69,11 @@ bike_tire_pressures <- function(
   # Param validation
   if (
     min(front_tire_casing_compensation, rear_tire_casing_compensation) < 1 |
-    max(front_tire_casing_compensation, rear_tire_casing_compensation) > 1.25 |
+    max(front_tire_casing_compensation, rear_tire_casing_compensation) > 1.20 |
     min(front_tire_size_mm, rear_tire_size_mm) < 19 |
     max(front_tire_size_mm, rear_tire_size_mm) > 60 |
-    rider_weight_lbs > 250 |
-    rider_weight_lbs < 80 |
+    rider_weight_lbs > max_rider_weight |
+    rider_weight_lbs < min_rider_weight |
     front_distribution < 0.25 |
     front_distribution > 0.80
   ) {
