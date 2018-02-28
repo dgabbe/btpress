@@ -18,19 +18,29 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  
+  
+<meta property="og:title" content="Compute the 15% droop tire pressure based on wheel load and tire size — droop_pressure_psi" />
 
+<meta property="og:description" content="Original research used rims with internal widths of ~19mm. Today's wider
+rims can add increase the volume of a tire by 33%." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -78,21 +88,26 @@
     </div>
 
     
-    <p>Original research used rims with internal widths of ~19mm. Today&#39;s wider
+    <p>Original research used rims with internal widths of ~19mm. Today's wider
 rims can add increase the volume of a tire by 33%.</p>
     
 
-    <pre><span class='fu'>droop_pressure_psi</span>(<span class='no'>weight_lbs</span>, <span class='no'>tire_size_mm</span>)</pre>
+    <pre class="usage"><span class='fu'>droop_pressure_psi</span>(<span class='no'>weight_lbs</span>, <span class='no'>tire_size_mm</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>weight_lbs</dt>
-      <dd>is the load on the bicycle wheel and typically 40 - 60
-percent of the total weight of the rider, bike and carried items.</dd>
-      <dt>tire_size_mm</dt>
-      <dd>is the nominal size of the tire from the casing label or
-directly measured diameter.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>weight_lbs</th>
+      <td><p>is the load on the bicycle wheel and typically 40 - 60
+percent of the total weight of the rider, bike and carried items.</p></td>
+    </tr>
+    <tr>
+      <th>tire_size_mm</th>
+      <td><p>is the nominal size of the tire from the casing label or
+directly measured diameter.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -101,7 +116,7 @@ directly measured diameter.</dd>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The emperical, imperial centric formula is from the
-<a href = 'BikeTinker'>http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/</a></p>
+<a href='http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/'>BikeTinker</a></p>
     
 
   </div>
@@ -124,7 +139,7 @@ directly measured diameter.</dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

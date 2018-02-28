@@ -18,19 +18,28 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  
+  
+<meta property="og:title" content="Generate the dataset for drawing the inflation curves — generate_inflation_data" />
 
+<meta property="og:description" content="Assign it to a variable if you want to explore it." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,20 +90,30 @@
     <p>Assign it to a variable if you want to explore it.</p>
     
 
-    <pre><span class='fu'>generate_inflation_data</span>(<span class='kw'>wheel_loads</span> <span class='kw'>=</span> <span class='fu'><a href='wheel_loads_lbs.html'>wheel_loads_lbs</a></span>(),
-  <span class='kw'>tire_sizes</span> <span class='kw'>=</span> <span class='fu'><a href='tire_sizes_mm.html'>tire_sizes_mm</a></span>(), <span class='kw'>min_psi</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='fl'>120</span>)</pre>
+    <pre class="usage"><span class='fu'>generate_inflation_data</span>(<span class='kw'>wheel_loads</span> <span class='kw'>=</span> <span class='fu'><a href='wheel_loads_lbs.html'>wheel_loads_lbs</a></span>(),
+  <span class='kw'>tire_sizes</span> <span class='kw'>=</span> <span class='fu'><a href='tire_sizes_mm.html'>tire_sizes_mm</a></span>(), <span class='kw'>min_psi</span> <span class='kw'>=</span> <span class='no'>min_tire_psi</span>,
+  <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='no'>max_tire_psi</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>wheel_loads</dt>
-      <dd>Vector containing the major X axis loads.</dd>
-      <dt>tire_sizes</dt>
-      <dd>Vector containing the different tire widths.</dd>
-      <dt>min_psi</dt>
-      <dd>Lowest pressure to plot.</dd>
-      <dt>max_psi</dt>
-      <dd>Highest pressure to plot.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>wheel_loads</th>
+      <td><p>Vector containing the major X axis loads.</p></td>
+    </tr>
+    <tr>
+      <th>tire_sizes</th>
+      <td><p>Vector containing the different tire widths.</p></td>
+    </tr>
+    <tr>
+      <th>min_psi</th>
+      <td><p>Lowest pressure to plot.</p></td>
+    </tr>
+    <tr>
+      <th>max_psi</th>
+      <td><p>Highest pressure to plot.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -119,7 +138,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

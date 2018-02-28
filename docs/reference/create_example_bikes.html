@@ -18,19 +18,28 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  
+  
+<meta property="og:title" content="Create a few example bikes and inflation plots — create_example_bikes" />
 
+<meta property="og:description" content="Create a few example bikes and inflation plots" />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,7 +90,7 @@
     <p>Create a few example bikes and inflation plots</p>
     
 
-    <pre><span class='fu'>create_example_bikes</span>()</pre>
+    <pre class="usage"><span class='fu'>create_example_bikes</span>()</pre>
         
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -89,11 +98,16 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># create_example_bikes()</span>
-<span class='co'># steel_sport</span>
-<span class='co'># steel_sport_plot</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>create_example_bikes</span>()</div><div class='output co'>#&gt; <span class='message'>Creating the following example bikes in the Global</span></div><div class='output co'>#&gt; <span class='message'>environment. Append '_plot' for plot object.</span></div><div class='output co'>#&gt; <span class='message'>  steel_sport</span></div><div class='output co'>#&gt; <span class='message'>  internal_hub_shopping</span></div><div class='output co'>#&gt; <span class='message'>  internal_hub_fun</span></div><div class='output co'>#&gt; <span class='message'>  trek_lexa</span></div><div class='output co'>#&gt; <span class='message'>  all_roads</span></div><div class='output co'>#&gt; <span class='message'>  nairo</span></div><div class='output co'>#&gt; <span class='message'>  froome</span></div><div class='output co'>#&gt; <span class='message'>  too_heavy</span></div><div class='output co'>#&gt; [[1]]</div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): object 'Load' not found</span></div><div class='input'><span class='no'>steel_sport</span></div><div class='output co'>#&gt; [[1]]
+#&gt; function () 
+#&gt; {
+#&gt;     bike_tire_pressures(rider_weight_lbs = 170, bike_weight_lbs = 20, 
+#&gt;         front_distribution = 0.4, front_tire_size_mm = 26, front_tire_casing_compensation = 1.15, 
+#&gt;         rear_tire_size_mm = 28, rear_tire_casing_compensation = 1.15)
+#&gt; }
+#&gt; &lt;environment: 0x7f905cfe7fb8&gt;
+#&gt; </div><div class='input'><span class='no'>steel_sport_plot</span></div><div class='output co'>#&gt; <span class='error'>Error in FUN(X[[i]], ...): object 'Load' not found</span></div><div class='img'><img src='create_example_bikes-1.png' alt='' width='700' height='432.632880098887' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -113,7 +127,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

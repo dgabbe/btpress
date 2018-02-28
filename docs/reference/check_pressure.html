@@ -18,19 +18,30 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  
+  
+<meta property="og:title" content="Check if pressure exceeds certain levels — check_pressure" />
 
+<meta property="og:description" content="Display a message if the tire pressure might be getting into the range where
+a tire or rim could be overinflated. New wider rims and tires have lower
+pressures than the defaults." />
+<meta name="twitter:card" content="summary" />
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -83,18 +94,25 @@ a tire or rim could be overinflated. New wider rims and tires have lower
 pressures than the defaults.</p>
     
 
-    <pre><span class='fu'>check_pressure</span>(<span class='no'>p</span>, <span class='kw'>warn_psi</span> <span class='kw'>=</span> <span class='fl'>105</span>, <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='fl'>120</span>)</pre>
+    <pre class="usage"><span class='fu'>check_pressure</span>(<span class='no'>p</span>, <span class='kw'>warn_psi</span> <span class='kw'>=</span> <span class='no'>warn_tire_psi</span>, <span class='kw'>max_psi</span> <span class='kw'>=</span> <span class='no'>max_tire_psi</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>p</dt>
-      <dd>Desired tire inflation pressure</dd>
-      <dt>warn_psi</dt>
-      <dd>Pressure exceeds to suggest increasing tire size</dd>
-      <dt>max_psi</dt>
-      <dd>Pressure exceeds warn to check max pressure ratings of tire &amp;
-rim</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>p</th>
+      <td><p>Desired tire inflation pressure</p></td>
+    </tr>
+    <tr>
+      <th>warn_psi</th>
+      <td><p>Pressure exceeds to suggest increasing tire size</p></td>
+    </tr>
+    <tr>
+      <th>max_psi</th>
+      <td><p>Pressure exceeds warn to check max pressure ratings of tire &amp;
+rim</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -119,7 +137,7 @@ rim</dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
