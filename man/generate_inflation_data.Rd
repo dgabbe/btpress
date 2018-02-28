@@ -5,7 +5,8 @@
 \title{Generate the dataset for drawing the inflation curves}
 \usage{
 generate_inflation_data(wheel_loads = wheel_loads_lbs(),
-  tire_sizes = tire_sizes_mm(), min_psi = 15, max_psi = 120)
+  tire_sizes = tire_sizes_mm(), min_psi = min_tire_psi,
+  max_psi = max_tire_psi)
 }
 \arguments{
 \item{wheel_loads}{Vector containing the major X axis loads.}

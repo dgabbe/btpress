@@ -4,7 +4,7 @@
 #' found a small sag or droop in the profile of the tire lead to better
 #' performance and comfort.
 #'
-#' Image that you could ride one gear faster or feel less fatigued at the end of
+#' Imagine that you could ride one gear faster or feel less fatigued at the end of
 #' your ride and it cost you nothing. Tuning your bike tire pressue to you, your
 #' bike, and your load may do just that. It all depends on wider bike tires with
 #' flexible sidewalls.
@@ -52,24 +52,29 @@
 #'   ```
 #' @section Choosing Between Bike and Load Weights:
 #'
-#'  Bikes are for transporting stuff around, but where your stuff is attached
-#' will impact bike handling. Increasing load weight decreases some
-#'  aspect of handling stability.
+#'   Bikes are for transporting stuff around, but where your stuff is attached
+#'   will impact bike handling. Increasing load weight decreases handling
+#'   stability. While your bike weight remains constant, your cargo weight could
+#'   vary from 0 to 20lbs and that will change tire pressure quite a bit.
 #'
+#'   Calculating how your load is distributed between both wheels depends on
+#'   factors unique to each bike that it is best to measure them.  We can
+#'   generalize about standard configurations and the following example will
+#'   highlight the limitations.
 #'
-#'   There are 2 cases for the load which need to be handled manually. The first
-#'   is weight carried on the rider. For example, if your bike lock is carried
-#'   on you, it should be added to the rider weight parameter, not the load
-#'   parameter. Same for a backpack.
+#'   Example coming soon!
 #'
-#'   The second is a load on both the front and rear racks. It's unwise to
-#'   assume a front/rear weight distribution. My recommendation is to measure
-#'   the distribution on a level surface.  A bathroom scale placed under one
-#'   wheel and a spacer block the same height as the scale placed under the
-#'   other wheel.  Load up the bike, hop on, and have a helper steady you and
-#'   read the numbers. Flip the bike around and meaure the other wheel.  Divide
-#'   the front weight by the rear weight and use that for the
-#'   `front_distribution` parameter.
+#'   If the rider is carrying a bike lock or backpack,
+#'   their weight should be added to the rider weight, not the load weight.
+#'
+#'   It's unwise to assume a front/rear weight distribution when there are loads
+#'   on both the front and rear racks.  My recommendation is to measure the
+#'   distribution on a level surface.  A bathroom scale placed under one wheel
+#'   and a spacer block the same height as the scale placed under the other
+#'   wheel.  Load up the bike, hop on, and have a helper steady you and read the
+#'   numbers. Flip the bike around and meaure the other wheel.  Divide the front
+#'   weight by the rear weight and use that for the `front_distribution`
+#'   parameter.
 #'
 #' @section Rim Widths:
 #'
@@ -93,7 +98,11 @@
 #'
 #' @section Pump Gauge Inaccuracies - Advanced:
 #'
+#'   Under development...
+#'
 #' @section Heavy Riders, Tandems, and Cargo Bikes:
+#'
+#'   Under development...
 #'
 #' @section Weight vs. Load:
 #'
@@ -158,7 +167,5 @@
 #' @name btpress-package
 NULL
 # To-do List:
-
-# Write test cases for error checking in bike_tire_pressures
 
 # tire pressures great than 150psi are not displayed on the chart - try expand_limit.

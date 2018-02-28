@@ -29,7 +29,7 @@ racing tires, marketed as having a casing from a tubular tire, used by
 professional racers, or are a folding tire are good candidates. On the
 other hand, puncture resistant tires,
 \href{snow tires}{https://edsasslercoaching.com/product-reviews/nokian-a10-studded-winter-tires/},
-and thick sidewalled tires are supported by their sidewalls and do not
+and thick touring tires are supported by their sidewalls and do not
 respond to pressure changes very well.
 
 The simplest way to calculate your tire pressure is to use the
@@ -54,6 +54,22 @@ or it's simply time for new tires. A wider tire is a great option to
 The following code compares 2 setups and builds upon the first example.\preformatted{new_tires <- bike_tire_pressures() # Supply new tires for the parameters
 plot_2_bike_inflation(bike_a = my_bike, bike_b = new_tires)
 }
+}
+
+\section{Choosing Between Bike and Load Weights}{
+
+
+Bikes are for transporting stuff around, but where your stuff is attached
+will impact bike handling. Increasing load weight decreases handling
+stability. While your bike weight remains constant, your cargo weight could
+vary from 0 to 20lbs and that will change tire pressure quite a bit.
+
+Calculating how your load is distributed between both wheels depends on
+factors unique to each bike that it is best to measure them.  We can
+generalize about standard configurations and the following example will
+highlight the limitations.
+
+Add example here!
 
 There are 2 cases for the load which need to be handled manually. The first
 is weight carried on the rider. For example, if your bike lock is carried
@@ -62,20 +78,12 @@ parameter. Same for a backpack.
 
 The second is a load on both the front and rear racks. It's unwise to
 assume a front/rear weight distribution. My recommendation is to measure
-the distribution on a level surface.  A bathroom scale place under one
+the distribution on a level surface.  A bathroom scale placed under one
 wheel and a spacer block the same height as the scale placed under the
 other wheel.  Load up the bike, hop on, and have a helper steady you and
 read the numbers. Flip the bike around and meaure the other wheel.  Divide
 the front weight by the rear weight and use that for the
 \code{front_distribution} parameter.
-}
-
-\section{Pump Inaccuracies}{
-
-
-Pump gauges considerably inaccurate. Parallex viewing makes precise reading
-of needle impossible. Never mind the pressure sensing mechanism has a wide
-tolerance.
 }
 
 \section{Rim Widths}{
@@ -85,6 +93,29 @@ The original research was conducted when internal widths for road rims were
 around 19mm. Today's rims are available in wider sizes, 23 - 25mm,
 increasing the volume up to 33\%. This program does not use internal rim
 width in its calculations.
+}
+
+\section{Pump Gauge Inaccuracies - Simple}{
+
+
+Built-in pump gauges are inaccurate. Between a wide tolerance range of the
+pressure sensing mechanism and imprecise reading of the gauge needle due to
+parallex, the indicated pressure should be considered an approximation.
+
+A simple experiment can help determine how your pump is reading.  Inflate
+your tires to the calculated pressure plus another 15psi.  If a test ride
+seems harsher or your bike bounces around more, the pressure is too high.
+Repeat, but this time inflate to 15psi less than the calculated pressure.
+If your wheels bottom out or the handling is squishly, the pressure is too
+low.  Adjust in increments of 5psi and repeat until satisfied.
+}
+
+\section{Pump Gauge Inaccuracies - Advanced}{
+
+}
+
+\section{Heavy Riders, Tandems, and Cargo Bikes}{
+
 }
 
 \section{Weight vs. Load}{

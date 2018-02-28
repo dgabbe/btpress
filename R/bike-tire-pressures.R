@@ -10,6 +10,7 @@
 #'   rim
 #'
 #' @return a list or NA
+#' @include min_max_limits.R
 #' @export
 check_pressure <- function(p, warn_psi = warn_tire_psi, max_psi = max_tire_psi) {
   if (p > max_psi) {
@@ -80,6 +81,10 @@ bike_tire_pressures <- function(
     stop("Unhelpful msg - one or more parameters are out of range")
   }
 
+  if (load_lbs > max_load_weight) {
+    message("Ah, check load_lbs - probably too heavy")
+  }
+
   # Calculations
   total_weight <- rider_weight_lbs + bike_weight_lbs + load_lbs
   front_weight <- total_weight * front_distribution
@@ -133,7 +138,7 @@ bike_tire_pressures <- function(
       Position = "Front",
       Msg = paste("Front", p$msg),
       color = p$color,
-      x = 70,
+      x = 65,
       y = 148
     )
   }
@@ -145,7 +150,7 @@ bike_tire_pressures <- function(
       Position = "Rear",
       Msg = paste("Rear", p$msg),
       color = p$color,
-      x = 70,
+      x = 65,
       y = 140
     )
   }

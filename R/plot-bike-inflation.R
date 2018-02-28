@@ -53,6 +53,7 @@ plot_bike_inflation <- function (
       data = bike$messages,
       aes(label = Msg, x = x, y = y),
       fill = bike$messages$color,
+      size = 5,
       hjust = "left",
       na.rm = TRUE,
       inherit.aes = FALSE

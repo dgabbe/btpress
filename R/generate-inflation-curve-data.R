@@ -23,6 +23,7 @@ wheel_loads_lbs <- function() { c(66, 77, 88, 100, 110, 121, 132, 143, 154) }
 #' @param max_psi Highest pressure to plot.
 #'
 #' @return tibble
+#' @include min_max_limits.R
 #' @export
 generate_inflation_data <- function(
   wheel_loads = wheel_loads_lbs(),

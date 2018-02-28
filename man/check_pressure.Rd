@@ -4,7 +4,7 @@
 \alias{check_pressure}
 \title{Check if pressure exceeds certain levels}
 \usage{
-check_pressure(p, warn_psi = 105, max_psi = 120)
+check_pressure(p, warn_psi = warn_tire_psi, max_psi = max_tire_psi)
 }
 \arguments{
 \item{p}{Desired tire inflation pressure}
