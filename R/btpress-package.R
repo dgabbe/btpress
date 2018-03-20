@@ -1,18 +1,16 @@
 #' btpress
 #'
 #' A program to calculate optimized bicycle tire pressure based on research that
-#' found a small sag or droop in the profile of the tire lead to better
+#' found a small sag or droop in the profile of the tire, lead to better
 #' performance and comfort.
 #'
-#' Imagine that you could ride one gear faster or feel less fatigued at the end of
-#' your ride and it cost you nothing. Tuning your bike tire pressure to you, your
-#' bike, and your load may do just that. It all depends on wider bike tires with
-#' flexible sidewalls.
-#'
-#' Riding one gear higher, depending on your gearing, is a 5 - 8\% increase.
-#' There are now 2 independent studies that support lower pressures are
-#' significantly better than pumping up your tires until they are rock hard. See
-#' the References section for articles.
+#' Imagine that you could ride one gear faster or feel less fatigued at the end
+#' of your ride and it cost you nothing. Tuning your bike tire pressure to your
+#' own unique situation may do just that. There are now 2 independent studies
+#' that support lower pressures are significantly better than pumping up your
+#' tires until they are rock hard. It all depends on wider bike tires with
+#' flexible sidewalls. Riding one gear higher, depending on your gearing,
+#' is a 5 - 8\% increase.
 #'
 #' @section Directions for Use:
 #'
@@ -28,7 +26,7 @@
 #'   The simplest way to calculate your tire pressure is to use the
 #'   \href{http://btp.frame38.com}{companion web app}, which uses this package.
 #'
-#'   To calculate your tire pressures execute this code sequence:
+#'   To calculate your tire pressures, execute this code sequence:
 #'   ```{r eval=FALSE}
 #'   my_bike <- bike_tire_pressures() # Supply your values for the parameters
 #'   plot_bike_inflation(bike = my_bike)
@@ -41,7 +39,7 @@
 #'   Extra light casings need an extra 10-15\% pressure to prevent the casing
 #'   threads from breaking.
 #'
-#'   Let's say your trials indicate a performance improvement and you'd like to
+#'   Suppose your trials indicate a performance improvement and you'd like to
 #'   \href{https://janheine.wordpress.com/2017/06/21/choosing-your-tires/}{explore other tire options},
 #'    or it's simply time for new tires. A wider tire is a great option to
 #'   \href{https://janheine.wordpress.com/2013/03/12/how-wide-a-tire-can-i-run/}{consider}.
@@ -52,7 +50,7 @@
 #'   ```
 #' @section Choosing Between Bike and Load Weights:
 #'
-#'   Bikes are for transporting stuff around, but where your stuff is attached
+#'   Bikes are for transporting gear around, but where your gear is attached
 #'   will impact bike handling. Increasing load weight decreases handling
 #'   stability. While your bike weight remains constant, your cargo weight could
 #'   vary from 0 to 20lbs and that will change tire pressure quite a bit.
@@ -69,8 +67,8 @@
 #'
 #'   It's unwise to assume a front/rear weight distribution when there are loads
 #'   on both the front and rear racks.  My recommendation is to measure the
-#'   distribution on a level surface.  A bathroom scale placed under one wheel
-#'   and a spacer block the same height as the scale placed under the other
+#'   distribution on a level surface.  Place a bathroom scale under one wheel
+#'   and a spacer block, the same height as the scale, under the other
 #'   wheel.  Load up the bike, hop on, and have a helper steady you and read the
 #'   numbers. Flip the bike around and measure the other wheel.  Divide the front
 #'   weight by the rear weight and use that for the `front_distribution`
@@ -86,14 +84,14 @@
 #' @section Pump Gauge Inaccuracies - Simple:
 #'
 #'   Built-in pump gauges are inaccurate. Between a wide tolerance range of the
-#'   pressure sensing mechanism and imprecise reading of the gauge needle due to
+#'   pressure-sensing mechanism and imprecise reading of the gauge needle due to
 #'   parallex, the indicated pressure should be considered an approximation.
 #'
 #'   A simple experiment can help determine how your pump is reading.  Inflate
 #'   your tires to the calculated pressure plus another 15psi.  If a test ride
 #'   seems harsher or your bike bounces around more, the pressure is too high.
 #'   Repeat, but this time inflate to 15psi less than the calculated pressure.
-#'   If your wheels bottom out or the handling is squishy, the pressure is too
+#'   If your wheels bottom out or the handling is squirmy, the pressure is too
 #'   low.  Adjust in increments of 5psi and repeat until satisfied.
 #'
 #' @section Pump Gauge Inaccuracies - Advanced:
@@ -141,7 +139,7 @@
 #'   published in
 #'   \href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly}.
 #'
-#'   The emperical curve fitting formula from the
+#'   The empirical curve fitting formula from the
 #'   \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}.
 #'
 #' @section Disclaimer:
@@ -164,6 +162,4 @@
 #' @docType package
 #' @name btpress-package
 NULL
-# To-do List:
 
-# tire pressures great than 150psi are not displayed on the chart - try expand_limit.
