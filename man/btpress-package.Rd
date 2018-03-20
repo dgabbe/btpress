@@ -106,12 +106,28 @@ seems harsher or your bike bounces around more, the pressure is too high.
 Repeat, but this time inflate to 15psi less than the calculated pressure.
 If your wheels bottom out or the handling is squishy, the pressure is too
 low.  Adjust in increments of 5psi and repeat until satisfied.
+
+For road tubeless setups, exceeding 60psi seems to increase the likelihood
+of a tire blowoff as nicely summarized in this
+\href{https://janheine.wordpress.com/2017/05/29/the-trouble-with-road-tubeless/}{post}.
 }
 
 \section{Pump Gauge Inaccuracies - Advanced}{
 
 
 Under development...
+}
+
+\section{Tire Mounting Instructions}{
+
+
+If using an inner tube, inflate it so it barely holds its shape and lightly
+coat with talc (talcum power). Then sprinkle some talc on the inside of the tire
+casing to coat the entire surface.  Flip the tire inside out if you find it's
+easier to apply that way.  This proceedure is mandatory for latex and light
+weight butyl tubes.
+
+Then follow Sven Cycles \href{https://www.svencycles.com/blog/compass-tyre-mounting-instructions/}{marvelous instructions}.
 }
 
 \section{Heavy Riders, Tandems, and Cargo Bikes}{
@@ -147,7 +163,7 @@ subject to.
 \item Part one,
 \href{https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now}{Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How We Got to Now}, of a five part series.
 \item The original
-\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly article}
+\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{\emph{Bicycle Quarterly} article}
 \item
 \href{https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/}{Road Tire Pressure For Plus And BLACK Wheels}
 \item
@@ -160,7 +176,7 @@ subject to.
 
 Source for data and pratical application to Jan Heine and Frank Berto
 published in
-\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly}.
+\emph{\href{https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf}{Bicycle Quarterly}}.
 
 The emperical curve fitting formula from the
 \href{http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/}{BikeTinker}.
