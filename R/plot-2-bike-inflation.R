@@ -1,5 +1,5 @@
 #' Plot and label front and rear wheel inflation data for comparing
-#' 2 bike setups.
+#' 2 bike setups
 #'
 #' @param base_plot ggplot object of base tire pressure curves.
 #' @param bike_a tibble to display for specific bike and rider.
