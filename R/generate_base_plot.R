@@ -35,7 +35,7 @@ generate_base_pressure_plot <- function(
     plot_theme +
     theme(
       plot.caption = element_text(color = "#bbbbbb"),
-      aspect.ratio = 0.66
+      aspect.ratio = 0.8
     ) +
     plot_title() +
     labs(caption = "Original data from Bicycle Quarterly/Frank Berto and Jan Heine") +
@@ -43,20 +43,21 @@ generate_base_pressure_plot <- function(
       name = "Wheel Load",
       breaks = seq(
         floor(min(base_inflation$wheel_load_lbs) / 10) * 10,
-        ceiling(max(base_inflation$wheel_load_lbs) / 10) * 10, 10
+        x_max_wheel_load, 10
       ),
       labels = dual_weight
     ) +
     scale_y_continuous(
       name = "Tire Pressure",
-      breaks = seq(20, 160, 10),
+      # add check so min - max tire psi is mod 10
+      breaks = seq(20, max_tire_psi, 10),
       labels = dual_pressure
     ) +
     scale_color_manual(values = tire_palette) +
-    coord_cartesian(ylim = c(20, 150)) +
-    # geom_line(size = 0.75, alpha = 0.95) +
+    # coord_cartesian(ylim = c(20, 150)) +
+    # coord_cartesian(ylim = c(min_tire_psi, max_tire_psi)) +
     geom_line(size = 0.85, alpha = 0.95) +
-    expand_limits(x = 158, y = 190) +
+    expand_limits(x = 158) + # to fit tire size label - make programatic
     geom_dl(
       aes(label = tire_size_text),
       method = list("last.points", cex = 1.0, hjust = -0.05),
