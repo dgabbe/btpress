@@ -1,5 +1,5 @@
 min_tire_psi <- 15
-max_tire_psi <- 120
+max_tire_psi <- 140
 
 min_rider_weight <- 80
 max_rider_weight <- 250
