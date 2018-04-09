@@ -12,6 +12,7 @@ tire_sizes_mm <- function() {
 #' Based on the Bicycle Quarterly chart which is in kilograms
 #' @export
 wheel_loads_lbs <- function() { c(66, 77, 88, 100, 110, 121, 132, 143, 154) }
+
 x_max_wheel_load <- ceiling(max(wheel_loads_lbs()) / 10) * 10
 
 #' Generate the dataset for drawing the inflation curves

@@ -107,7 +107,7 @@ create_example_bikes <- function() {
         bike_weight_lbs = 25,
         load_lbs = 5,
         front_distribution = 0.4,
-        front_tire_size_mm = 19,
+        front_tire_size_mm = 20,
         rear_tire_size_mm = 25
       )
     )
