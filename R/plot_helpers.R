@@ -87,3 +87,18 @@ plot_title <- function(
     subtitle
   )
 }
+
+#' heavy_rider_expand_limits
+#'
+#' @param bike setup to be plotted
+#' @param plot base_plot
+#'
+#' @return ggplot object
+#' @export
+#'
+heavy_rider_expand_limits <- function(bike, plot) {
+  max_psi <- max(bike$wheels$Pressure)
+  if ( max_psi > max_tire_psi) {
+    plot + expand_limits(x = x_max_wheel_load + 25, y = max_psi + 10 )
+  } else { plot }
+}

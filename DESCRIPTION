@@ -1,5 +1,5 @@
 Package: btpress
-Version: 2018.02.03
+Version: 2018.04.05
 Title: Bike Tire Pressure Optimizer
 Description: Calculates front and rear tire pressure based on bicycle, load, 
     and rider weights for various 700c, 650b, and 26 inch tire sizes.  Optimal 
@@ -10,7 +10,8 @@ Depends: R (>= 3.3.2)
 Imports: 
   directlabels, 
   dplyr (>= 0.7.2),
-  ggplot2 (>= 2.2.0), 
+  ggplot2 (>= 2.2.0),
+  magrittr,
   tibble,
   tidyr,
   wesanderson

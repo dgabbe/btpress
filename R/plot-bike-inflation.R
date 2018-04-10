@@ -29,33 +29,34 @@ plot_bike_inflation <- function (
     paste(note)
   }
 
-  base_plot +
+  heavy_rider_expand_limits(bike, base_plot) +
     plot_title(subtitle = note) +
-    geom_point(
-      data = bike$wheels,
-      aes(Load, Pressure),
-      shape = 8,
-      size = 4,
-      color = bike$wheels$ggplot_color,
+    # Display first so data points can overwrite them
+    geom_label(
+      data = bike$messages,
+      aes(label = Msg, x = x, y = y),
+      fill = bike$messages$color,
+      size = 4.5,
+      hjust = "left",
+      na.rm = TRUE,
       inherit.aes = FALSE
-    )  +
+    ) +
     annotate(
       "text",
       label = bike$wheels$annotation,
-      size = 4.5,
+      size = 4.0,
       fontface = "bold",
       color = bike$wheels$ggplot_color,
       x = bike$wheels$Load,
       y = bike$wheels$Pressure,
       vjust = -0.4
     ) +
-    geom_label(
-      data = bike$messages,
-      aes(label = Msg, x = x, y = y),
-      fill = bike$messages$color,
-      size = 5,
-      hjust = "left",
-      na.rm = TRUE,
+    geom_point(
+      data = bike$wheels,
+      aes(Load, Pressure),
+      shape = 8,
+      size = 4,
+      color = bike$wheels$ggplot_color,
       inherit.aes = FALSE
     )
 }
