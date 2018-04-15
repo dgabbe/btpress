@@ -102,9 +102,15 @@ plot_title <- function(
 rider_expand_limits <- function(bike) {
   new_limits <- list()
   max_psi <- max(bike$wheels$Pressure)
+  max_load <- max(bike$wheels$Load)
+
   if ( max_psi > max_tire_psi) {
-    expand_limits(x = x_max_wheel_load + 25, y = max_psi + 10 )
+    plot <- plot + expand_limits(y = max_psi + 10 )
   }
 
-  new_limits
+  if (max_load > 152 && max_load <= x_max_wheel_load) {
+    plot <- plot + expand_limits(x = x_max_wheel_load + 5) # try deleting this test - don't think it's needed...
+  } else if (max_load > x_max_wheel_load) {
+    plot <- plot + expand_limits(x = x_max_wheel_load + 5 + (max_load - x_max_wheel_load))
+  } else { plot }
 }
