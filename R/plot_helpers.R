@@ -105,7 +105,7 @@ heavy_rider_expand_limits <- function(bike, plot) {
   }
 
   if (max_load > 152 && max_load <= x_max_wheel_load) {
-    plot <- plot + expand_limits(x = x_max_wheel_load + 5)
+    plot <- plot + expand_limits(x = x_max_wheel_load + 5) # try deleting this test - don't think it's needed...
   } else if (max_load > x_max_wheel_load) {
     plot <- plot + expand_limits(x = x_max_wheel_load + 5 + (max_load - x_max_wheel_load))
   } else { plot }
