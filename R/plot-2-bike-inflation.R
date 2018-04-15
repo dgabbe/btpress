@@ -33,10 +33,6 @@ plot_2_bike_inflation <- function (
   label_color_bike_a <- c("darkblue", "darkblue")
   label_color_bike_b <- c("black", "black")
 
-  # Temp code for proof of concept
-  # images <- c("file:///Users/dgabbe/_git/R/btpressapp/www/images/NYCS-bull-trans-A-20px.png",
-  #             "file:///Users/dgabbe/_git/R/btpressapp/www/images/NYCS-bull-trans-B-20px.png")
-
   bike_a$wheels <- tibble::add_column(bike_a$wheels, Image = c(images[1], images[1]))
   bike_b$wheels <- tibble::add_column(bike_b$wheels, Image = c(images[2], images[2]))
 
@@ -47,9 +43,9 @@ plot_2_bike_inflation <- function (
     geom_image(
       data = bike_a$wheels,
       aes(Load, Pressure, image = Image),
-      # by = "width",
-      # color = "blue",
-           size = 0.05,
+      by = "width",
+      color = "#2850ad",
+           size = 0.03,
       inherit.aes = FALSE
     )
   } else {

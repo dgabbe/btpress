@@ -107,7 +107,7 @@ create_example_bikes <- function() {
         bike_weight_lbs = 25,
         load_lbs = 5,
         front_distribution = 0.4,
-        front_tire_size_mm = 19,
+        front_tire_size_mm = 20,
         rear_tire_size_mm = 25
       )
     )
@@ -119,7 +119,7 @@ create_example_bikes <- function() {
     bikes,
     function(lst){
       message("  ", lst[1])
-      assign(as.character(lst[1]), lst[2], envir = .GlobalEnv)
+      assign(as.character(lst[1]), lst[2](), envir = .GlobalEnv)
       assign(
         paste(lst[1], "_plot", sep = ""),
         plot_bike_inflation(base_pressure_plot, lst[2], show_note = TRUE),

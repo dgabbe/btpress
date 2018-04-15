@@ -88,7 +88,10 @@ plot_title <- function(
   )
 }
 
-#' heavy_rider_expand_limits
+# expand left side of scale when front wheel load < 70lbs
+# get code from desktop!!
+
+#' rider_expand_limits
 #'
 #' @param bike setup to be plotted
 #' @param plot base_plot
@@ -96,9 +99,12 @@ plot_title <- function(
 #' @return ggplot object
 #' @export
 #'
-heavy_rider_expand_limits <- function(bike, plot) {
+rider_expand_limits <- function(bike) {
+  new_limits <- list()
   max_psi <- max(bike$wheels$Pressure)
   if ( max_psi > max_tire_psi) {
-    plot + expand_limits(x = x_max_wheel_load + 25, y = max_psi + 10 )
-  } else { plot }
+    expand_limits(x = x_max_wheel_load + 25, y = max_psi + 10 )
+  }
+
+  new_limits
 }

@@ -16,20 +16,21 @@ plot_bike_inflation <- function (
   show_note = FALSE,
   note = NULL
   ) {
+
   note <- if (isTRUE(show_note)) {
     if (is.null(note)) {
-      paste(
+      paste0(
         paste(bike$weights$Source, collapse = " + "), " = ",
         sum(bike$weights$Weight), "lbs | F/R %: ",
-        paste(bike$wheels$distribution, collapse = "/"),
-        sep = ""
+        paste(bike$wheels$distribution, collapse = "/")
       )
     }
   } else {
-    paste(note)
+    paste0(note)
   }
 
-  heavy_rider_expand_limits(bike, base_plot) +
+  base_plot +
+    rider_expand_limits(bike) +
     plot_title(subtitle = note) +
     # Display first so data points can overwrite them
     geom_label(
