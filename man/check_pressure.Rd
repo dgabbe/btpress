@@ -4,21 +4,18 @@
 \alias{check_pressure}
 \title{Check if pressure exceeds certain levels}
 \usage{
-check_pressure(p, warn_psi = warn_tire_psi, max_psi = max_tire_psi)
+check_pressure(p, tire_size)
 }
 \arguments{
 \item{p}{Desired tire inflation pressure}
 
-\item{warn_psi}{Pressure exceeds to suggest increasing tire size}
-
-\item{max_psi}{Pressure exceeds warn to check max pressure ratings of tire &
-rim}
+\item{tire_size}{tire size}
 }
 \value{
 a list or NA
 }
 \description{
 Display a message if the tire pressure might be getting into the range where
-a tire or rim could be overinflated. New wider rims and tires have lower
-pressures than the defaults.
+a tire or rim could be overinflated. Data published by DT Swiss listing the
+maxiumum rim pressure by tire size is used.
 }

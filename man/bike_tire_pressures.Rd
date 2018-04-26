@@ -10,7 +10,7 @@ bike_tire_pressures(rider_weight_lbs = 100, bike_weight_lbs = 15,
   rear_tire_size_mm = 28, front_distribution = 0.4)
 }
 \arguments{
-\item{rider_weight_lbs}{Weight of rider dressed with biking shoes and helmet.}
+\item{rider_weight_lbs}{Weight of rider dressed in riding attire, biking shoes and helmet.}
 
 \item{bike_weight_lbs}{Weight of bike}
 

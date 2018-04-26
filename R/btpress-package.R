@@ -78,8 +78,9 @@
 #'
 #'   The original research was conducted when internal widths for road rims were
 #'   around 19mm. Today's rims are available in wider sizes, 23 - 25mm,
-#'   increasing the volume up to 33\%. This program does not use internal rim
-#'   width in its calculations.
+#'   increasing the volume up to 33\%. For these rims, measure the tire width with a
+#'   digital or analog caliper and use that value for the tire width parameters.
+#'
 #'
 #' @section Pump Gauge Inaccuracies - Simple:
 #'

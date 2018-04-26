@@ -93,8 +93,10 @@ plot_title <- function(
 
 #' rider_expand_limits
 #'
+#' Wheel loads at extremes need to expand the plot area to prevent
+#' labels from being clipped.
+#'
 #' @param bike setup to be plotted
-#' @param plot base_plot
 #'
 #' @return ggplot object
 #' @export
@@ -103,14 +105,20 @@ rider_expand_limits <- function(bike) {
   new_limits <- list()
   max_psi <- max(bike$wheels$Pressure)
   max_load <- max(bike$wheels$Load)
+  min_load <- min(bike$wheels$Load)
 
   if ( max_psi > max_tire_psi) {
-    plot <- plot + expand_limits(y = max_psi + 10 )
+    new_limits <- c(new_limits, expand_limits(y = max_psi + 10 ))
+  }
+
+  if (min_load < x_min_wheel_load) {
+    new_limits <- c(new_limits, expand_limits(x = x_min_wheel_load - 5))
   }
 
   if (max_load > 152 && max_load <= x_max_wheel_load) {
-    plot <- plot + expand_limits(x = x_max_wheel_load + 5) # try deleting this test - don't think it's needed...
+    new_limits <- c(new_limits, expand_limits(x = x_max_wheel_load + 5))
   } else if (max_load > x_max_wheel_load) {
-    plot <- plot + expand_limits(x = x_max_wheel_load + 5 + (max_load - x_max_wheel_load))
-  } else { plot }
+    new_limits <- c(new_limits, expand_limits(x = x_max_wheel_load + 5 + (max_load - x_max_wheel_load)))
+  }
+  return(new_limits)
 }

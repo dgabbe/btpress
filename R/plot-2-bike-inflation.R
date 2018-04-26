@@ -26,15 +26,15 @@ plot_2_bike_inflation <- function (
 
   if (use_icon && length(images) != 2) {
     stop("images arg requires vector of 2 elements")
+  } else {
+    bike_a$wheels <- tibble::add_column(bike_a$wheels, Image = c(images[1], images[1]))
+    bike_b$wheels <- tibble::add_column(bike_b$wheels, Image = c(images[2], images[2]))
   }
 
   label_font_size <- 4.0
   geom_point_size <- 3.5
   label_color_bike_a <- c("darkblue", "darkblue")
   label_color_bike_b <- c("black", "black")
-
-  bike_a$wheels <- tibble::add_column(bike_a$wheels, Image = c(images[1], images[1]))
-  bike_b$wheels <- tibble::add_column(bike_b$wheels, Image = c(images[2], images[2]))
 
   base_plot +
     plot_title(subtitle = "A/B Comparison") +
@@ -45,7 +45,7 @@ plot_2_bike_inflation <- function (
       aes(Load, Pressure, image = Image),
       by = "width",
       color = "#2850ad",
-           size = 0.03,
+      size = 0.03,
       inherit.aes = FALSE
     )
   } else {
@@ -59,7 +59,7 @@ plot_2_bike_inflation <- function (
     )
   }
   } +
-  {    if (use_icon) {
+  { if (use_icon) {
       annotate(
         "text",
         label = bike_a$wheels$annotation,
