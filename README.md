@@ -2,6 +2,15 @@
 # btpress
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![packageversion](https://img.shields.io/badge/Package%20version-2018.04.05-orange.svg?style=flat-square)](commits/master)
+
+<!-- Build passing shield -->
+
+<!-- code coverage shield -->
+
+<!-- github download shield -->
+
+<!-- license shield? -->
 
 Imagine that you could ride one gear faster or feel less fatigued at the
 end of your ride and it cost you nothing. Tuning your bike tire pressure
