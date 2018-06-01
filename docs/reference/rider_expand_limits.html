@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check if pressure exceeds certain levels — check_pressure • btpress</title>
+<title>rider_expand_limits — rider_expand_limits • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,11 +28,10 @@
 
 
 
-<meta property="og:title" content="Check if pressure exceeds certain levels — check_pressure" />
+<meta property="og:title" content="rider_expand_limits — rider_expand_limits" />
 
-<meta property="og:description" content="Display a message if the tire pressure might be getting into the range where
-a tire or rim could be overinflated. Data published by DT Swiss listing the
-maxiumum rim pressure by tire size is used." />
+<meta property="og:description" content="Wheel loads at extremes need to expand the plot area to prevent
+labels from being clipped." />
 
 <meta property="og:image" content="https://blog.frame38.com/btpress/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -98,37 +97,32 @@ maxiumum rim pressure by tire size is used." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check if pressure exceeds certain levels</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dgabbe/btpress/blob/master/R/bike-tire-pressures.R'><code>R/bike-tire-pressures.R</code></a></small>
-    <div class="hidden name"><code>check_pressure.Rd</code></div>
+    <h1>rider_expand_limits</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/btpress/blob/master/R/plot_helpers.R'><code>R/plot_helpers.R</code></a></small>
+    <div class="hidden name"><code>rider_expand_limits.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Display a message if the tire pressure might be getting into the range where
-a tire or rim could be overinflated. Data published by DT Swiss listing the
-maxiumum rim pressure by tire size is used.</p>
+    <p>Wheel loads at extremes need to expand the plot area to prevent
+labels from being clipped.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_pressure</span>(<span class='no'>p</span>, <span class='no'>tire_size</span>)</pre>
+    <pre class="usage"><span class='fu'>rider_expand_limits</span>(<span class='no'>bike</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>p</th>
-      <td><p>Desired tire inflation pressure</p></td>
-    </tr>
-    <tr>
-      <th>tire_size</th>
-      <td><p>tire size</p></td>
+      <th>bike</th>
+      <td><p>setup to be plotted</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a list or NA</p>
+    <p>ggplot object</p>
     
 
   </div>

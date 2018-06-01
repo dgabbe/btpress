@@ -1,0 +1,8 @@
+pandoc: 2.2.1
+pkgdown: 1.0.0
+pkgdown_sha: ~
+articles: []
+urls:
+  reference: https://blog.frame38.com/btpress/reference
+  article: https://blog.frame38.com/btpress/articles
+

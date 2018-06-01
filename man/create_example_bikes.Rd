@@ -7,8 +7,17 @@
 create_example_bikes()
 }
 \value{
-list of bikes
+creates bike and plot objects in the Global environment
 }
 \description{
 Create a few example bikes and inflation plots
+}
+\examples{
+\donttest{
+\dontrun{
+create_example_bikes()
+steel_sport
+steel_sport_plot
+}
+}
 }

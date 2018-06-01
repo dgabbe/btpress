@@ -25,12 +25,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
 <meta property="og:title" content="Compute front and rear tire pressures based on data for bike and rider. — bike_tire_pressures" />
 
 <meta property="og:description" content="The label for each point is generated and stored in the annotation column." />
+
+<meta property="og:image" content="https://blog.frame38.com/btpress/logo.png" />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -53,12 +58,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">btpress</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">btpress</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.4.5</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/btpress-package.html">Intro</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -73,6 +85,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -80,27 +93,31 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Compute front and rear tire pressures based on data for bike and rider.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/btpress/blob/master/R/bike-tire-pressures.R'><code>R/bike-tire-pressures.R</code></a></small>
+    <div class="hidden name"><code>bike_tire_pressures.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>The label for each point is generated and stored in the <code>annotation</code> column.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>bike_tire_pressures</span>(<span class='kw'>rider_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>bike_weight_lbs</span> <span class='kw'>=</span> <span class='fl'>15</span>,
   <span class='kw'>load_lbs</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>front_tire_casing_compensation</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>front_tire_size_mm</span> <span class='kw'>=</span> <span class='fl'>28</span>, <span class='kw'>rear_tire_casing_compensation</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>rear_tire_size_mm</span> <span class='kw'>=</span> <span class='fl'>28</span>, <span class='kw'>front_distribution</span> <span class='kw'>=</span> <span class='fl'>0.4</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>rider_weight_lbs</th>
-      <td><p>Weight of rider dressed with biking shoes and helmet.</p></td>
+      <td><p>Weight of rider dressed in riding attire, biking shoes and helmet.</p></td>
     </tr>
     <tr>
       <th>bike_weight_lbs</th>
@@ -174,5 +191,8 @@ check max tire and rim pressures is stored.</p>
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

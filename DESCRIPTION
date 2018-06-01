@@ -8,13 +8,14 @@ Description: Calculates front and rear tire pressure based on bicycle, load,
 Authors@R: c(person("David", "Gabbé", , "dgabbe@acm.org", role = c("aut", "cre")))
 Depends: R (>= 3.3.2)
 Imports: 
-  directlabels, 
-  dplyr (>= 0.7.2),
-  ggplot2 (>= 2.2.0),
-  magrittr,
-  tibble,
-  tidyr,
-  wesanderson
+    directlabels (>= 2017.03.31),
+    dplyr (>= 0.7.2),
+    ggimage,
+    ggplot2 (>= 2.2.0),
+    magrittr,
+    tibble,
+    tidyr,
+    wesanderson
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

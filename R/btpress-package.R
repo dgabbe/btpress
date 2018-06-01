@@ -1,7 +1,7 @@
 #' btpress
 #'
 #' A program to calculate optimized bicycle tire pressure based on research that
-#' found a small sag or droop in the profile of the tire, lead to better
+#' found a small sag or droop in the profile of the tire, led to better
 #' performance and comfort.
 #'
 #' Imagine that you could ride one gear faster or feel less fatigued at the end

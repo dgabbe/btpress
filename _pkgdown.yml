@@ -1,20 +1,31 @@
-navbar:
-  left:
-  - text: Intro
-    href: reference/btpress-package.html
-  - text: Reference
-    href: reference/index.html
-#reference:
-#  - title: "title"
-#    desc: "description here"
-#    contents:
-#      - func1
-#      - func2
-#      - func3
-#  - title: "title here"
-#    desc: "description here."
-#    contents:
-#      - func1
-#      - func2
-#      - func2
+url: https://blog.frame38.com/btpress
+template:
+  ganalytics: UA-69499253-4
+reference:
+  - title: "Data Generation"
+    desc: "Functions to generate the data set, base plot, and tire pressure"
+    contents:
+      - base_pressure_plot
+      - bike_tire_pressures
+      - droop_pressure_psi
+      - starts_with("generate_")
+      - tire_sizes_mm
+  - title: "Features"
+    desc: "Functions to generate the user info"
+    contents:
+      - plot_bike_inflation
+      - plot_2_bike_inflation
+  - title: "Plot Helpers"
+    desc: "Functions to format data for plotting"
+    contents:
+      - check_pressure
+      - rider_expand_limits
+      - starts_with("dual_")
+      - plot_title
+      - theme_dg_pale
+  - title: "Unit Conversion"
+    desc: "Metric/imperial unit conversion"
+    contents:
+      - lb_to_kg
+      - psi_to_bar
 

@@ -25,9 +25,15 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
 <meta property="og:title" content="Function reference" />
+
+<meta property="og:image" content="https://blog.frame38.com/btpress/logo.png" />
+<meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -50,12 +56,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">btpress</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">btpress</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.4.5</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/btpress-package.html">Intro</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -70,6 +83,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -77,155 +91,165 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;2018.02.03</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="base_pressure_plot.html">base_pressure_plot</a></code> </p>
-          </td>
-          <td><p>Base pressure chart</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="bike_tire_pressures.html">bike_tire_pressures</a></code> </p>
-          </td>
-          <td><p>Compute front and rear tire pressures based on data for bike and rider.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="btpress-package.html">btpress-package</a></code> </p>
-          </td>
-          <td><p>btpress</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="check_pressure.html">check_pressure</a></code> </p>
-          </td>
-          <td><p>Check if pressure exceeds certain levels</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="create_example_bikes.html">create_example_bikes</a></code> </p>
-          </td>
-          <td><p>Create a few example bikes and inflation plots</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="droop_pressure_psi.html">droop_pressure_psi</a></code> </p>
-          </td>
-          <td><p>Compute the 15% droop tire pressure based on wheel load and tire size</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dual_pressure_point.html">dual_pressure_point</a></code> </p>
-          </td>
-          <td><p>Data point formatting function</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dual_pressure.html">dual_pressure</a></code> </p>
-          </td>
-          <td><p>Y axis label formatting function</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="dual_weight.html">dual_weight</a></code> </p>
-          </td>
-          <td><p>X axis label formatting function</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="generate_base_pressure_plot.html">generate_base_pressure_plot</a></code> </p>
-          </td>
-          <td><p>Generate the base plot of inflation curves for all tire sizes</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="generate_inflation_data.html">generate_inflation_data</a></code> </p>
-          </td>
-          <td><p>Generate the dataset for drawing the inflation curves</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="lb_to_kg.html">lb_to_kg</a></code> </p>
-          </td>
-          <td><p>Convert pounds to kilograms</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="plot_2_bike_inflation.html">plot_2_bike_inflation</a></code> </p>
-          </td>
-          <td><p>Plot and label front and rear wheel inflation data for comparing
-2 bike setups.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="plot_bike_inflation.html">plot_bike_inflation</a></code> </p>
-          </td>
-          <td><p>Plot and label front and rear wheel inflation data for a bike setup</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="plot_title.html">plot_title</a></code> </p>
-          </td>
-          <td><p>Display a generic title and optionally add bike summary info</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="psi_to_bar.html">psi_to_bar</a></code> </p>
-          </td>
-          <td><p>Convert PSI to Bar</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="theme_dg_pale.html">theme_dg_pale</a></code> </p>
-          </td>
-          <td><p>Modifications to <code>theme_bw</code> to add a bit of color</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="tire_sizes_mm.html">tire_sizes_mm</a></code> </p>
-          </td>
-          <td><p>Nominal tire sizes</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="wheel_loads_lbs.html">wheel_loads_lbs</a></code> </p>
-          </td>
-          <td><p>X axis values for wheel loads in lbs</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-data-generation" class="hasAnchor"><a href="#section-data-generation" class="anchor"></a>Data Generation</h2>
+          <p class="section-desc"><p>Functions to generate the data set, base plot, and tire pressure</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="base_pressure_plot.html">base_pressure_plot</a></code> </p>
+        </td>
+        <td><p>Base pressure chart</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="bike_tire_pressures.html">bike_tire_pressures()</a></code> </p>
+        </td>
+        <td><p>Compute front and rear tire pressures based on data for bike and rider.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="droop_pressure_psi.html">droop_pressure_psi()</a></code> </p>
+        </td>
+        <td><p>Compute the 15% droop tire pressure based on wheel load and tire size</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="generate_base_pressure_plot.html">generate_base_pressure_plot()</a></code> </p>
+        </td>
+        <td><p>Generate the base plot of inflation curves for all tire sizes</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="generate_inflation_data.html">generate_inflation_data()</a></code> </p>
+        </td>
+        <td><p>Generate the dataset for drawing the inflation curves</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="tire_sizes_mm.html">tire_sizes_mm()</a></code> </p>
+        </td>
+        <td><p>Nominal tire sizes</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-features" class="hasAnchor"><a href="#section-features" class="anchor"></a>Features</h2>
+          <p class="section-desc"><p>Functions to generate the user info</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="plot_bike_inflation.html">plot_bike_inflation()</a></code> </p>
+        </td>
+        <td><p>Plot and label front and rear wheel inflation data for a bike setup</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="plot_2_bike_inflation.html">plot_2_bike_inflation()</a></code> </p>
+        </td>
+        <td><p>Plot and label front and rear wheel inflation data for comparing
+2 bike setups</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-plot-helpers" class="hasAnchor"><a href="#section-plot-helpers" class="anchor"></a>Plot Helpers</h2>
+          <p class="section-desc"><p>Functions to format data for plotting</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="check_pressure.html">check_pressure()</a></code> </p>
+        </td>
+        <td><p>Check if pressure exceeds certain levels</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="rider_expand_limits.html">rider_expand_limits()</a></code> </p>
+        </td>
+        <td><p>rider_expand_limits</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dual_pressure.html">dual_pressure()</a></code> </p>
+        </td>
+        <td><p>Y axis label formatting function</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dual_pressure_point.html">dual_pressure_point()</a></code> </p>
+        </td>
+        <td><p>Data point formatting function</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="dual_weight.html">dual_weight()</a></code> </p>
+        </td>
+        <td><p>X axis label formatting function</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="plot_title.html">plot_title()</a></code> </p>
+        </td>
+        <td><p>Display a generic title and optionally add bike summary info</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="theme_dg_pale.html">theme_dg_pale()</a></code> </p>
+        </td>
+        <td><p>Modifications to <code>theme_bw</code> to add a bit of color</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-unit-conversion" class="hasAnchor"><a href="#section-unit-conversion" class="anchor"></a>Unit Conversion</h2>
+          <p class="section-desc"><p>Metric/imperial unit conversion</p></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="lb_to_kg.html">lb_to_kg()</a></code> </p>
+        </td>
+        <td><p>Convert pounds to kilograms</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="psi_to_bar.html">psi_to_bar()</a></code> </p>
+        </td>
+        <td><p>Convert PSI to Bar</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-data-generation">Data Generation</a></li>
+      <li><a href="#section-features">Features</a></li>
+      <li><a href="#section-plot-helpers">Plot Helpers</a></li>
+      <li><a href="#section-unit-conversion">Unit Conversion</a></li>
     </ul>
   </div>
 </div>
@@ -242,5 +266,8 @@
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

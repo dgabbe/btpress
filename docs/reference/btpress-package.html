@@ -25,14 +25,19 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
 <meta property="og:title" content="btpress — btpress-package" />
 
 <meta property="og:description" content="A program to calculate optimized bicycle tire pressure based on research that
-found a small sag or droop in the profile of the tire lead to better
+found a small sag or droop in the profile of the tire, led to better
 performance and comfort." />
+
+<meta property="og:image" content="https://blog.frame38.com/btpress/logo.png" />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -55,12 +60,19 @@ performance and comfort." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">btpress</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">btpress</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.4.5</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/btpress-package.html">Intro</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -75,6 +87,7 @@ performance and comfort." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -82,29 +95,32 @@ performance and comfort." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>btpress</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/btpress/blob/master/R/btpress-package.R'><code>R/btpress-package.R</code></a></small>
+    <div class="hidden name"><code>btpress-package.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>A program to calculate optimized bicycle tire pressure based on research that
-found a small sag or droop in the profile of the tire lead to better
+found a small sag or droop in the profile of the tire, led to better
 performance and comfort.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Imagine that you could ride one gear faster or feel less fatigued at the end of
-your ride and it cost you nothing. Tuning your bike tire pressure to you, your
-bike, and your load may do just that. It all depends on wider bike tires with
-flexible sidewalls.</p>
-<p>Riding one gear higher, depending on your gearing, is a 5 - 8% increase.
-There are now 2 independent studies that support lower pressures are
-significantly better than pumping up your tires until they are rock hard. See
-the References section for articles.</p>
+    <p>Imagine that you could ride one gear faster or feel less fatigued at the end
+of your ride and it cost you nothing. Tuning your bike tire pressure to your
+own unique situation may do just that. There are now 2 independent studies
+that support lower pressures are significantly better than pumping up your
+tires until they are rock hard. It all depends on wider bike tires with
+flexible sidewalls. Riding one gear higher, depending on your gearing,
+is a 5 - 8% increase.</p>
     
     <h2 class="hasAnchor" id="directions-for-use"><a class="anchor" href="#directions-for-use"></a>Directions for Use</h2>
 
@@ -119,7 +135,7 @@ and thick touring tires are supported by their sidewalls and do not
 respond to pressure changes very well.</p>
 <p>The simplest way to calculate your tire pressure is to use the
 <a href='http://btp.frame38.com'>companion web app</a>, which uses this package.</p>
-<p>To calculate your tire pressures execute this code sequence:</p><pre>my_bike &lt;- bike_tire_pressures() # Supply your values for the parameters
+<p>To calculate your tire pressures, execute this code sequence:</p><pre>my_bike &lt;- bike_tire_pressures() # Supply your values for the parameters
 plot_bike_inflation(bike = my_bike)
 </pre>
     <p>If a test ride indicates that the tire pressure is really too low, it's
@@ -128,7 +144,7 @@ pressure by 10psi.  Remember this is not an exact science nor setting so
 some experimentation may be needed.</p>
 <p>Extra light casings need an extra 10-15% pressure to prevent the casing
 threads from breaking.</p>
-<p>Let's say your trials indicate a performance improvement and you'd like to
+<p>Suppose your trials indicate a performance improvement and you'd like to
 <a href='https://janheine.wordpress.com/2017/06/21/choosing-your-tires/'>explore other tire options</a>,
 or it's simply time for new tires. A wider tire is a great option to
 <a href='https://janheine.wordpress.com/2013/03/12/how-wide-a-tire-can-i-run/'>consider</a>.
@@ -139,7 +155,7 @@ plot_2_bike_inflation(bike_a = my_bike, bike_b = new_tires)
     <h2 class="hasAnchor" id="choosing-between-bike-and-load-weights"><a class="anchor" href="#choosing-between-bike-and-load-weights"></a>Choosing Between Bike and Load Weights</h2>
 
     
-    <p>Bikes are for transporting stuff around, but where your stuff is attached
+    <p>Bikes are for transporting gear around, but where your gear is attached
 will impact bike handling. Increasing load weight decreases handling
 stability. While your bike weight remains constant, your cargo weight could
 vary from 0 to 20lbs and that will change tire pressure quite a bit.</p>
@@ -152,8 +168,8 @@ highlight the limitations.</p>
 their weight should be added to the rider weight, not the load weight.</p>
 <p>It's unwise to assume a front/rear weight distribution when there are loads
 on both the front and rear racks.  My recommendation is to measure the
-distribution on a level surface.  A bathroom scale placed under one wheel
-and a spacer block the same height as the scale placed under the other
+distribution on a level surface.  Place a bathroom scale under one wheel
+and a spacer block, the same height as the scale, under the other
 wheel.  Load up the bike, hop on, and have a helper steady you and read the
 numbers. Flip the bike around and measure the other wheel.  Divide the front
 weight by the rear weight and use that for the <code>front_distribution</code>
@@ -164,26 +180,39 @@ parameter.</p>
     
     <p>The original research was conducted when internal widths for road rims were
 around 19mm. Today's rims are available in wider sizes, 23 - 25mm,
-increasing the volume up to 33%. This program does not use internal rim
-width in its calculations.</p>
+increasing the volume up to 33%. For these rims, measure the tire width with a
+digital or analog caliper and use that value for the tire width parameters.</p>
     
     <h2 class="hasAnchor" id="pump-gauge-inaccuracies-simple"><a class="anchor" href="#pump-gauge-inaccuracies-simple"></a>Pump Gauge Inaccuracies - Simple</h2>
 
     
     <p>Built-in pump gauges are inaccurate. Between a wide tolerance range of the
-pressure sensing mechanism and imprecise reading of the gauge needle due to
+pressure-sensing mechanism and imprecise reading of the gauge needle due to
 parallex, the indicated pressure should be considered an approximation.</p>
 <p>A simple experiment can help determine how your pump is reading.  Inflate
 your tires to the calculated pressure plus another 15psi.  If a test ride
 seems harsher or your bike bounces around more, the pressure is too high.
 Repeat, but this time inflate to 15psi less than the calculated pressure.
-If your wheels bottom out or the handling is squishy, the pressure is too
+If your wheels bottom out or the handling is squirmy, the pressure is too
 low.  Adjust in increments of 5psi and repeat until satisfied.</p>
+<p>For road tubeless setups, exceeding 60psi seems to increase the likelihood
+of a tire blowoff as nicely summarized in this
+<a href='https://janheine.wordpress.com/2017/05/29/the-trouble-with-road-tubeless/'>post</a>.</p>
     
     <h2 class="hasAnchor" id="pump-gauge-inaccuracies-advanced"><a class="anchor" href="#pump-gauge-inaccuracies-advanced"></a>Pump Gauge Inaccuracies - Advanced</h2>
 
     
     <p>Under development...</p>
+    
+    <h2 class="hasAnchor" id="tire-mounting-instructions"><a class="anchor" href="#tire-mounting-instructions"></a>Tire Mounting Instructions</h2>
+
+    
+    <p>If using an inner tube, inflate it so it barely holds its shape and lightly
+coat with talc (talcum power). Then sprinkle some talc on the inside of the tire
+casing to coat the entire surface.  Flip the tire inside out if you find it's
+easier to apply that way.  This proceedure is mandatory for latex and light
+weight butyl tubes.</p>
+<p>Then follow Sven Cycles <a href='https://www.svencycles.com/blog/compass-tyre-mounting-instructions/'>marvelous instructions</a>.</p>
     
     <h2 class="hasAnchor" id="heavy-riders-tandems-and-cargo-bikes"><a class="anchor" href="#heavy-riders-tandems-and-cargo-bikes"></a>Heavy Riders, Tandems, and Cargo Bikes</h2>
 
@@ -211,7 +240,7 @@ subject to.</p>
 <li><p>Part one,
 <a href='https://silca.cc/blogs/journal/118397252-tire-size-pressure-aero-comfort-rolling-resistance-and-more-part-1-how-we-got-to-now'>Tire Size, Pressure, Aero, Comfort, Rolling Resistance and More. Part 1: How We Got to Now</a>, of a five part series.</p></li>
 <li><p>The original
-<a href='https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf'>Bicycle Quarterly article</a></p></li>
+<a href='https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf'><em>Bicycle Quarterly</em> article</a></p></li>
 <li><p><a href='https://www.hedcycling.com/blog/road-tire-pressure-for-plus-and-black-wheels/'>Road Tire Pressure For Plus And BLACK Wheels</a></p></li>
 <li><p><a href='http://trstriathlon.com/talking-tires-with-joshua-poertner/'>Tire Pressure – Stop Guessing And Read The Science</a></p></li>
 </ul>
@@ -221,8 +250,8 @@ subject to.</p>
     
     <p>Source for data and pratical application to Jan Heine and Frank Berto
 published in
-<a href='https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf'>Bicycle Quarterly</a>.</p>
-<p>The emperical curve fitting formula from the
+<em><a href='https://www.compasscycle.com/wp-content/uploads/2015/03/BQTireDrop.pdf'>Bicycle Quarterly</a></em>.</p>
+<p>The empirical curve fitting formula from the
 <a href='http://www.biketinker.com/2010/bike-resources/optimal-tire-pressure-for-bicycles/'>BikeTinker</a>.</p>
     
     <h2 class="hasAnchor" id="disclaimer"><a class="anchor" href="#disclaimer"></a>Disclaimer</h2>
@@ -262,6 +291,8 @@ no compensation for this program.</p>
 
       <li><a href="#pump-gauge-inaccuracies-advanced">Pump Gauge Inaccuracies - Advanced</a></li>
 
+      <li><a href="#tire-mounting-instructions">Tire Mounting Instructions</a></li>
+
       <li><a href="#heavy-riders-tandems-and-cargo-bikes">Heavy Riders, Tandems, and Cargo Bikes</a></li>
 
       <li><a href="#weight-vs-load">Weight vs. Load</a></li>
@@ -290,5 +321,8 @@ no compensation for this program.</p>
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

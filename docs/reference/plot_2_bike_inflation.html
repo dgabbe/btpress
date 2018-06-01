@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Plot and label front and rear wheel inflation data for comparing
-2 bike setups. — plot_2_bike_inflation • btpress</title>
+2 bike setups — plot_2_bike_inflation • btpress</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -26,14 +26,19 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
 <meta property="og:title" content="Plot and label front and rear wheel inflation data for comparing
-2 bike setups. — plot_2_bike_inflation" />
+2 bike setups — plot_2_bike_inflation" />
 
 <meta property="og:description" content="Plot and label front and rear wheel inflation data for comparing
-2 bike setups." />
+2 bike setups" />
+
+<meta property="og:image" content="https://blog.frame38.com/btpress/logo.png" />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -56,12 +61,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">btpress</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">btpress</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2018.4.5</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/btpress-package.html">Intro</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -76,6 +88,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -83,21 +96,26 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Plot and label front and rear wheel inflation data for comparing
-2 bike setups.</h1>
+2 bike setups</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dgabbe/btpress/blob/master/R/plot-2-bike-inflation.R'><code>R/plot-2-bike-inflation.R</code></a></small>
+    <div class="hidden name"><code>plot_2_bike_inflation.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Plot and label front and rear wheel inflation data for comparing
-2 bike setups.</p>
+2 bike setups</p>
     
+    </div>
 
-    <pre class="usage"><span class='fu'>plot_2_bike_inflation</span>(<span class='kw'>base_plot</span> <span class='kw'>=</span> <span class='no'>base_pressure_plot</span>, <span class='no'>bike_a</span>, <span class='no'>bike_b</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_2_bike_inflation</span>(<span class='kw'>base_plot</span> <span class='kw'>=</span> <span class='no'>base_pressure_plot</span>, <span class='no'>bike_a</span>, <span class='no'>bike_b</span>,
+  <span class='kw'>images</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -112,6 +130,11 @@
       <th>bike_b</th>
       <td><p>tibble to display for specific bike and rider.</p></td>
     </tr>
+    <tr>
+      <th>images</th>
+      <td><p>vector of images to display for points.  Order of images is
+bike_a, bike_b.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -120,7 +143,7 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>plot_bike_inflation</p>
+    <div class='dont-index'><p>plot_bike_inflation</p></div>
     
 
   </div>
@@ -149,5 +172,8 @@
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
