@@ -16,6 +16,15 @@ test_that("dual_pressure works", {
   expect_equal(dual_pressure(50), "50 psi\n3.4 bar")
 })
 
+test_that("dual_pressure_point Front works", {
+  expect_equal(dual_pressure_point(32, "Front", 70), "32mm Front\n70 psi | 4.8 bar")
+})
+
+test_that("dual_pressure_point Rear works", {
+  expect_equal(dual_pressure_point(32, "Rear", 70), "32mm Rear\n70 psi | 4.8 bar")
+})
+
+
 # dual_pressure_point
 #
 # plot_title
