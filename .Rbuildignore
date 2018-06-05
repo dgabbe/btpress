@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^\testing.R
 ^docs$
+^NEWS\.Rmd$
 ^README\.Rmd$
 ^.*\.Rproj$
 ^_pkgdown\.yml$
