@@ -4,7 +4,7 @@
 #'
 #' @export
 tire_sizes_mm <- function() {
-  as.integer(c(20, 23, 25, 28, 32, 35, 38, 42, 44, 48, 54))
+  as.integer(c(20, 23, 25, 28, 32, 35, 38, 42, 44, 48, 55, 58))
 }
 
 #' X axis values for wheel loads in lbs
