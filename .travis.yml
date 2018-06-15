@@ -6,8 +6,9 @@ cache: packages
 latex: false
 warnings_are_errors: false
 
-# Failed with 'missing ggimage' unless below used.
+# Needed to avoid 'missing' install failure message.
 r_packages:
+  - magick
   - ggimage
 
 #r_github_packages:
