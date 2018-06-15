@@ -9,3 +9,4 @@
 ^\.nojekyll$
 ^\.travis\.yml$
 ^codecov\.yml$
+^.covrignore$
