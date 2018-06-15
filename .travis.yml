@@ -6,8 +6,9 @@ cache: packages
 latex: false
 warnings_are_errors: false
 
-#r_packages: # maybe needed
-#  - ggimage
+# Failed with 'missing ggimage' unless below used.
+r_packages:
+  - ggimage
 
 #r_github_packages:
 #  - covr
