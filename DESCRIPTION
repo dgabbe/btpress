@@ -34,3 +34,7 @@ Collate:
     'generate_base_plot.R'
     'plot-2-bike-inflation.R'
     'plot-bike-inflation.R'
+Suggests: 
+    covr,
+    testthat
+    

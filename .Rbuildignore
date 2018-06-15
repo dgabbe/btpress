@@ -7,3 +7,5 @@
 ^.*\.Rproj$
 ^_pkgdown\.yml$
 ^\.nojekyll$
+^\.travis\.yml$
+^codecov\.yml$
