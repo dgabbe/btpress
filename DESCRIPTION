@@ -27,7 +27,6 @@ Collate:
     'bike-tire-pressures.R'
     'btpress-package.R'
     'droop_pressure.R'
-    'example-bikes.R'
     'generate-inflation-curve-data.R'
     'theme_dg_pale.R'
     'plot_helpers.R'
@@ -37,4 +36,3 @@ Collate:
 Suggests: 
     covr,
     testthat
-    

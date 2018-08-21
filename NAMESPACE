@@ -3,7 +3,6 @@
 export(base_pressure_plot)
 export(bike_tire_pressures)
 export(check_pressure)
-export(create_example_bikes)
 export(droop_pressure_psi)
 export(dual_pressure)
 export(dual_pressure_point)
