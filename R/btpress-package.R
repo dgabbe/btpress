@@ -15,10 +15,9 @@
 #' @section Directions for Use:
 #'
 #'   The first step is evaluating whether your tires have flexible sidewalls
-#'   which will respond readily to tire pressure changes. Tires marketed as
-#'   racing tires, marketed as having a casing from a tubular tire, used by
-#'   professional racers, or are a folding tire are good candidates. On the
-#'   other hand, puncture resistant tires,
+#'   which will respond readily to tire pressure changes. Completely deflate your tires.
+#'   If the rim is resting on a pancaked tire, your tire should work well this method.
+#'   On other hand, puncture resistant tires,
 #'   \href{https://edsasslercoaching.com/product-reviews/nokian-a10-studded-winter-tires/}{snow tires},
 #'   and thick touring tires are supported by their sidewalls and do not
 #'   respond to pressure changes very well.
