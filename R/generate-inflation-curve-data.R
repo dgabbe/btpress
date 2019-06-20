@@ -28,6 +28,10 @@ x_min_wheel_load <- floor(min(wheel_loads_lbs()) / 10) * 10
 #' @return tibble
 #' @include min_max_limits.R
 #' @export
+#'
+#' Based on Hadley's Joy of Functional Programming, try using the
+#' purrr::map() functions to replace lapply.
+#'
 generate_inflation_data <- function(
   wheel_loads = wheel_loads_lbs(),
   tire_sizes = tire_sizes_mm(),
